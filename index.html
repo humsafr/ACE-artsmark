@@ -982,6 +982,85 @@
       .flow-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -18px; transform: translateX(-50%); }
       h1 { font-size: 42px; }
     }
+
+    /* v5 readability + consistency overrides */
+    .hero,
+    .section,
+    .lead,
+    .section-lead,
+    .section-header p,
+    .strategy-copy,
+    .strategy-copy p,
+    .panel-intro,
+    .meta-card p,
+    .step-detail p,
+    .step-story,
+    .shift-item,
+    .shift-item span,
+    .milestone span,
+    .footnote {
+      color: #111111;
+    }
+
+    .offer-card small,
+    .network-card small {
+      color: #111111;
+      font-size: 16px;
+      line-height: 1.42;
+      font-weight: 500;
+    }
+
+    .panel-intro,
+    .meta-card p,
+    .step-detail p,
+    .step-story {
+      color: #111111;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .flow-step {
+      color: #111111;
+      font-size: 15.5px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .step-detail {
+      background: rgba(255,255,255,.55);
+      border-color: rgba(217,222,231,.75);
+    }
+
+    .step-detail h3 {
+      display: none;
+    }
+
+    .offer-card,
+    .network-card,
+    .offer-card:hover,
+    .network-card:hover,
+    .offer-card:focus,
+    .network-card:focus,
+    .offer-card.active,
+    .network-card.active,
+    .flow-step,
+    .flow-step:hover,
+    .flow-step:focus,
+    .flow-step.active {
+      text-decoration: none;
+    }
+
+    .offer-card *,
+    .network-card *,
+    .flow-step * {
+      text-decoration: none;
+    }
+
+    .offer-card.active::after,
+    .network-card.active::after {
+      display: none;
+    }
+
   </style>
 </head>
 <body>
@@ -998,7 +1077,7 @@
     <section class="hero" id="top">
       <div>
         <h1>Future Artsmark service direction</h1>
-        <p class="lead">A proposed direction for Artsmark: a clearer service that helps schools understand, strengthen and celebrate arts and culture in ways that fit their context.</p>
+        <p class="lead">A proposed direction for Artsmark: help schools understand, strengthen and be recognised for high-quality arts and cultural education in ways that fit their context.</p>
         <div class="cta-row">
           <a class="btn" href="https://chatgpt.com/canvas/shared/6a102b44ed2c8191b1199862647844da" target="_blank" rel="noopener">Explore Artsmark prototype →</a>
         </div>
@@ -1086,8 +1165,8 @@
         </div>
       </div>
 
-      <div class="section-title">At-a-glance transition plan</div>
-      <div class="roadmap" aria-label="At-a-glance transition plan">
+      <div class="section-title">Transition plan</div>
+      <div class="roadmap" aria-label="Transition plan">
         <div class="rm-row">
           <div class="rm-cell rm-header"><strong>School-facing change</strong><span>What each strand is learning</span></div>
           <div class="rm-cell rm-header"><strong>Sept 2026</strong><span>Signal + adapt</span></div>
@@ -1137,7 +1216,7 @@
         title: 'Assess & award',
         forText: 'Schools ready to be recognised, or maintain their award status.',
         valueText: 'Gives schools a clearer route to external recognition, with feedback they can use afterwards.',
-        intro: 'This is the award route: schools prepare evidence, apply for assessment, and receive an award with framework-linked feedback.',
+        intro: 'This is the award offer: schools prepare evidence, apply for assessment, and receive an award with framework-linked feedback. They no longer have to evidence a development journey or register for a programme: they simply apply to be assessed when they are ready to do so.',
         flow: [
           { label: 'Understand expectations', story: 'A school can see what the award assesses, what has changed, what evidence is expected, and decide what date it is working towards.', formats: ['Award criteria & guidance', 'Award window dates', 'Application form', 'FAQ'] },
           { label: 'Prepare evidence', story: 'A school gathers evidence and reports it against the framework criteria to build a rounded picture of its provision.', formats: ['Evidence guide', 'Application prep session', 'Examples of evidence'] },
@@ -1153,7 +1232,7 @@
         title: 'Check & strengthen',
         forText: 'Schools wanting to improve provision, whether or not they apply for an award.',
         valueText: 'Lets schools use the framework to understand where they are and choose targeted next steps that fit their context.',
-        intro: 'This is the orienting and improvement offer: schools can audit provision, identify priorities and access different kinds of support or examples.',
+        intro: 'This is the orienting and improvement offer: schools can audit provision, identify priorities and access different kinds of support or examples. They no longer have to be award-motivated to be able to strengthen: any school can use the framework to check their provision and decide what to do next.',
         flow: [
           { label: 'Check current provision', story: 'A school uses the framework criteria to audit their provision and capacity: what is already happening, what feels strong and what is patchy.', formats: ['Self-audit tool', 'Downloadable kit', 'Peer / group sessions', 'Specialist-supported audit'] },
           { label: 'Choose focus areas', story: 'A school decides what would be most useful to strengthen next, rather than trying to improve everything at once.', formats: ['Suggested next steps', 'Signpost', 'Specialist follow-up'] },
@@ -1167,7 +1246,7 @@
         valueIcon: '🤝',
         title: 'Connect & share practice',
         forText: 'Artsmark schools looking for examples, connection or ways to contribute.',
-        valueText: 'Makes practice visible and helps both offers work better: schools can learn from peers, share what works and see what strengthening looks like.',
+        valueText: 'Makes practice visible and helps both offers work better: schools can learn from peers, share what works and see what strengthening looks like. Over time, this might fold into the offers, but for the transition we recognise this is a high-value area that needs dedicated effort to cultuvate.',
         intro: 'This is the connective layer: it supports both recognition and strengthening by creating opportunities for schools to exchange, learn and contribute.',
         flow: [
           { label: 'Join a session', story: 'A school joins a practice share session that feels relevant to its context or current focus area.', formats: ['Hosted spotlight', 'School-led showcase', 'Panel', 'Peer discussion'] },
@@ -1212,7 +1291,7 @@
         btn.classList.toggle('active', i === index);
         btn.style.borderColor = i === index ? p.color : 'var(--line)';
       });
-      stepDetail.innerHTML = `<h3>${step.label}</h3><p>${step.story}</p><div class="section-title">Possible formats</div><div class="format-list">${step.formats.map(x => `<span class="format-pill">${x}</span>`).join('')}</div>`;
+      stepDetail.innerHTML = `<p class="step-story">${step.story}</p><div class="format-list">${step.formats.map(x => `<span class="format-pill">${x}</span>`).join('')}</div>`;
     }
 
     document.querySelectorAll('[data-part]').forEach(btn => {
