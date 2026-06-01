@@ -236,6 +236,35 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 24px rgba(17,24,39,.045);
+      display: block;
+      color: #111;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .framework-link,
+    .framework-link:visited,
+    .framework-link:hover,
+    .framework-link:active {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .framework-link h2,
+    .framework-link p {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .framework-link h2 span {
+      font-size: 15px;
+      margin-left: 4px;
+      opacity: 0.55;
+    }
+
+    .framework-link:hover {
+        border-color: rgba(17,17,17,0.22);
+        background: rgba(255,255,255,0.7);
     }
 
     .framework-band h2 {
@@ -1102,10 +1131,12 @@
       </div>
 
       <div class="model-canvas">
-        <div class="framework-band">
-          <h2>One Artsmark framework</h2>
-          <p>Shared criteria for audit, strengthening, evidence, assessment, feedback and examples.</p>
-        </div>
+        <a class="framework-band framework-link" href="https://www.artsmark.org.uk/your-artsmark-hub/support-your-journey/artsmark-framework" target="_blank" rel="noopener">
+          <div>
+            <h2>One Artsmark framework <span aria-hidden="true">↗</span></h2>
+            <p>Shared criteria for audit, strengthening, evidence, assessment, feedback and examples.</p>
+          </div>
+        </a>
 
         <div class="offer-row">
           <button class="offer-card award active" data-part="award">
