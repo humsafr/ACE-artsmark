@@ -662,6 +662,301 @@
     }
 
 
+    /* v4 typographic tightening */
+    :root {
+      --shadow: 0 8px 20px rgba(17, 24, 39, 0.045);
+    }
+
+    body {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1380px;
+      padding: 24px;
+    }
+
+    .site-nav {
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .site-nav strong {
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 7px 11px;
+      font-weight: 600;
+    }
+
+    .hero,
+    .section {
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: .98;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .075em;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.42;
+      max-width: 860px;
+    }
+
+    .btn {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 16px;
+    }
+
+    .hero-panel h3,
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .075em;
+    }
+
+    .shift-item {
+      font-size: 14px;
+      padding: 11px 0;
+    }
+
+    .shift-item span:last-child {
+      font-size: 14.5px;
+      font-weight: 700;
+    }
+
+    .arrow {
+      font-weight: 700;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-lead {
+      font-size: 18px !important;
+      line-height: 1.42 !important;
+      max-width: 900px !important;
+      margin-top: 10px !important;
+    }
+
+    .framework-band {
+      padding: 11px 16px;
+      margin-bottom: 12px;
+    }
+
+    .framework-band h2 {
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+
+    .framework-band p {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .offer-card,
+    .network-card {
+      min-height: 70px;
+      padding: 13px 15px;
+      border-radius: 17px;
+    }
+
+    .offer-card h3,
+    .network-card h3 {
+      font-size: 19px;
+      letter-spacing: -0.015em;
+      font-weight: 700;
+    }
+
+    .offer-card small,
+    .network-card small {
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.28;
+      margin-top: 5px;
+    }
+
+    .offer-card.active h3,
+    .network-card.active h3 {
+      font-weight: 700;
+    }
+
+    .detail-panel {
+      margin-top: 16px;
+      padding-top: 18px;
+    }
+
+    .detail-panel h2 {
+      font-size: 24px;
+      letter-spacing: -0.025em;
+    }
+
+    .panel-intro {
+      font-size: 14.5px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .meta-row {
+      gap: 12px;
+      margin: 14px 0 16px;
+    }
+
+    .meta-card {
+      border-radius: 16px;
+      padding: 13px 14px;
+    }
+
+    .meta-card p {
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .flow-horizontal {
+      gap: 24px;
+      margin: 14px 0 18px;
+    }
+
+    .flow-step {
+      min-height: 78px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.25;
+      padding: 12px;
+    }
+
+    .flow-step.active {
+      font-weight: 700;
+    }
+
+    .flow-step:not(:last-child)::after {
+      right: -22px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .step-detail {
+      padding: 15px 16px;
+      border-radius: 16px;
+      margin-top: 14px;
+    }
+
+    .step-detail h3 {
+      font-size: 18px;
+      letter-spacing: -0.015em;
+    }
+
+    .step-detail p {
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .format-pill {
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 9px;
+    }
+
+    .strategy-copy {
+      font-size: 15.5px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .confidence-grid {
+      gap: 10px;
+      margin: 10px 0 18px;
+    }
+
+    .confidence-card {
+      border-radius: 16px;
+    }
+
+    .confidence-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 11px 12px;
+    }
+
+    .rag-row {
+      font-size: 13px;
+      padding: 10px 12px;
+    }
+
+    .rag {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 8px;
+    }
+
+    .roadmap {
+      border-radius: 18px;
+    }
+
+    .rm-cell {
+      min-height: 90px;
+      padding: 11px;
+    }
+
+    .rm-header {
+      min-height: 70px;
+    }
+
+    .rm-header strong {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .rm-header span,
+    .rm-lane small,
+    .milestone span,
+    .footnote {
+      font-size: 12px;
+    }
+
+    .rm-lane {
+      font-weight: 700;
+    }
+
+    .milestone {
+      border-left-width: 4px;
+      border-radius: 12px;
+      padding: 9px 10px;
+      font-size: 12.5px;
+      min-height: 62px;
+    }
+
+    .milestone strong {
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+
     @media (max-width: 1080px) {
       .hero { grid-template-columns: 1fr; }
       .confidence-grid { grid-template-columns: 1fr; }
@@ -696,7 +991,7 @@
       <div class="nav-links">
         <a href="#service-model">Service model</a>
         <a href="#change-roadmap">Sequenced learning</a>
-        <a href="https://chatgpt.com/canvas/shared/6a102b44ed2c8191b1199862647844da">Artsmark prototype</a>
+        <a href="https://chatgpt.com/canvas/shared/6a102b44ed2c8191b1199862647844da" target="_blank" rel="noopener">Artsmark prototype</a>
       </div>
     </nav>
 
@@ -705,7 +1000,7 @@
         <h1>Future Artsmark service direction</h1>
         <p class="lead">A proposed direction for Artsmark: a clearer service that helps schools understand, strengthen and celebrate arts and culture in ways that fit their context.</p>
         <div class="cta-row">
-          <a class="btn" href="teacher-prototype.html">Explore Artsmark prototype →</a>
+          <a class="btn" href="https://chatgpt.com/canvas/shared/6a102b44ed2c8191b1199862647844da" target="_blank" rel="noopener">Explore Artsmark prototype →</a>
         </div>
       </div>
       <aside class="hero-panel" aria-label="What is changing">
