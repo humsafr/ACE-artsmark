@@ -26,14 +26,14 @@
   /*
     Option-specific colours echo the individual experiences.
   */
-  --option-one: #3f5368;
-  --option-one-soft: #e7edf2;
+  --option-one: #8a5333;
+  --option-one-soft: #f2e8e1;
 
   --option-two: #315c49;
   --option-two-soft: #e3eee6;
 
-  --option-three: #8a5333;
-  --option-three-soft: #f2e8e1;
+  --option-three:  #3f5368;
+  --option-three-soft: #e7edf2;
 
   --focus: #0069c2;
 
