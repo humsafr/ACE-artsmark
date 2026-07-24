@@ -2,47 +2,731 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Option 2: Structured self-assessment</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="A prototype holistic Artsmark assessment application structured around four narrative themes."
+  >
+
+  <title>Artsmark narrative application</title>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main>
-    <p>
-      <a href="../">← Back to all prototypes</a>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+  <div class="site-header__inner">
+    <div>
+      <p class="eyebrow">
+        Artsmark assessment prototype · For testing only · No data sent or stored remotely
+      </p>
+
+      <p class="site-title">
+        Narrative application
+      </p>
+    </div>
+
+    <p class="prototype-label">
+      Option 2
     </p>
+  </div>
+  </header>
 
-    <h1>Option 2: Structured self-assessment</h1>
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <!-- =====================================================
+         INTRO SCREEN
+         ===================================================== -->
+    <section
+      id="intro-screen"
+      class="screen screen--active"
+      aria-labelledby="intro-title"
+    >
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <p class="eyebrow">Before you begin</p>
 
-    <p>
-      This prototype explores a structured assessment using multiple-choice
-      questions, indicators and short supporting explanations.
-    </p>
+          <h1 id="intro-title">
+            Tell a coherent story about your arts and cultural provision
+          </h1>
 
-    <p>
-      Schools would respond to a small number of questions across each of the
-      eight Artsmark framework criteria, creating a broad and consistent picture
-      of current practice.
-    </p>
+          <p class="lead">
+            This version brings the eight Artsmark Framework criteria together
+            into four connected narrative sections.
+          </p>
 
-    <section>
-      <h2>What this option is testing</h2>
+          <p>
+            Each section asks two substantial questions. The prompts help you
+            describe current practice, give examples, explain impact, and be
+            open about challenges or areas that remain less developed.
+          </p>
 
-      <ul>
-        <li>Whether multiple-choice questions reduce effort and ambiguity.</li>
-        <li>Whether a structured format creates a sufficiently rigorous assessment.</li>
-        <li>Whether schools can recognise their own practice in the available answers.</li>
-        <li>Whether short explanations can provide the context assessors need.</li>
-      </ul>
+          <p>
+            The framework criteria remain visible throughout, but you can
+            respond through a more joined-up account of how the work operates
+            across your setting.
+          </p>
+
+        <div class="notice">
+          <h2>What you'll be asked to provide</h2>
+
+          <p>
+            You'll give long-form answers across four sections.
+            At the end, you'll also have the option to add one short video of up to
+            five minutes to show or explain something that is difficult to convey in
+            writing. The video is optional and production quality is not assessed.
+          </p>
+        </div>
+
+
+          <div class="intro-actions">
+            <button
+              id="start-button"
+              class="button button--primary"
+              type="button"
+            >
+              Start application
+            </button>
+
+            <button
+              id="resume-button"
+              class="button button--secondary"
+              type="button"
+              hidden
+            >
+              Continue saved draft
+            </button>
+          </div>
+        </div>
+
+        <aside class="intro-summary" aria-label="Application overview">
+          <h2>What to expect</h2>
+
+          <dl class="summary-list">
+            <div>
+              <dt>4</dt>
+              <dd>narrative sections</dd>
+            </div>
+
+            <div>
+              <dt>8</dt>
+              <dd>substantial questions</dd>
+            </div>
+
+            <div>
+              <dt>1</dt>
+              <dd>optional video</dd>
+            </div>
+          </dl>
+
+          <h3>The four sections</h3>
+
+          <ol class="theme-list">
+            <li>Purpose, leadership and inclusion</li>
+            <li>Learning and cultural entitlement</li>
+            <li>Voice, experience and impact</li>
+            <li>People, partnerships and sustainability</li>
+          </ol>
+        </aside>
+      </div>
     </section>
 
-    <section>
-      <h2>Prototype status</h2>
+    <!-- =====================================================
+         APPLICATION SCREEN
+         ===================================================== -->
+    <section
+      id="application-screen"
+      class="screen"
+      aria-labelledby="section-title"
+    >
+      <div class="application-progress">
+        <div class="progress-meta">
+          <p id="progress-text" class="progress-text">
+            Section 1 of 4
+          </p>
 
-      <p>
-        Placeholder page. The interactive prototype will be added here.
-      </p>
+          <p id="saved-status" class="saved-status" aria-live="polite">
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          aria-label="Application progress"
+        >
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="application-layout">
+        <aside class="section-navigation" aria-label="Application sections">
+          <h2>Your progress</h2>
+          <ol id="section-list" class="section-list"></ol>
+        </aside>
+
+        <div class="application-panel">
+          <div class="section-heading">
+            <p id="section-number" class="eyebrow">
+              Section 1
+            </p>
+
+            <h1 id="section-title">
+              Purpose, leadership and inclusion
+            </h1>
+
+            <p id="section-introduction" class="section-introduction"></p>
+
+            <div class="criteria-panel">
+              <p class="criteria-panel__label">
+                Framework criteria in this section
+              </p>
+
+              <ul id="criteria-tags" class="criteria-tags"></ul>
+            </div>
+          </div>
+
+          <form id="application-form" novalidate>
+            <div id="questions-container"></div>
+
+            <p class="prototype-help">
+              Responses are optional in this prototype. Save and continue works
+              even when one or both answers are blank.
+            </p>
+
+            <div class="form-actions">
+              <button
+                id="back-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Back
+              </button>
+
+              <button
+                id="save-exit-button"
+                class="button button--quiet"
+                type="button"
+              >
+                Save and return to start
+              </button>
+
+              <button
+                id="next-button"
+                class="button button--primary"
+                type="submit"
+              >
+                Save and continue
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         OPTIONAL VIDEO SCREEN
+         ===================================================== -->
+    <section
+      id="video-screen"
+      class="screen"
+      aria-labelledby="video-title"
+    >
+      <div class="application-progress">
+        <div class="progress-meta">
+          <p class="progress-text">
+            Optional contribution
+          </p>
+
+          <p id="video-saved-status" class="saved-status" aria-live="polite">
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="100"
+          aria-label="Application progress"
+        >
+          <div class="progress-bar progress-bar--complete"></div>
+        </div>
+      </div>
+
+      <div class="video-page">
+        <div class="video-heading">
+          <p class="eyebrow">Optional recorded contribution</p>
+
+          <h1 id="video-title">
+            Bring one important part of your application to life
+          </h1>
+
+          <p class="lead">
+            You can add one short video to show or explain something that is
+            difficult to convey fully in writing.
+          </p>
+
+          <p>
+            This is optional. Choosing not to add a video will not disadvantage
+            your application.
+          </p>
+        </div>
+
+        <div class="video-layout">
+          <div>
+            <section class="video-prompt-card" aria-labelledby="video-prompt-title">
+              <p class="question-count">The prompt</p>
+
+              <h2 id="video-prompt-title">
+                What would you like the assessor to understand more clearly?
+              </h2>
+
+              <p>
+                Use your video to add insight into one aspect of your
+                provision.
+              </p>
+
+              <p>This might include:</p>
+
+              <ul class="prompt-list">
+                <li>
+                  children and young people describing their experience or
+                  influence
+                </li>
+                <li>
+                  a senior leader explaining how arts and culture are embedded
+                </li>
+                <li>
+                  a concrete example of practice or impact
+                </li>
+                <li>
+                  something about your context that helps explain your written
+                  answers
+                </li>
+              </ul>
+
+              <p class="video-emphasis">
+                Do not use the video simply to repeat the written application.
+              </p>
+            </section>
+
+            <form id="video-form" novalidate>
+              <section class="upload-card" aria-labelledby="upload-title">
+                <h2 id="upload-title">Add your video</h2>
+
+                <label class="file-picker" for="video-file">
+                  <span class="file-picker__button">Choose video file</span>
+
+                  <span id="file-name" class="file-picker__name">
+                    No file selected
+                  </span>
+                </label>
+
+                <input
+                  id="video-file"
+                  class="visually-hidden"
+                  type="file"
+                  accept="video/mp4,video/quicktime,video/webm"
+                >
+
+                <p class="field-help">
+                  Accepted formats: MP4, MOV or WebM. Maximum five minutes.
+                  File-size limit to be confirmed.
+                </p>
+
+                <div class="video-description">
+                  <label for="video-description">
+                    Briefly tell the assessor what this video adds
+                  </label>
+
+                  <textarea
+                    id="video-description"
+                    name="video-description"
+                    rows="4"
+                    maxlength="250"
+                  ></textarea>
+
+                  <div class="textarea-meta">
+                    <span>
+                      This helps the assessor understand why you chose this
+                      contribution.
+                    </span>
+
+                    <span id="video-description-count">
+                      0 / 250 characters
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  id="prototype-file-notice"
+                  class="prototype-file-notice"
+                  hidden
+                >
+                  <strong>Prototype note:</strong>
+                  the file itself is not uploaded or retained. Only its name is
+                  shown during this browser session.
+                </div>
+              </section>
+
+              <div class="form-actions">
+                <button
+                  id="video-back-button"
+                  class="button button--secondary"
+                  type="button"
+                >
+                  Back
+                </button>
+
+                <button
+                  id="continue-without-video-button"
+                  class="button button--secondary"
+                  type="button"
+                >
+                  Continue without a video
+                </button>
+
+                <button
+                  class="button button--primary"
+                  type="submit"
+                >
+                  Save video and continue
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="video-guidance">
+            <section>
+              <h2>What you can submit</h2>
+
+              <ul>
+                <li>One video only</li>
+                <li>Maximum five minutes</li>
+                <li>No additional files, folders or evidence links</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>What assessors will consider</h2>
+
+              <p>
+                Assessors will consider only the insight the video adds about:
+              </p>
+
+              <ul>
+                <li>context</li>
+                <li>practice</li>
+                <li>voice</li>
+                <li>impact</li>
+                <li>embeddedness</li>
+              </ul>
+
+              <p>
+                Production quality will not be assessed.
+              </p>
+            </section>
+
+            <section>
+              <h2>Before uploading</h2>
+
+              <ul>
+                <li>Make sure appropriate consent is in place</li>
+                <li>Include captions or a transcript</li>
+                <li>Avoid including unnecessary personal information</li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         END-OF-FORM CHOICE
+         ===================================================== -->
+    <section
+      id="completion-screen"
+      class="screen"
+      aria-labelledby="completion-title"
+    >
+      <div class="narrow-panel">
+        <p class="eyebrow">End of the form</p>
+
+        <h1 id="completion-title">
+          You have reached the end of the narrative application
+        </h1>
+
+        <p class="lead">
+          You can review your responses and optional contribution, or continue
+          to an overview showing how the application maps to the framework.
+        </p>
+
+        <div class="choice-grid">
+          <article class="choice-card">
+            <h2>Review my responses</h2>
+
+            <p>
+              Read the full narrative, check the optional contribution and
+              return directly to anything you would like to change.
+            </p>
+
+            <button
+              id="review-button"
+              class="button button--secondary"
+              type="button"
+            >
+              Review and change
+            </button>
+          </article>
+
+          <article class="choice-card">
+            <h2>See framework overview</h2>
+
+            <p>
+              See how the four narrative sections cover the eight Artsmark
+              Framework criteria.
+            </p>
+
+            <button
+              id="overview-button"
+              class="button button--primary"
+              type="button"
+            >
+              Continue to overview
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         REVIEW SCREEN
+         ===================================================== -->
+    <section
+      id="review-screen"
+      class="screen"
+      aria-labelledby="review-title"
+    >
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">Review</p>
+
+          <h1 id="review-title">
+            Check your narrative
+          </h1>
+
+          <p class="lead">
+            Responses are grouped by narrative section. Blank responses are
+            clearly marked and can be completed later.
+          </p>
+        </div>
+
+        <button
+          id="review-overview-button"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to overview
+        </button>
+      </div>
+
+      <div id="review-container" class="review-container"></div>
+
+      <section class="review-video-section" aria-labelledby="review-video-title">
+        <div class="review-section__header">
+          <div>
+            <h2 id="review-video-title">
+              Optional recorded contribution
+            </h2>
+
+            <p>
+              One short video used to add insight rather than repeat the
+              written application.
+            </p>
+          </div>
+
+          <button
+            id="edit-video-button"
+            class="text-button"
+            type="button"
+          >
+            Change contribution
+          </button>
+        </div>
+
+        <dl class="review-answers">
+          <div class="review-answer">
+            <dt>Video file</dt>
+            <dd id="review-video-file">No video added.</dd>
+          </div>
+
+          <div class="review-answer">
+            <dt>What the video adds</dt>
+            <dd id="review-video-description">No description added.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="review-footer">
+        <button
+          id="review-back-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Back
+        </button>
+
+        <button
+          id="review-overview-button-bottom"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to overview
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         OVERVIEW SCREEN
+         ===================================================== -->
+    <section
+      id="overview-screen"
+      class="screen"
+      aria-labelledby="overview-title"
+    >
+      <div class="overview-header">
+        <div>
+          <p class="eyebrow">Framework overview</p>
+
+          <h1 id="overview-title">
+            One narrative, eight visible criteria
+          </h1>
+
+          <p class="lead">
+            This overview shows how the four narrative sections relate to the
+            full Artsmark Framework. It does not indicate an award level.
+          </p>
+        </div>
+
+        <button
+          id="edit-from-overview-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Review responses
+        </button>
+      </div>
+
+      <div class="overview-grid">
+        <section
+          class="overview-card"
+          aria-labelledby="framework-map-title"
+        >
+          <h2 id="framework-map-title">
+            Framework coverage
+          </h2>
+
+          <p>
+            The questions are grouped to reduce repetition while still drawing
+            out evidence relevant to all eight criteria.
+          </p>
+
+          <div id="framework-map" class="framework-map"></div>
+        </section>
+
+        <aside class="overview-summary">
+          <h2>What a strong account should contain</h2>
+
+          <div class="checklist">
+            <label>
+              <input type="checkbox">
+              <span>
+                Concrete examples rather than broad or promotional claims.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                An explanation of what changed and how the setting knows.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                Challenges, unevenness and adaptations as well as successes.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                The experiences and voices of children and young people.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                Evidence that practice is shared, sustainable and understood.
+              </span>
+            </label>
+          </div>
+
+          <div id="video-overview" class="video-overview"></div>
+        </aside>
+      </div>
+
+      <section class="next-step-card" aria-labelledby="next-step-title">
+        <div>
+          <p class="eyebrow">Prototype endpoint</p>
+
+          <h2 id="next-step-title">
+            The next stage could prepare the application for submission
+          </h2>
+
+          <p>
+            A future version could combine the responses into one continuous
+            application, validate the recorded contribution and include final
+            declarations before submission.
+          </p>
+        </div>
+
+        <button
+          id="restart-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Clear draft and start again
+        </button>
+      </section>
     </section>
   </main>
+
+  <div
+    id="live-region"
+    class="visually-hidden"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <script src="script.js"></script>
 </body>
 </html>

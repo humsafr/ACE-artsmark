@@ -2,47 +2,721 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Option 3: Evidence-led assessment</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="An interactive Artsmark provision snapshot and narrative assessment prototype."
+  >
+
+  <title>Artsmark provision snapshot</title>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main>
-    <p>
-      <a href="../">← Back to all prototypes</a>
-    </p>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-    <h1>Option 3: Evidence-led assessment</h1>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark assessment prototype · For testing only
+        </p>
 
-    <p>
-      This prototype explores an assessment built around examples of practice,
-      evidence and change over time.
-    </p>
+        <p class="site-title">
+          Your provision snapshot
+        </p>
+      </div>
 
-    <p>
-      Instead of relying mainly on long written statements, schools would provide
-      a smaller number of focused examples showing what they did, why they did it,
-      what changed and how they know.
-    </p>
+      <p class="prototype-label">
+        Option 3
+      </p>
+    </div>
+  </header>
 
-    <section>
-      <h2>What this option is testing</h2>
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <!-- =====================================================
+         INTRO SCREEN
+         ===================================================== -->
+    <section
+      id="intro-screen"
+      class="screen screen--active intro-screen"
+      aria-labelledby="intro-title"
+    >
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <p class="eyebrow">Before you begin</p>
 
-      <ul>
-        <li>Whether examples provide a more credible picture of practice.</li>
-        <li>Whether schools can show impact without producing lengthy narratives.</li>
-        <li>Whether different forms of evidence can support fair assessment.</li>
-        <li>Whether this approach better connects planning, action and reflection.</li>
-      </ul>
+          <h1 id="intro-title">
+            Build a picture of your arts and cultural provision
+          </h1>
+
+          <p class="lead">
+            This questionnaire helps you describe how arts, culture and
+            creativity currently work across your school or setting.
+          </p>
+
+          <p>
+            You will respond to three questions under each of the eight
+            Artsmark Framework criteria. Choose the answer that feels closest
+            to your setting today.
+          </p>
+
+          <p>
+            There may not be a perfect fit. Select the best approximate answer.
+            You will be able to review and change your responses before seeing
+            your snapshot.
+          </p>
+
+          <div class="notice">
+            <h2>This snapshot is not the assessment itself</h2>
+
+            <p>
+              Your answers create a descriptive picture of relative strengths
+              and areas that may be less developed. They do not determine an
+              Artsmark award level.
+            </p>
+
+            <p>
+              After viewing the snapshot, you will be asked to add context,
+              examples and evidence so an assessor can understand what sits
+              behind your choices.
+            </p>
+          </div>
+
+          <p class="prototype-help">
+            Nothing is submitted or stored remotely. Your progress is saved
+            only for the current browser session.
+          </p>
+
+          <div class="intro-actions">
+            <button
+              id="start-button"
+              class="button button--primary"
+              type="button"
+            >
+              Start the questionnaire
+            </button>
+
+            <button
+              id="resume-button"
+              class="button button--secondary"
+              type="button"
+              hidden
+            >
+              Continue saved progress
+            </button>
+          </div>
+        </div>
+
+        <aside class="intro-summary" aria-label="Questionnaire overview">
+          <h2>What to expect</h2>
+
+          <dl class="summary-list">
+            <div>
+              <dt>8</dt>
+              <dd>framework sections</dd>
+            </div>
+
+            <div>
+              <dt>24</dt>
+              <dd>multiple-choice questions</dd>
+            </div>
+
+            <div>
+              <dt>5</dt>
+              <dd>narrative questions</dd>
+            </div>
+          </dl>
+
+          <h3>The eight criteria</h3>
+
+          <ol class="criteria-list">
+            <li>Values and Ethos</li>
+            <li>Equality, Diversity and Inclusion</li>
+            <li>Leadership</li>
+            <li>Children and Young People</li>
+            <li>Curriculum Design and Delivery</li>
+            <li>Range of Offer</li>
+            <li>Continuing Professional Development</li>
+            <li>Cultural Collaborations</li>
+          </ol>
+        </aside>
+      </div>
     </section>
 
-    <section>
-      <h2>Prototype status</h2>
+    <!-- =====================================================
+         QUESTIONNAIRE SCREEN
+         ===================================================== -->
+    <section
+      id="questionnaire-screen"
+      class="screen"
+      aria-labelledby="section-title"
+    >
+      <div class="questionnaire-header">
+        <div class="progress-meta">
+          <p id="progress-text" class="progress-text">
+            Section 1 of 8
+          </p>
 
-      <p>
-        Placeholder page. The interactive prototype will be added here.
-      </p>
+          <p id="answered-text" class="answered-text">
+            0 of 24 questions answered
+          </p>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          aria-label="Questionnaire progress"
+        >
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="questionnaire-layout">
+        <aside class="section-navigation" aria-label="Questionnaire sections">
+          <h2>Your progress</h2>
+          <ol id="section-list" class="section-list"></ol>
+        </aside>
+
+        <div class="question-panel">
+          <div class="section-heading">
+            <p id="section-number" class="eyebrow">
+              Criterion 1
+            </p>
+
+            <h1 id="section-title">
+              Values and Ethos
+            </h1>
+
+            <p id="section-subtitle" class="section-subtitle">
+              Demonstrate commitment to arts and culture
+            </p>
+          </div>
+
+          <form id="questions-form" novalidate>
+            <div id="questions-container"></div>
+
+            <div
+              id="validation-message"
+              class="validation-message"
+              role="alert"
+              hidden
+            >
+              Please answer all questions in this section before continuing.
+            </div>
+
+            <div class="form-actions">
+              <button
+                id="back-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Back
+              </button>
+
+              <button
+                id="save-exit-button"
+                class="button button--quiet"
+                type="button"
+              >
+                Save and return to start
+              </button>
+
+              <button
+                id="next-button"
+                class="button button--primary"
+                type="submit"
+              >
+                Save and continue
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         COMPLETION CHOICE
+         ===================================================== -->
+    <section
+      id="completion-screen"
+      class="screen"
+      aria-labelledby="completion-title"
+    >
+      <div class="narrow-panel">
+        <p class="eyebrow">Questionnaire complete</p>
+
+        <h1 id="completion-title">
+          You have answered all 24 questions
+        </h1>
+
+        <p class="lead">
+          You can review and change your answers, or continue directly to your
+          provision snapshot.
+        </p>
+
+        <div class="choice-grid">
+          <article class="choice-card">
+            <h2>Review my answers</h2>
+
+            <p>
+              See all eight sections, check your choices and return to anything
+              you would like to change.
+            </p>
+
+            <button
+              id="review-button"
+              class="button button--secondary"
+              type="button"
+            >
+              Review and change
+            </button>
+          </article>
+
+          <article class="choice-card">
+            <h2>See my snapshot</h2>
+
+            <p>
+              View a visual profile of the relative strengths in your current
+              provision.
+            </p>
+
+            <button
+              id="results-button"
+              class="button button--primary"
+              type="button"
+            >
+              Continue to snapshot
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         QUESTIONNAIRE REVIEW
+         ===================================================== -->
+    <section
+      id="review-screen"
+      class="screen"
+      aria-labelledby="review-title"
+    >
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">Review</p>
+
+          <h1 id="review-title">
+            Check your answers
+          </h1>
+
+          <p class="lead">
+            Your selected answers are shown below. Return to any section to
+            make changes.
+          </p>
+        </div>
+
+        <button
+          id="review-results-button"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to snapshot
+        </button>
+      </div>
+
+      <div id="review-container" class="review-container"></div>
+
+      <div class="review-footer">
+        <button
+          id="review-back-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Back
+        </button>
+
+        <button
+          id="review-results-button-bottom"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to snapshot
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SNAPSHOT RESULTS
+         ===================================================== -->
+    <section
+      id="results-screen"
+      class="screen"
+      aria-labelledby="results-title"
+    >
+      <div class="results-header">
+        <div>
+          <p class="eyebrow">Your snapshot</p>
+
+          <h1 id="results-title">
+            A picture of your current provision
+          </h1>
+
+          <p class="lead">
+            This profile shows the relative shape of your answers across the
+            eight Artsmark Framework criteria.
+          </p>
+        </div>
+
+        <button
+          id="edit-from-results-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Review answers
+        </button>
+      </div>
+
+      <div class="results-grid">
+        <div class="chart-card">
+          <div class="chart-wrapper">
+            <canvas
+              id="radar-chart"
+              width="760"
+              height="620"
+              aria-label="Radar chart showing the relative profile of answers across eight Artsmark criteria"
+              role="img"
+            >
+              Your browser does not support the chart.
+            </canvas>
+          </div>
+
+          <p class="chart-note">
+            The further the shape extends towards the edge, the more developed
+            the selected descriptions were in that area. This is not an award
+            score or level.
+          </p>
+        </div>
+
+        <aside class="results-summary">
+          <h2>What this tells you</h2>
+
+          <p>
+            The snapshot can help you notice where practice appears more
+            established and where the picture is less consistent or more
+            dependent on particular people or circumstances.
+          </p>
+
+          <div id="strengths-summary" class="result-callout"></div>
+
+          <div id="development-summary" class="result-callout"></div>
+        </aside>
+      </div>
+
+      <section class="scores-section" aria-labelledby="scores-title">
+        <h2 id="scores-title">
+          Your profile by criterion
+        </h2>
+
+        <div id="scores-list" class="scores-list"></div>
+      </section>
+
+      <section class="next-step-card" aria-labelledby="next-step-title">
+        <div>
+          <p class="eyebrow">Next step</p>
+
+          <h2 id="next-step-title">
+            Add the story behind your snapshot
+          </h2>
+
+          <p>
+            Use five narrative questions to explain what the snapshot gets
+            right, add examples and evidence, and describe challenges or
+            areas that remain less established.
+          </p>
+        </div>
+
+        <button
+          id="start-narrative-button"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to narrative
+        </button>
+      </section>
+    </section>
+
+    <!-- =====================================================
+         NARRATIVE FOLLOW-UP
+         ===================================================== -->
+    <section
+      id="narrative-screen"
+      class="screen"
+      aria-labelledby="narrative-title"
+    >
+      <div class="narrative-heading">
+        <p class="eyebrow">Narrative follow-up</p>
+
+        <h1 id="narrative-title">
+          Add the story behind your snapshot
+        </h1>
+
+        <p class="lead">
+          Your snapshot is a starting point, not an assessment result. Use the
+          questions to explain what sits behind the pattern, provide examples
+          and add context the questionnaire could not capture.
+        </p>
+      </div>
+
+      <details class="mobile-snapshot">
+        <summary>View your snapshot</summary>
+
+        <div class="mobile-snapshot__content">
+          <div class="mini-chart-wrapper">
+            <canvas
+              id="mobile-radar-chart"
+              width="500"
+              height="430"
+              aria-label="Compact version of your Artsmark provision snapshot"
+              role="img"
+            ></canvas>
+          </div>
+
+          <div id="mobile-scores-list" class="mini-scores-list"></div>
+        </div>
+      </details>
+
+      <div class="narrative-layout">
+        <aside class="snapshot-reference" aria-label="Your snapshot">
+          <div class="snapshot-reference__header">
+            <p class="eyebrow">Your reference</p>
+            <h2>Your snapshot</h2>
+          </div>
+
+          <div class="mini-chart-wrapper">
+            <canvas
+              id="narrative-radar-chart"
+              width="500"
+              height="430"
+              aria-label="Compact version of your Artsmark provision snapshot"
+              role="img"
+            ></canvas>
+          </div>
+
+          <div id="narrative-scores-list" class="mini-scores-list"></div>
+
+          <button
+            id="return-to-results-button"
+            class="text-button"
+            type="button"
+          >
+            View full snapshot
+          </button>
+        </aside>
+
+        <div class="narrative-panel">
+          <div class="narrative-progress">
+            <div class="progress-meta">
+              <p id="narrative-progress-text" class="progress-text">
+                Question 1 of 5
+              </p>
+
+              <p
+                id="narrative-saved-status"
+                class="saved-status"
+                aria-live="polite"
+              >
+                Draft saved
+              </p>
+            </div>
+
+            <div
+              id="narrative-progress-track"
+              class="progress-track"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="20"
+              aria-label="Narrative progress"
+            >
+              <div
+                id="narrative-progress-bar"
+                class="progress-bar"
+              ></div>
+            </div>
+          </div>
+
+          <form id="narrative-form" novalidate>
+            <article class="narrative-question-card">
+              <p id="narrative-question-count" class="question-count">
+                Question 1 of 5
+              </p>
+
+              <h2 id="narrative-question-title">
+                What does this snapshot get right, and where does it need more
+                context?
+              </h2>
+
+              <ul
+                id="narrative-guidance-list"
+                class="prompt-list"
+              ></ul>
+
+              <div class="textarea-wrapper">
+                <textarea
+                  id="narrative-response"
+                  rows="12"
+                  maxlength="2400"
+                  aria-describedby="narrative-guidance-list narrative-character-count"
+                ></textarea>
+
+                <div class="textarea-meta">
+                  <span>
+                    A focused account with specific examples is more useful
+                    than covering everything.
+                  </span>
+
+                  <span id="narrative-character-count">
+                    0 / 2,400 characters
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <div class="form-actions">
+              <button
+                id="narrative-back-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Back
+              </button>
+
+              <button
+                id="narrative-save-exit-button"
+                class="button button--quiet"
+                type="button"
+              >
+                Save and return to snapshot
+              </button>
+
+              <button
+                id="narrative-next-button"
+                class="button button--primary"
+                type="submit"
+              >
+                Save and continue
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FINAL REVIEW
+         ===================================================== -->
+    <section
+      id="final-review-screen"
+      class="screen"
+      aria-labelledby="final-review-title"
+    >
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">Application review</p>
+
+          <h1 id="final-review-title">
+            Review your snapshot and narrative
+          </h1>
+
+          <p class="lead">
+            This combines your structured self-assessment with the context,
+            examples and reflection you have added.
+          </p>
+        </div>
+
+        <button
+          id="edit-narrative-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Edit narrative
+        </button>
+      </div>
+
+      <div class="final-review-layout">
+        <aside class="final-snapshot-card">
+          <h2>Your provision snapshot</h2>
+
+          <div class="mini-chart-wrapper">
+            <canvas
+              id="final-radar-chart"
+              width="500"
+              height="430"
+              aria-label="Your Artsmark provision snapshot"
+              role="img"
+            ></canvas>
+          </div>
+
+          <div id="final-scores-list" class="mini-scores-list"></div>
+
+          <button
+            id="edit-questionnaire-button"
+            class="text-button"
+            type="button"
+          >
+            Review questionnaire answers
+          </button>
+        </aside>
+
+        <div id="narrative-review-container" class="narrative-review-container">
+        </div>
+      </div>
+
+      <section class="next-step-card" aria-labelledby="prototype-end-title">
+        <div>
+          <p class="eyebrow">Prototype endpoint</p>
+
+          <h2 id="prototype-end-title">
+            The application could now be prepared for submission
+          </h2>
+
+          <p>
+            A future version could add declarations, an optional recorded
+            contribution and a final submission step.
+          </p>
+        </div>
+
+        <button
+          id="restart-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Clear progress and start again
+        </button>
+      </section>
     </section>
   </main>
+
+  <div
+    id="live-region"
+    class="visually-hidden"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <script src="script.js"></script>
 </body>
 </html>

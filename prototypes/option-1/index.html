@@ -2,47 +2,477 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Option 1: Guided reflection</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="A prototype Artsmark assessment application structured around the eight Artsmark Framework criteria."
+  >
+
+  <title>Artsmark framework application</title>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main>
-    <p>
-      <a href="../">← Back to all prototypes</a>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div>
+      <p class="eyebrow">
+        Artsmark assessment prototype · For testing only · No data sent or stored remotely
+      </p>
+
+      <p class="site-title">
+        Framework application
+      </p>
+    </div>
+
+    <p class="prototype-label">
+      Option 1
     </p>
+  </div>
+</header>
 
-    <h1>Option 1: Guided reflection</h1>
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <!-- INTRO SCREEN -->
+    <section
+      id="intro-screen"
+      class="screen screen--active"
+      aria-labelledby="intro-title"
+    >
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <p class="eyebrow">Before you begin</p>
 
-    <p>
-      This prototype explores a conversational, step-by-step approach to
-      assessment.
-    </p>
+          <h1 id="intro-title">
+            Tell the story of your provision through the Artsmark Framework
+          </h1>
 
-    <p>
-      Schools would be guided through a sequence of reflective questions,
-      helping them describe their current practice, identify strengths and
-      choose areas for development.
-    </p>
+          <p class="lead">
+            This application asks you to describe your arts and cultural
+            practice against each of the eight Artsmark Framework criteria.
+          </p>
 
-    <section>
-      <h2>What this option is testing</h2>
+          <p>
+            For each criterion, you will be asked what practice currently looks
+            like, how it is embedded, what difference it makes and what you are
+            learning or strengthening next.
+          </p>
 
-      <ul>
-        <li>Whether a guided journey makes the framework easier to understand.</li>
-        <li>Whether schools can reflect meaningfully without writing long statements.</li>
-        <li>Whether prompts can help schools connect activity, intention and impact.</li>
-        <li>Whether the experience feels supportive while still enabling assessment.</li>
-      </ul>
+          <p>
+            Assessors are interested in concrete, reflective accounts rather
+            than polished claims. You do not need to describe everything.
+            Choose examples that help someone understand the quality,
+            intention and impact of your practice.
+          </p>
+
+          <div class="notice">
+            <h2>Focus on what helps an assessor understand your practice</h2>
+
+              <p>
+                Use concrete examples to explain what happens, why it matters, what difference it makes and how you know.
+              </p>
+
+              <p> 
+                You do not need to describe everything. It is useful to be open about
+                challenges, differences across the setting and anything that remains
+                fragile or is still developing.
+          </div>
+
+          <div class="intro-actions">
+            <button
+              id="start-button"
+              class="button button--primary"
+              type="button"
+            >
+              Start application
+            </button>
+
+            <button
+              id="resume-button"
+              class="button button--secondary"
+              type="button"
+              hidden
+            >
+              Continue saved draft
+            </button>
+          </div>
+        </div>
+
+        <aside class="intro-summary" aria-label="Application overview">
+          <h2>What to expect</h2>
+
+          <dl class="summary-list">
+            <div>
+              <dt>8</dt>
+              <dd>framework criteria</dd>
+            </div>
+
+            <div>
+              <dt>32</dt>
+              <dd>short prompts</dd>
+            </div>
+
+            <div>
+              <dt>30–45</dt>
+              <dd>minutes to draft</dd>
+            </div>
+          </dl>
+
+          <h3>The eight criteria</h3>
+
+          <ol class="criteria-list">
+            <li>Values and Ethos</li>
+            <li>Equality, Diversity and Inclusion</li>
+            <li>Leadership</li>
+            <li>Children and Young People</li>
+            <li>Curriculum Design and Delivery</li>
+            <li>Range of Offer</li>
+            <li>Continuing Professional Development</li>
+            <li>Cultural Collaborations</li>
+          </ol>
+        </aside>
+      </div>
     </section>
 
-    <section>
-      <h2>Prototype status</h2>
+    <!-- QUESTIONNAIRE SCREEN -->
+    <section
+      id="application-screen"
+      class="screen"
+      aria-labelledby="section-title"
+    >
+      <div class="application-progress">
+        <div class="progress-meta">
+          <p id="progress-text" class="progress-text">
+            Section 1 of 8
+          </p>
 
-      <p>
-        Placeholder page. The interactive prototype will be added here.
-      </p>
+          <p id="saved-status" class="saved-status" aria-live="polite">
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          aria-label="Application progress"
+        >
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="application-layout">
+        <aside class="section-navigation" aria-label="Application sections">
+          <h2>Your progress</h2>
+          <ol id="section-list" class="section-list"></ol>
+        </aside>
+
+        <div class="application-panel">
+          <div class="section-heading">
+            <p id="section-number" class="eyebrow">
+              Criterion 1
+            </p>
+
+            <h1 id="section-title">
+              Values and Ethos
+            </h1>
+
+            <p id="section-subtitle" class="section-subtitle">
+              Demonstrate commitment to arts and culture
+            </p>
+
+            <p id="section-guidance" class="section-guidance"></p>
+          </div>
+
+          <form id="application-form" novalidate>
+            <div id="prompts-container"></div>
+
+            <div
+              id="validation-message"
+              class="validation-message"
+              role="alert"
+              hidden
+            >
+              Please add a response to each prompt before continuing. A short
+              working draft is fine.
+            </div>
+
+            <div class="form-actions">
+              <button
+                id="back-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Back
+              </button>
+
+              <button
+                id="save-exit-button"
+                class="button button--quiet"
+                type="button"
+              >
+                Save and return to start
+              </button>
+
+              <button
+                id="next-button"
+                class="button button--primary"
+                type="submit"
+              >
+                Save and continue
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLETION CHOICE -->
+    <section
+      id="completion-screen"
+      class="screen"
+      aria-labelledby="completion-title"
+    >
+      <div class="narrow-panel">
+        <p class="eyebrow">Draft complete</p>
+
+        <h1 id="completion-title">
+          You have responded to all eight framework criteria
+        </h1>
+
+        <p class="lead">
+          You can review and change your draft, or continue to a structured
+          overview of your application.
+        </p>
+
+        <div class="choice-grid">
+          <article class="choice-card">
+            <h2>Review my answers</h2>
+
+            <p>
+              Read every response and return directly to any criterion that
+              needs further work.
+            </p>
+
+            <button
+              id="review-button"
+              class="button button--secondary"
+              type="button"
+            >
+              Review and change
+            </button>
+          </article>
+
+          <article class="choice-card">
+            <h2>See application overview</h2>
+
+            <p>
+              View a concise summary showing how much you have written under
+              each criterion and prepare for the next assessment step.
+            </p>
+
+            <button
+              id="overview-button"
+              class="button button--primary"
+              type="button"
+            >
+              Continue to overview
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW SCREEN -->
+    <section
+      id="review-screen"
+      class="screen"
+      aria-labelledby="review-title"
+    >
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">Review</p>
+
+          <h1 id="review-title">
+            Check your application
+          </h1>
+
+          <p class="lead">
+            Your responses are grouped by framework criterion. Return to any
+            section to make changes.
+          </p>
+        </div>
+
+        <button
+          id="review-overview-button"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to overview
+        </button>
+      </div>
+
+      <div id="review-container" class="review-container"></div>
+
+      <div class="review-footer">
+        <button
+          id="review-back-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Back
+        </button>
+
+        <button
+          id="review-overview-button-bottom"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to overview
+        </button>
+      </div>
+    </section>
+
+    <!-- OVERVIEW SCREEN -->
+    <section
+      id="overview-screen"
+      class="screen"
+      aria-labelledby="overview-title"
+    >
+      <div class="overview-header">
+        <div>
+          <p class="eyebrow">Application overview</p>
+
+          <h1 id="overview-title">
+            Your framework-based draft
+          </h1>
+
+          <p class="lead">
+            This overview shows the shape and completeness of your written
+            application. It does not indicate an award level.
+          </p>
+        </div>
+
+        <button
+          id="edit-from-overview-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Review answers
+        </button>
+      </div>
+
+      <div class="overview-grid">
+        <section
+          class="overview-card"
+          aria-labelledby="completion-summary-title"
+        >
+          <h2 id="completion-summary-title">
+            Draft coverage
+          </h2>
+
+          <p>
+            Each bar represents how much of the suggested response space you
+            have used. More text is not necessarily better: assessors need
+            relevant examples, evidence and analysis rather than repetition.
+          </p>
+
+          <div id="coverage-list" class="coverage-list"></div>
+        </section>
+
+        <aside class="overview-summary">
+          <h2>Before assessment</h2>
+
+          <div class="checklist">
+            <label>
+              <input type="checkbox">
+              <span>
+                We have used concrete examples rather than general claims.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                We have explained what difference the practice makes and how
+                we know.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                We have been honest about what remains uneven, fragile or
+                developing.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                Senior leaders and other relevant voices have contributed to
+                the account.
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox">
+              <span>
+                Children and young people’s experiences are visible in the
+                application.
+              </span>
+            </label>
+          </div>
+        </aside>
+      </div>
+
+      <section class="next-step-card" aria-labelledby="next-step-title">
+        <div>
+          <p class="eyebrow">Prototype endpoint</p>
+
+          <h2 id="next-step-title">
+            The next step could be submission or an optional recorded contribution
+          </h2>
+
+          <p>
+            A future version could allow the school to submit this application,
+            add a short optional video contribution, or indicate willingness to
+            take part in an assessor clarification call.
+          </p>
+        </div>
+
+        <button
+          id="restart-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Clear draft and start again
+        </button>
+      </section>
     </section>
   </main>
+
+  <div
+    id="live-region"
+    class="visually-hidden"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <script src="script.js"></script>
 </body>
 </html>

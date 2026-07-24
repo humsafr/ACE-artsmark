@@ -2,73 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore three draft approaches to the Artsmark assessment application."
+  >
+
   <title>Artsmark assessment prototypes</title>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main>
-    <p>
-      <a href="../">← Back to project overview</a>
-    </p>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
-    <h1>Artsmark assessment prototypes</h1>
-
-    <p>
-      These prototypes explore three possible approaches to the redesigned
-      Artsmark assessment experience.
-    </p>
-
-    <p>
-      Each option is intended to test a different balance between reflection,
-      assessment rigour, usability and the quality of evidence schools can provide.
-    </p>
-
-    <section>
-      <h2>Prototype options</h2>
-
-      <article>
-        <h3>
-          <a href="./option-1/">Option 1: Guided reflection</a>
-        </h3>
-        <p>
-          A conversational, step-by-step assessment that helps schools reflect
-          on their practice and build a rounded picture across the Artsmark
-          framework.
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark assessment prototypes · For testing only · No data sent or stored remotely
         </p>
-      </article>
 
-      <article>
-        <h3>
-          <a href="./option-2/">Option 2: Structured self-assessment</a>
-        </h3>
-        <p>
-          A more structured assessment using multiple-choice questions,
-          indicators and short explanations across all eight framework criteria.
+        <p class="site-title">
+          Exploring the application experience
         </p>
-      </article>
+      </div>
 
-      <article>
-        <h3>
-          <a href="./option-3/">Option 3: Evidence-led assessment</a>
-        </h3>
-        <p>
-          An assessment centred on examples, evidence and change over time,
-          helping schools show what is happening in practice rather than relying
-          primarily on long written statements.
+      <p class="prototype-label">
+        Three options
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <!-- =====================================================
+         INTRODUCTION
+
+         Change this copy as the purpose of testing develops.
+         ===================================================== -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Why we are testing</p>
+
+        <h1 id="page-title">
+          Help us shape a fair and useful assessment process
+        </h1>
+
+        <p class="lead">
+          We are exploring three possible ways for schools to describe their
+          arts and cultural provision.
         </p>
-      </article>
+
+        <p>
+          The content is still draft and will change. These prototypes give us
+          something tangible to respond to, rather than asking everyone to
+          begin from scratch.
+        </p>
+
+        <p>
+          The aim is not to select one “best” option. We want to understand
+          which formats and elements are useful, and what could be combined
+          into a process worth testing further.
+        </p>
+
+        <p>
+          We will also test these approaches with schools to understand where
+          they experience ease, confidence, clarity or confusion.
+        </p>
+      </div>
+
+      <aside class="prototype-notice" aria-labelledby="notice-title">
+        <h2 id="notice-title">
+          About these prototypes
+        </h2>
+
+        <p>
+          All text is draft and do not represent the final Artsmark assessment.
+        </p>
+
+        <p>
+          Nothing is submitted or stored remotely. The wording, questions and
+          interactions are all open to change.
+        </p>
+      </aside>
     </section>
 
-    <section>
-      <h2>About the prototypes</h2>
+    <!-- =====================================================
+         OPTION CARDS
 
-      <p>
-        These are early prototypes for testing ideas, not finished designs.
-        Their purpose is to help the Artsmark team, assessors and schools explore
-        what feels clear, useful, credible and manageable.
-      </p>
+         Keep each summary brief so testers can form their own
+         view of the experience.
+         ===================================================== -->
+    <section class="options-section" aria-labelledby="options-title">
+      <div class="section-heading">
+        <p class="eyebrow">Explore the options</p>
+
+        <h2 id="options-title">
+          Three possible starting points
+        </h2>
+      </div>
+
+      <div class="options-grid">
+        <!-- OPTION 1 -->
+        <article class="option-card option-card--one">
+          <div class="option-card__header">
+            <p class="option-number">Option 1</p>
+
+            <h3>Framework application</h3>
+          </div>
+
+          <p class="option-description">
+            Long-form questions under each of the eight Artsmark Framework
+            criteria.
+          </p>
+
+          <dl class="option-summary">
+            <div>
+              <dt>Offers</dt>
+              <dd>
+                Clear and thorough coverage of the whole framework.
+              </dd>
+            </div>
+
+            <div>
+              <dt>May limit</dt>
+              <dd>
+                Can feel long, repetitive or fragmented.
+              </dd>
+            </div>
+          </dl>
+
+          <a
+            class="button button--option-one"
+            href="./option-1/index.html"
+          >
+            Explore Option 1
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <!-- OPTION 2 -->
+        <article class="option-card option-card--two">
+          <div class="option-card__header">
+            <p class="option-number">Option 2</p>
+
+            <h3>Narrative application</h3>
+          </div>
+
+          <p class="option-description">
+            Eight long-form questions grouped into four broader sections, with
+            an optional video of up to five minutes.
+          </p>
+
+          <dl class="option-summary">
+            <div>
+              <dt>Offers</dt>
+              <dd>
+                A fuller account of practice, context and impact.
+              </dd>
+            </div>
+
+            <div>
+              <dt>May limit</dt>
+              <dd>
+                Schools need to judge how best to cover overlapping criteria.
+              </dd>
+            </div>
+          </dl>
+
+          <a
+            class="button button--option-two"
+            href="./option-2/index.html"
+          >
+            Explore Option 2
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <!-- OPTION 3 -->
+        <article class="option-card option-card--three">
+          <div class="option-card__header">
+            <p class="option-number">Option 3</p>
+
+            <h3>Snapshot application</h3>
+          </div>
+
+          <p class="option-description">
+            A structured self-assessment across all eight criteria, followed
+            by narrative examples.
+          </p>
+
+          <dl class="option-summary">
+            <div>
+              <dt>Offers</dt>
+              <dd>
+                A more interactive view of the framework and clear link to strengthening. 
+              </dd>
+            </div>
+
+            <div>
+              <dt>May limit</dt>
+              <dd>
+                Schools may read an implied award level too soon.
+              </dd>
+            </div>
+          </dl>
+
+          <a
+            class="button button--option-three"
+            href="./option-3/index.html"
+          >
+            Explore Option 3
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>
+        Artsmark assessment redesign · Prototype testing
+      </p>
+    </div>
+  </footer>
+
+  <!-- Relative path: works with Live Server and GitHub Pages -->
+  <script src="script.js"></script>
 </body>
 </html>
