@@ -221,7 +221,7 @@ a:focus-visible {
 }
 
 .options-section {
-  margin-top: clamp(4rem, 9vw, 8rem);
+  margin-top: 2rem;
 }
 
 .section-heading {
