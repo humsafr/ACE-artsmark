@@ -376,7 +376,7 @@ a:focus-visible {
 }
 
 .button--option-one:hover {
-  background: #314354;
+  background: #704128;
 }
 
 .button--option-two {
@@ -392,7 +392,7 @@ a:focus-visible {
 }
 
 .button--option-three:hover {
-  background: #704128;
+  background: #314354;
 }
 
 .site-footer {
