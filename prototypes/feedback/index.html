@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Example assessment feedback · Artsmark prototype</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark assessment prototype · For testing only
+        </p>
+
+        <p class="site-title">
+          Example assessment feedback
+        </p>
+      </div>
+
+      <a class="prototype-label" href="../index.html">
+        ← Back to options
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">Step 3 of 3</p>
+
+      <h1>
+        Feedback that helps a school understand what to build on
+      </h1>
+
+      <p class="lead">
+        This example shows how assessment feedback could combine a consistent
+        framework profile with specific observations and practical next steps.
+      </p>
+
+      <div class="notice">
+        <strong>This is an illustrative example.</strong>
+
+        <p>
+          The profile and comments below are not linked to a real school or
+          assessment decision.
+        </p>
+      </div>
+    </section>
+
+    <section class="outcome-panel" aria-labelledby="outcome-title">
+      <div>
+        <p class="eyebrow">Assessment outcome</p>
+
+        <h2 id="outcome-title">
+          Gold Artsmark Award
+        </h2>
+
+        <p>
+          The school demonstrates a strong and increasingly embedded approach
+          to arts and culture, with clear leadership, broad provision and
+          positive outcomes for children and young people.
+        </p>
+      </div>
+
+      <span class="outcome-badge">Example outcome</span>
+    </section>
+
+    <div class="feedback-layout">
+      <section class="profile-card" aria-labelledby="profile-title">
+        <div class="section-heading">
+          <p class="eyebrow">Assessed profile</p>
+
+          <h2 id="profile-title">
+            How established practice appears across the framework
+          </h2>
+
+          <p>
+            This profile shows the relative shape of the assessor’s judgement.
+            It is not an automatic award calculation.
+          </p>
+        </div>
+
+        <div class="radar-wrap">
+          <svg
+            class="radar-chart"
+            viewBox="0 0 520 500"
+            role="img"
+            aria-labelledby="radar-title radar-description"
+          >
+            <title id="radar-title">
+              Example assessed profile across eight Artsmark criteria
+            </title>
+
+            <desc id="radar-description">
+              Stronger assessed practice in leadership, values and ethos,
+              curriculum and range of offer, with less established practice in
+              children and young people and cultural collaborations.
+            </desc>
+
+            <g class="radar-grid">
+              <polygon points="260,210 295,225 310,260 295,295 260,310 225,295 210,260 225,225"></polygon>
+              <polygon points="260,160 330,190 360,260 330,330 260,360 190,330 160,260 190,190"></polygon>
+              <polygon points="260,110 365,155 410,260 365,365 260,410 155,365 110,260 155,155"></polygon>
+              <polygon points="260,60 400,120 460,260 400,400 260,460 120,400 60,260 120,120"></polygon>
+
+              <line x1="260" y1="260" x2="260" y2="60"></line>
+              <line x1="260" y1="260" x2="400" y2="120"></line>
+              <line x1="260" y1="260" x2="460" y2="260"></line>
+              <line x1="260" y1="260" x2="400" y2="400"></line>
+              <line x1="260" y1="260" x2="260" y2="460"></line>
+              <line x1="260" y1="260" x2="120" y2="400"></line>
+              <line x1="260" y1="260" x2="60" y2="260"></line>
+              <line x1="260" y1="260" x2="120" y2="120"></line>
+            </g>
+
+            <polygon
+              class="radar-shape"
+              points="260,78 380,140 410,260 345,345 260,385 175,345 125,260 150,150"
+            ></polygon>
+
+            <g class="radar-points">
+              <circle cx="260" cy="78" r="5"></circle>
+              <circle cx="380" cy="140" r="5"></circle>
+              <circle cx="410" cy="260" r="5"></circle>
+              <circle cx="345" cy="345" r="5"></circle>
+              <circle cx="260" cy="385" r="5"></circle>
+              <circle cx="175" cy="345" r="5"></circle>
+              <circle cx="125" cy="260" r="5"></circle>
+              <circle cx="150" cy="150" r="5"></circle>
+            </g>
+
+            <g class="radar-labels">
+              <text x="260" y="28" text-anchor="middle">
+                Values and Ethos
+              </text>
+
+              <text x="420" y="92" text-anchor="start">
+                Equality, Diversity
+              </text>
+              <text x="420" y="108" text-anchor="start">
+                and Inclusion
+              </text>
+
+              <text x="490" y="264" text-anchor="start">
+                Leadership
+              </text>
+
+              <text x="415" y="426" text-anchor="start">
+                Children and
+              </text>
+              <text x="415" y="442" text-anchor="start">
+                Young People
+              </text>
+
+              <text x="260" y="488" text-anchor="middle">
+                Curriculum
+              </text>
+
+              <text x="98" y="426" text-anchor="end">
+                Range of Offer
+              </text>
+
+              <text x="30" y="248" text-anchor="end">
+                Professional
+              </text>
+              <text x="30" y="264" text-anchor="end">
+                Development
+              </text>
+
+              <text x="105" y="92" text-anchor="end">
+                Cultural
+              </text>
+              <text x="105" y="108" text-anchor="end">
+                Collaborations
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <p class="chart-note">
+          The shape gives an overview. The written feedback explains the
+          evidence, judgement and suggested next steps.
+        </p>
+      </section>
+
+      <aside class="summary-card" aria-labelledby="summary-title">
+        <p class="eyebrow">At a glance</p>
+
+        <h2 id="summary-title">
+          Overall assessment
+        </h2>
+
+        <dl class="summary-list">
+          <div>
+            <dt>Strongest areas</dt>
+            <dd>
+              Values and Ethos, Leadership, Curriculum Design and Delivery
+            </dd>
+          </div>
+
+          <div>
+            <dt>Areas to build on</dt>
+            <dd>
+              Children and Young People, Cultural Collaborations
+            </dd>
+          </div>
+
+          <div>
+            <dt>Next review focus</dt>
+            <dd>
+              Pupil decision-making, partnership depth and consistency across
+              year groups
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+
+    <section class="feedback-section" aria-labelledby="strengths-title">
+      <div class="section-heading">
+        <p class="eyebrow">What is working well</p>
+
+        <h2 id="strengths-title">
+          Recognised strengths
+        </h2>
+      </div>
+
+      <div class="feedback-grid">
+        <article class="feedback-card">
+          <h3>Leadership is becoming more widely shared</h3>
+
+          <p>
+            The cross-school working group, senior leadership oversight and
+            regular governor review show that responsibility no longer sits
+            only with the Artsmark lead.
+          </p>
+
+          <p class="evidence-label">
+            Evidence considered
+          </p>
+
+          <p>
+            Improvement planning, meeting records and examples from several
+            subject leads.
+          </p>
+        </article>
+
+        <article class="feedback-card">
+          <h3>Arts and culture are visible in everyday curriculum practice</h3>
+
+          <p>
+            Curriculum planning shows a clearer entitlement and progression
+            across year groups, rather than provision depending mainly on
+            occasional events.
+          </p>
+
+          <p class="evidence-label">
+            Evidence considered
+          </p>
+
+          <p>
+            Curriculum plans, pupil work and staff reflections from different
+            phases.
+          </p>
+        </article>
+
+        <article class="feedback-card">
+          <h3>The school has made purposeful use of its context</h3>
+
+          <p>
+            Local cultural partnerships have broadened pupils’ experiences and
+            helped staff develop confidence in areas where specialist capacity
+            was limited.
+          </p>
+
+          <p class="evidence-label">
+            Evidence considered
+          </p>
+
+          <p>
+            Partnership examples, staff development activity and pupil
+            participation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="feedback-section" aria-labelledby="build-title">
+      <div class="section-heading">
+        <p class="eyebrow">What you could strengthen</p>
+
+        <h2 id="build-title">
+          Areas to build on
+        </h2>
+      </div>
+
+      <div class="feedback-grid">
+        <article class="feedback-card feedback-card--development">
+          <h3>Move from pupil consultation towards pupil influence</h3>
+
+          <p>
+            Children and young people are regularly asked for their views, but
+            there is less evidence that they influence decisions about
+            provision.
+          </p>
+
+          <p class="next-step-label">
+            A possible next step
+          </p>
+
+          <p>
+            Give pupils clear responsibility for shaping one recurring part of
+            the offer and review what changes as a result.
+          </p>
+        </article>
+
+        <article class="feedback-card feedback-card--development">
+          <h3>Make partnership work less dependent on individual projects</h3>
+
+          <p>
+            Current partnerships provide valuable opportunities, but several
+            appear tied to particular funding, events or staff relationships.
+          </p>
+
+          <p class="next-step-label">
+            A possible next step
+          </p>
+
+          <p>
+            Agree shared longer-term aims with one or two key partners and
+            build these into curriculum or staff development planning.
+          </p>
+        </article>
+
+        <article class="feedback-card feedback-card--development">
+          <h3>Strengthen consistency across year groups</h3>
+
+          <p>
+            Strong practice is evident, but the application suggests that
+            depth and progression still vary across parts of the school.
+          </p>
+
+          <p class="next-step-label">
+            A possible next step
+          </p>
+
+          <p>
+            Use existing strong practice to define a small number of common
+            expectations and review how consistently they are experienced.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="priorities-section" aria-labelledby="priorities-title">
+      <div>
+        <p class="eyebrow">Suggested next priorities</p>
+
+        <h2 id="priorities-title">
+          Focus for the next stage
+        </h2>
+
+        <p>
+          These priorities are intended to support planning rather than add a
+          new set of requirements.
+        </p>
+      </div>
+
+      <ol class="priority-list">
+        <li>
+          <span>1</span>
+          Strengthen meaningful pupil decision-making.
+        </li>
+
+        <li>
+          <span>2</span>
+          Build greater continuity into cultural partnerships.
+        </li>
+
+        <li>
+          <span>3</span>
+          Make curriculum entitlement and progression more consistent.
+        </li>
+      </ol>
+    </section>
+
+    <section class="discussion-panel">
+      <p class="eyebrow">Question for testing</p>
+
+      <h2>
+        What would the assessment need to capture for feedback like this to be
+        fair, specific and useful?
+      </h2>
+
+      <p>
+        Consider whether the proposed profile, questions and evidence prompts
+        would give an assessor enough material to explain both the judgement
+        and the school’s next opportunities for development.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>School profile · Artsmark prototype</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark assessment prototype · For testing only
+        </p>
+
+        <p class="site-title">
+          School profile
+        </p>
+      </div>
+
+      <a class="prototype-label" href="../index.html">
+        ← Back to options
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">Step 1 of 2</p>
+
+      <h1>Check your school profile</h1>
+
+      <p class="lead">
+        This information gives the assessor context about your setting before
+        they review your application.
+      </p>
+
+      <p>
+        Most of the profile only needs to be completed once. When you reapply,
+        you can check the information and update anything that has changed.
+      </p>
+
+      <div class="status-panel">
+        <div>
+          <strong>Example profile</strong>
+          <span>Last updated 14 September 2026</span>
+        </div>
+
+        <span class="status-badge">Profile complete</span>
+      </div>
+    </section>
+
+    <form id="profile-form">
+      <section class="profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">About the setting</p>
+          <h2>School details</h2>
+        </div>
+
+        <div class="field-grid">
+          <label>
+            School or setting name
+            <input type="text" value="Example Community School">
+          </label>
+
+          <label>
+            Unique reference number
+            <input type="text" value="123456">
+          </label>
+
+          <label>
+            Phase
+            <select>
+              <option>Primary</option>
+              <option>Secondary</option>
+              <option>All-through</option>
+              <option>Special</option>
+              <option>Alternative provision</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            School type
+            <select>
+              <option>Community school</option>
+              <option>Academy</option>
+              <option>Free school</option>
+              <option>Foundation school</option>
+              <option>Independent school</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Age range
+            <input type="text" value="4–11">
+          </label>
+
+          <label>
+            Approximate number of pupils
+            <input type="number" value="420">
+          </label>
+
+          <label>
+            Number of sites
+            <input type="number" value="1">
+          </label>
+
+          <label>
+            Local context
+            <select>
+              <option>Urban</option>
+              <option>Suburban</option>
+              <option>Rural</option>
+              <option>Coastal</option>
+              <option>Mixed</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">Pupil community</p>
+          <h2>Who the school serves</h2>
+
+          <p>
+            These details help the assessor understand access, participation
+            and the context in which provision is being developed.
+          </p>
+        </div>
+
+        <div class="field-grid">
+          <label>
+            Pupils with SEND
+            <input type="text" value="Approximately 18%">
+          </label>
+
+          <label>
+            Pupils eligible for pupil premium
+            <input type="text" value="Approximately 29%">
+          </label>
+
+          <label>
+            Pupils with English as an additional language
+            <input type="text" value="Approximately 35%">
+          </label>
+
+          <label>
+            Other relevant characteristics
+            <input
+              type="text"
+              value="High pupil mobility across the school year"
+            >
+          </label>
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">Arts and cultural provision</p>
+          <h2>How provision is organised</h2>
+        </div>
+
+        <div class="field-grid">
+          <label class="field-wide">
+            Artforms currently taught
+            <textarea rows="3">Visual art, music, drama, dance and creative writing</textarea>
+          </label>
+
+          <label>
+            Main curriculum model
+            <select>
+              <option>Class teachers teach most arts subjects</option>
+              <option>Specialist arts teachers</option>
+              <option>Mixed generalist and specialist model</option>
+              <option>Departmental model</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Arts subject leads or specialists
+            <input
+              type="text"
+              value="Music specialist and subject leads for art and drama"
+            >
+          </label>
+
+          <label class="field-wide">
+            Regular extracurricular or enrichment provision
+            <textarea rows="3">Choir, school production, visual arts club and annual partnership project</textarea>
+          </label>
+
+          <label class="field-wide">
+            Current cultural partners or networks
+            <textarea rows="3">Local theatre, music hub, regional gallery and cluster of neighbouring schools</textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">Leadership and capacity</p>
+          <h2>Who supports the work</h2>
+        </div>
+
+        <div class="field-grid">
+          <label>
+            Senior leader responsible
+            <input type="text" value="Deputy Headteacher">
+          </label>
+
+          <label>
+            Artsmark lead
+            <input type="text" value="Art subject lead">
+          </label>
+
+          <label class="field-wide">
+            How responsibility is shared
+            <textarea rows="3">A cross-school working group includes subject leads, a senior leader and a governor.</textarea>
+          </label>
+
+          <label class="field-wide">
+            Relevant staffing, funding or timetable factors
+            <textarea rows="3">The school has protected music provision but limited specialist capacity in other artforms.</textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <div class="section-heading">
+          <p class="eyebrow">Context and starting point</p>
+
+          <h2>
+            What should an assessor understand about your setting?
+          </h2>
+
+          <p>
+            Include features of your context, curriculum, local environment or
+            starting point that have materially shaped the work.
+          </p>
+        </div>
+
+        <label class="field-wide">
+          Context for the assessor
+          <textarea rows="7">The school serves a culturally diverse community and has strong enthusiasm for arts activity, but provision has historically depended on a small number of staff. Our Artsmark work has focused on creating a more consistent entitlement across year groups, strengthening staff confidence and making better use of local cultural partnerships.</textarea>
+        </label>
+      </section>
+
+      <div class="form-actions">
+        <button
+          id="update-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Update profile
+        </button>
+
+        <a class="button button--primary" href="../index.html#options">
+          Confirm and continue
+        </a>
+      </div>
+
+      <p id="save-message" class="save-message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

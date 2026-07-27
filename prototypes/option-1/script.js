@@ -27,30 +27,30 @@ const sections = [
     prompts: [
       {
         id: "values-practice",
-        title: "What does this look like in your setting?",
+        title: "What does current practice look like?",
         help:
-          "Describe how arts, culture and creativity connect to your values, ethos and everyday school life.",
+          "Describe one or two concrete examples. What happens, who is involved and how regularly?",
         maxCharacters: 1200
       },
       {
         id: "values-embeddedness",
-        title: "How is this embedded or developing?",
+        title: "What has changed or become more embedded?",
         help:
-          "Explain how widely the commitment is understood, who is involved and how it influences priorities or decisions.",
+          "What was happening before? What is different now? Where can that difference be seen in normal school practice?",
         maxCharacters: 1200
       },
       {
         id: "values-impact",
-        title: "What difference does it make, and how do you know?",
+        title: "What difference has this made, and how do you know?",
         help:
-          "Use one or two examples showing an effect on learning, wellbeing, personal development or community.",
+          "Explain the impact on children and young people, staff, leadership or the wider community. Refer to the evidence that helped you reach that view.",
         maxCharacters: 1400
       },
       {
         id: "values-next",
-        title: "What are you learning or strengthening next?",
+        title: "What have you learned, and what remains less secure?",
         help:
-          "Describe anything that remains uneven, unclear or in development.",
+          "What has not worked as expected? Where is practice uneven, fragile or still developing? What are you adapting or strengthening next?",
         maxCharacters: 900
       }
     ]
@@ -66,7 +66,7 @@ const sections = [
         id: "edi-practice",
         title: "What does this look like in your setting?",
         help:
-          "Describe how your arts and cultural provision reflects your pupils, communities and wider society.",
+          "Describe with examples how your arts and cultural provision reflects your pupils, communities and wider society.",
         maxCharacters: 1200
       },
       {
