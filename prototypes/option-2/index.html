@@ -80,10 +80,10 @@
           <h2>What you'll be asked to provide</h2>
 
           <p>
-            You'll give long-form answers across four sections.
-            At the end, you'll also have the option to add one short video of up to
-            five minutes to show or explain something that is difficult to convey in
-            writing. The video is optional and production quality is not assessed.
+            You'll give long-form answers across four sections. At the end,
+            you can optionally add up to three selected evidence items and one
+            short spoken reflection. Both are optional and should only clarify
+            or substantiate what is already in your written account.
           </p>
         </div>
 
@@ -123,8 +123,8 @@
             </div>
 
             <div>
-              <dt>1</dt>
-              <dd>optional video</dd>
+              <dt>0–3</dt>
+              <dd>optional evidence items</dd>
             </div>
           </dl>
 
@@ -237,6 +237,135 @@
       </div>
     </section>
 
+
+    <!-- =====================================================
+         OPTIONAL EVIDENCE SCREEN
+         ===================================================== -->
+    <section
+      id="evidence-screen"
+      class="screen"
+      aria-labelledby="evidence-title"
+    >
+      <div class="application-progress">
+        <div class="progress-meta">
+          <p class="progress-text">
+            Optional contribution · 1 of 2
+          </p>
+
+          <p id="evidence-saved-status" class="saved-status" aria-live="polite">
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="100"
+          aria-label="Application progress"
+        >
+          <div class="progress-bar progress-bar--complete"></div>
+        </div>
+      </div>
+
+      <div class="video-page">
+        <div class="video-heading">
+          <p class="eyebrow">Optional supporting evidence</p>
+
+          <h1 id="evidence-title">
+            Add selected evidence that substantiates your account
+          </h1>
+
+          <p class="lead">
+            Your written application should stand on its own. You may add up to
+            three items only where they support a specific claim or help an
+            assessor understand something more clearly.
+          </p>
+
+          <p>
+            Evidence is optional. Choosing not to add any will not disadvantage
+            your application, and the number or presentation quality of items
+            is not assessed.
+          </p>
+        </div>
+
+        <div class="video-layout">
+          <div>
+            <div id="evidence-list" class="evidence-list"></div>
+
+            <button
+              id="add-evidence-button"
+              class="button button--secondary"
+              type="button"
+            >
+              Add an evidence item
+            </button>
+
+            <div class="form-actions">
+              <button
+                id="evidence-back-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Back
+              </button>
+
+              <button
+                id="continue-without-evidence-button"
+                class="button button--secondary"
+                type="button"
+              >
+                Continue without evidence
+              </button>
+
+              <button
+                id="evidence-continue-button"
+                class="button button--primary"
+                type="button"
+              >
+                Save evidence and continue
+              </button>
+            </div>
+          </div>
+
+          <aside class="video-guidance">
+            <section>
+              <h2>What can be useful</h2>
+
+              <ul>
+                <li>a short curriculum or progression extract</li>
+                <li>pupil, staff or partner voice</li>
+                <li>participation or progression information</li>
+                <li>a brief leadership or improvement-planning extract</li>
+                <li>an example of pupil work with clear context</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Keep it selective</h2>
+
+              <ul>
+                <li>Choose only evidence that supports something already stated</li>
+                <li>Do not upload full policies, large reports or folders</li>
+                <li>Do not add unlabelled images or unrelated showcase material</li>
+                <li>Avoid unnecessary personal information</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>What assessors need</h2>
+
+              <p>
+                For each item, explain which part of the written application it
+                supports and what the assessor should notice.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <!-- =====================================================
          OPTIONAL VIDEO SCREEN
          ===================================================== -->
@@ -248,7 +377,7 @@
       <div class="application-progress">
         <div class="progress-meta">
           <p class="progress-text">
-            Optional contribution
+            Optional contribution · 2 of 2
           </p>
 
           <p id="video-saved-status" class="saved-status" aria-live="polite">
@@ -270,15 +399,15 @@
 
       <div class="video-page">
         <div class="video-heading">
-          <p class="eyebrow">Optional recorded contribution</p>
+          <p class="eyebrow">Optional spoken reflection</p>
 
           <h1 id="video-title">
-            Bring one important part of your application to life
+            Add one short spoken reflection
           </h1>
 
           <p class="lead">
-            You can add one short video to show or explain something that is
-            difficult to convey fully in writing.
+            You can add one short recording to clarify something that is
+            difficult to communicate fully in writing.
           </p>
 
           <p>
@@ -293,44 +422,32 @@
               <p class="question-count">The prompt</p>
 
               <h2 id="video-prompt-title">
-                What would you like the assessor to understand more clearly?
+                Choose one question to answer
               </h2>
-
-              <p>
-                Use your video to add insight into one aspect of your
-                provision.
-              </p>
-
-              <p>This might include:</p>
 
               <ul class="prompt-list">
                 <li>
-                  children and young people describing their experience or
-                  influence
+                  What has changed most significantly in your setting, and why
+                  does it matter?
                 </li>
                 <li>
-                  a senior leader explaining how arts and culture are embedded
-                </li>
-                <li>
-                  a concrete example of practice or impact
-                </li>
-                <li>
-                  something about your context that helps explain your written
-                  answers
+                  What would you most like the assessor to understand about
+                  your context or journey?
                 </li>
               </ul>
 
               <p class="video-emphasis">
-                Do not use the video simply to repeat the written application.
+                Use the recording to clarify something already present in your
+                written application, not to introduce a separate body of evidence.
               </p>
             </section>
 
             <form id="video-form" novalidate>
               <section class="upload-card" aria-labelledby="upload-title">
-                <h2 id="upload-title">Add your video</h2>
+                <h2 id="upload-title">Add your spoken reflection</h2>
 
                 <label class="file-picker" for="video-file">
-                  <span class="file-picker__button">Choose video file</span>
+                  <span class="file-picker__button">Choose video or audio file</span>
 
                   <span id="file-name" class="file-picker__name">
                     No file selected
@@ -345,13 +462,13 @@
                 >
 
                 <p class="field-help">
-                  Accepted formats: MP4, MOV or WebM. Maximum five minutes.
-                  File-size limit to be confirmed.
+                  Accepted formats: MP4, MOV, WebM, MP3, M4A or WAV.
+                  Maximum two minutes. File-size limit to be confirmed.
                 </p>
 
                 <div class="video-description">
                   <label for="video-description">
-                    Briefly tell the assessor what this video adds
+                    Briefly tell the assessor what this reflection clarifies
                   </label>
 
                   <textarea
@@ -363,8 +480,8 @@
 
                   <div class="textarea-meta">
                     <span>
-                      This helps the assessor understand why you chose this
-                      contribution.
+                      This helps the assessor understand what part of the
+                      written application the reflection relates to.
                     </span>
 
                     <span id="video-description-count">
@@ -398,14 +515,14 @@
                   class="button button--secondary"
                   type="button"
                 >
-                  Continue without a video
+                  Continue without a reflection
                 </button>
 
                 <button
                   class="button button--primary"
                   type="submit"
                 >
-                  Save video and continue
+                  Save reflection and continue
                 </button>
               </div>
             </form>
@@ -413,43 +530,40 @@
 
           <aside class="video-guidance">
             <section>
-              <h2>What you can submit</h2>
+              <h2>Simple, comparable format</h2>
 
               <ul>
-                <li>One video only</li>
-                <li>Maximum five minutes</li>
-                <li>No additional files, folders or evidence links</li>
+                <li>One member of staff speaking directly to camera</li>
+                <li>One take is enough</li>
+                <li>Maximum two minutes</li>
+                <li>Audio-only is also acceptable</li>
               </ul>
             </section>
 
             <section>
-              <h2>What assessors will consider</h2>
-
-              <p>
-                Assessors will consider only the insight the video adds about:
-              </p>
+              <h2>How this stays fair</h2>
 
               <ul>
-                <li>context</li>
-                <li>practice</li>
-                <li>voice</li>
-                <li>impact</li>
-                <li>embeddedness</li>
+                <li>No music, graphics or professional editing are needed</li>
+                <li>Do not film a school tour or showcase facilities</li>
+                <li>Do not include pupils or other identifiable people</li>
+                <li>Production quality and presentation skills are not assessed</li>
               </ul>
-
-              <p>
-                Production quality will not be assessed.
-              </p>
             </section>
 
             <section>
               <h2>Before uploading</h2>
 
               <ul>
-                <li>Make sure appropriate consent is in place</li>
-                <li>Include captions or a transcript</li>
-                <li>Avoid including unnecessary personal information</li>
+                <li>Make sure the content relates to the written application</li>
+                <li>Include captions or a transcript where relevant</li>
+                <li>Avoid unnecessary personal information</li>
               </ul>
+
+              <p>
+                In a live service, the recording would use an approved secure
+                submission method. This prototype does not upload or retain media.
+              </p>
             </section>
           </aside>
         </div>
@@ -472,7 +586,7 @@
         </h1>
 
         <p class="lead">
-          You can review your responses and optional contribution, or continue
+          You can review your responses and optional contributions, or continue
           to an overview showing how the application maps to the framework.
         </p>
 
@@ -481,7 +595,7 @@
             <h2>Review my responses</h2>
 
             <p>
-              Read the full narrative, check the optional contribution and
+              Read the full narrative, check the optional contributions and
               return directly to anything you would like to change.
             </p>
 
@@ -547,15 +661,41 @@
 
       <div id="review-container" class="review-container"></div>
 
+
+      <section class="review-video-section" aria-labelledby="review-evidence-title">
+        <div class="review-section__header">
+          <div>
+            <h2 id="review-evidence-title">
+              Optional supporting evidence
+            </h2>
+
+            <p>
+              Up to three selected items that substantiate specific claims in
+              the written application.
+            </p>
+          </div>
+
+          <button
+            id="edit-evidence-button"
+            class="text-button"
+            type="button"
+          >
+            Change evidence
+          </button>
+        </div>
+
+        <div id="review-evidence-list" class="review-evidence-list"></div>
+      </section>
+
       <section class="review-video-section" aria-labelledby="review-video-title">
         <div class="review-section__header">
           <div>
             <h2 id="review-video-title">
-              Optional recorded contribution
+              Optional spoken reflection
             </h2>
 
             <p>
-              One short video used to add insight rather than repeat the
+              One short recording used to clarify rather than extend the
               written application.
             </p>
           </div>
@@ -571,12 +711,12 @@
 
         <dl class="review-answers">
           <div class="review-answer">
-            <dt>Video file</dt>
+            <dt>Recording file</dt>
             <dd id="review-video-file">No video added.</dd>
           </div>
 
           <div class="review-answer">
-            <dt>What the video adds</dt>
+            <dt>What the reflection clarifies</dt>
             <dd id="review-video-description">No description added.</dd>
           </div>
         </dl>
@@ -689,6 +829,7 @@
             </label>
           </div>
 
+          <div id="evidence-overview" class="video-overview"></div>
           <div id="video-overview" class="video-overview"></div>
         </aside>
       </div>

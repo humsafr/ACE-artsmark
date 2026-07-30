@@ -175,9 +175,11 @@ const sections = [
 */
 
 const STORAGE_KEY = "artsmark-option-2-draft";
+const MAX_EVIDENCE_ITEMS = 3;
 
 const answers = {};
 const visitedSections = new Set();
+const evidenceItems = [];
 
 const videoContribution = {
   fileName: "",
@@ -186,6 +188,7 @@ const videoContribution = {
 
 let currentSectionIndex = 0;
 let saveStatusTimeout = null;
+let evidenceSaveStatusTimeout = null;
 let videoSaveStatusTimeout = null;
 
 const screens = [...document.querySelectorAll(".screen")];
@@ -213,6 +216,19 @@ const backButton = document.getElementById("back-button");
 const saveExitButton = document.getElementById("save-exit-button");
 const nextButton = document.getElementById("next-button");
 
+const evidenceList = document.getElementById("evidence-list");
+const addEvidenceButton = document.getElementById("add-evidence-button");
+const evidenceBackButton = document.getElementById("evidence-back-button");
+const continueWithoutEvidenceButton = document.getElementById(
+  "continue-without-evidence-button"
+);
+const evidenceContinueButton = document.getElementById(
+  "evidence-continue-button"
+);
+const evidenceSavedStatus = document.getElementById(
+  "evidence-saved-status"
+);
+
 const videoForm = document.getElementById("video-form");
 const videoFileInput = document.getElementById("video-file");
 const fileName = document.getElementById("file-name");
@@ -237,6 +253,13 @@ const reviewButton = document.getElementById("review-button");
 const overviewButton = document.getElementById("overview-button");
 
 const reviewContainer = document.getElementById("review-container");
+const reviewEvidenceList = document.getElementById(
+  "review-evidence-list"
+);
+const editEvidenceButton = document.getElementById(
+  "edit-evidence-button"
+);
+
 const reviewVideoFile = document.getElementById("review-video-file");
 const reviewVideoDescription = document.getElementById(
   "review-video-description"
@@ -255,6 +278,7 @@ const editFromOverviewButton = document.getElementById(
   "edit-from-overview-button"
 );
 const frameworkMap = document.getElementById("framework-map");
+const evidenceOverview = document.getElementById("evidence-overview");
 const videoOverview = document.getElementById("video-overview");
 const restartButton = document.getElementById("restart-button");
 
@@ -306,6 +330,7 @@ function hasAnySavedContent() {
 
   return (
     hasWrittenAnswer ||
+    evidenceItems.length > 0 ||
     Boolean(videoContribution.fileName) ||
     Boolean(videoContribution.description.trim())
   );
@@ -336,6 +361,7 @@ function saveDraft(showConfirmation = true, source = "application") {
     answers,
     currentSectionIndex,
     visitedSections: [...visitedSections],
+    evidenceItems,
     videoContribution,
     savedAt: new Date().toISOString()
   };
@@ -388,6 +414,19 @@ function loadDraft() {
       });
     }
 
+    if (Array.isArray(parsed.evidenceItems)) {
+      parsed.evidenceItems
+        .slice(0, MAX_EVIDENCE_ITEMS)
+        .forEach((item) => {
+          evidenceItems.push({
+            title: String(item.title || ""),
+            section: String(item.section || ""),
+            description: String(item.description || ""),
+            fileName: String(item.fileName || "")
+          });
+        });
+    }
+
     if (
       parsed.videoContribution &&
       typeof parsed.videoContribution === "object"
@@ -412,6 +451,7 @@ function clearDraft() {
   });
 
   visitedSections.clear();
+  evidenceItems.splice(0, evidenceItems.length);
 
   videoContribution.fileName = "";
   videoContribution.description = "";
@@ -434,12 +474,16 @@ function showSavedStatus(source = "application") {
   const target =
     source === "video"
       ? videoSavedStatus
-      : savedStatus;
+      : source === "evidence"
+        ? evidenceSavedStatus
+        : savedStatus;
 
   const timeoutKey =
     source === "video"
       ? "video"
-      : "application";
+      : source === "evidence"
+        ? "evidence"
+        : "application";
 
   target.textContent = "Draft saved";
   target.classList.add("is-visible");
@@ -448,6 +492,12 @@ function showSavedStatus(source = "application") {
     window.clearTimeout(videoSaveStatusTimeout);
 
     videoSaveStatusTimeout = window.setTimeout(() => {
+      target.classList.remove("is-visible");
+    }, 1400);
+  } else if (timeoutKey === "evidence") {
+    window.clearTimeout(evidenceSaveStatusTimeout);
+
+    evidenceSaveStatusTimeout = window.setTimeout(() => {
       target.classList.remove("is-visible");
     }, 1400);
   } else {
@@ -596,7 +646,7 @@ function renderSection(sectionIndex) {
 
   nextButton.textContent =
     currentSectionIndex === sections.length - 1
-      ? "Continue to optional video"
+      ? "Continue to optional evidence"
       : "Save and continue";
 
   updateProgress();
@@ -605,6 +655,162 @@ function renderSection(sectionIndex) {
   liveRegion.textContent =
     `${section.title}. Section ${currentSectionIndex + 1} ` +
     `of ${sections.length}.`;
+}
+
+
+function renderEvidenceStep() {
+  evidenceList.innerHTML = "";
+
+  evidenceItems.forEach((item, index) => {
+    const article = document.createElement("article");
+    const header = document.createElement("div");
+    const heading = document.createElement("h2");
+    const removeButton = document.createElement("button");
+    const fields = document.createElement("div");
+
+    article.className = "evidence-item";
+    header.className = "evidence-item__header";
+    fields.className = "evidence-fields";
+
+    heading.textContent = `Evidence item ${index + 1}`;
+
+    removeButton.type = "button";
+    removeButton.className = "remove-evidence-button";
+    removeButton.textContent = "Remove";
+
+    removeButton.addEventListener("click", () => {
+      evidenceItems.splice(index, 1);
+      renderEvidenceStep();
+      saveDraft(false);
+    });
+
+    header.append(heading, removeButton);
+
+    const titleLabel = document.createElement("label");
+    const titleInput = document.createElement("input");
+
+    titleLabel.textContent = "Evidence title";
+    titleInput.type = "text";
+    titleInput.value = item.title;
+    titleInput.placeholder = "For example: Pupil voice summary";
+
+    titleInput.addEventListener("input", () => {
+      evidenceItems[index].title = titleInput.value;
+      saveDraft(false);
+    });
+
+    titleLabel.appendChild(titleInput);
+
+    const sectionLabel = document.createElement("label");
+    const sectionSelect = document.createElement("select");
+
+    sectionLabel.textContent =
+      "Which written section or claim does this support?";
+
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "Choose a narrative section";
+    sectionSelect.appendChild(defaultOption);
+
+    sections.forEach((section, sectionIndex) => {
+      const option = document.createElement("option");
+
+      option.value = String(sectionIndex);
+      option.textContent = section.title;
+      option.selected = item.section === String(sectionIndex);
+
+      sectionSelect.appendChild(option);
+    });
+
+    sectionSelect.addEventListener("change", () => {
+      evidenceItems[index].section = sectionSelect.value;
+      saveDraft(false);
+    });
+
+    sectionLabel.appendChild(sectionSelect);
+
+    const descriptionLabel = document.createElement("label");
+    const descriptionInput = document.createElement("textarea");
+
+    descriptionLabel.className = "field-wide";
+    descriptionLabel.textContent = "What should the assessor notice?";
+
+    descriptionInput.maxLength = 250;
+    descriptionInput.value = item.description;
+    descriptionInput.placeholder =
+      "Explain briefly what this item substantiates and why it matters.";
+
+    descriptionInput.addEventListener("input", () => {
+      evidenceItems[index].description = descriptionInput.value;
+      saveDraft(false);
+    });
+
+    descriptionLabel.appendChild(descriptionInput);
+
+    const fileLabel = document.createElement("label");
+    const fileInput = document.createElement("input");
+    const fileStatus = document.createElement("div");
+
+    fileLabel.className = "field-wide";
+    fileLabel.textContent = "Choose a file";
+
+    fileInput.type = "file";
+    fileInput.accept = ".pdf,.doc,.docx,.jpg,.jpeg,.png";
+
+    fileStatus.className = "evidence-file-status";
+    fileStatus.textContent =
+      item.fileName ||
+      "Prototype note: the file is not uploaded or retained.";
+
+    fileInput.addEventListener("change", () => {
+      evidenceItems[index].fileName =
+        fileInput.files.length > 0
+          ? fileInput.files[0].name
+          : "";
+
+      fileStatus.textContent =
+        evidenceItems[index].fileName ||
+        "Prototype note: the file is not uploaded or retained.";
+
+      saveDraft(false);
+    });
+
+    fileLabel.append(fileInput, fileStatus);
+
+    fields.append(
+      titleLabel,
+      sectionLabel,
+      descriptionLabel,
+      fileLabel
+    );
+
+    article.append(header, fields);
+    evidenceList.appendChild(article);
+  });
+
+  addEvidenceButton.disabled =
+    evidenceItems.length >= MAX_EVIDENCE_ITEMS;
+
+  addEvidenceButton.textContent =
+    evidenceItems.length >= MAX_EVIDENCE_ITEMS
+      ? "Maximum of three items reached"
+      : "Add an evidence item";
+}
+
+function addEvidenceItem() {
+  if (evidenceItems.length >= MAX_EVIDENCE_ITEMS) {
+    return;
+  }
+
+  evidenceItems.push({
+    title: "",
+    section: "",
+    description: "",
+    fileName: ""
+  });
+
+  renderEvidenceStep();
+  saveDraft(false);
 }
 
 function renderVideoStep() {
@@ -701,12 +907,57 @@ function renderReview() {
     reviewContainer.appendChild(article);
   });
 
+  renderEvidenceReview();
   renderVideoReview();
+}
+
+
+function renderEvidenceReview() {
+  reviewEvidenceList.innerHTML = "";
+
+  if (evidenceItems.length === 0) {
+    const empty = document.createElement("p");
+
+    empty.className = "blank-response";
+    empty.textContent = "No supporting evidence added.";
+
+    reviewEvidenceList.appendChild(empty);
+    return;
+  }
+
+  evidenceItems.forEach((item, index) => {
+    const article = document.createElement("article");
+    const title = document.createElement("h3");
+    const sectionText = document.createElement("p");
+    const description = document.createElement("p");
+    const file = document.createElement("p");
+
+    article.className = "review-evidence-item";
+
+    title.textContent =
+      item.title.trim() || `Evidence item ${index + 1}`;
+
+    sectionText.textContent =
+      item.section !== "" && sections[Number(item.section)]
+        ? `Supports: ${sections[Number(item.section)].title}`
+        : "No narrative section selected.";
+
+    description.textContent =
+      item.description.trim() || "No explanation added.";
+
+    file.textContent =
+      item.fileName
+        ? `Selected file: ${item.fileName}`
+        : "No file selected.";
+
+    article.append(title, sectionText, description, file);
+    reviewEvidenceList.appendChild(article);
+  });
 }
 
 function renderVideoReview() {
   reviewVideoFile.textContent =
-    videoContribution.fileName || "No video added.";
+    videoContribution.fileName || "No recording added.";
 
   reviewVideoDescription.textContent =
     videoContribution.description.trim() ||
@@ -750,6 +1001,25 @@ function renderFrameworkMap() {
   });
 }
 
+
+function renderEvidenceOverview() {
+  evidenceOverview.innerHTML = "";
+
+  const title = document.createElement("h3");
+  const description = document.createElement("p");
+
+  title.textContent = "Optional supporting evidence";
+
+  description.textContent =
+    evidenceItems.length > 0
+      ? `${evidenceItems.length} selected evidence item${
+          evidenceItems.length === 1 ? "" : "s"
+        } added.`
+      : "No supporting evidence has been added. This does not disadvantage the application.";
+
+  evidenceOverview.append(title, description);
+}
+
 function renderVideoOverview() {
   const hasVideo = Boolean(videoContribution.fileName);
 
@@ -758,14 +1028,14 @@ function renderVideoOverview() {
   const title = document.createElement("h3");
   const description = document.createElement("p");
 
-  title.textContent = "Optional recorded contribution";
+  title.textContent = "Optional spoken reflection";
 
   if (hasVideo) {
     description.textContent =
-      `A video has been added: ${videoContribution.fileName}.`;
+      `A recording has been added: ${videoContribution.fileName}.`;
   } else {
     description.textContent =
-      "No video has been added. This does not disadvantage the application.";
+      "No spoken reflection has been added. This does not disadvantage the application.";
   }
 
   videoOverview.append(title, description);
@@ -773,6 +1043,7 @@ function renderVideoOverview() {
 
 function showOverview() {
   renderFrameworkMap();
+  renderEvidenceOverview();
   renderVideoOverview();
   showScreen("overview-screen");
 }
@@ -802,8 +1073,8 @@ applicationForm.addEventListener("submit", (event) => {
     renderSection(currentSectionIndex + 1);
     showScreen("application-screen");
   } else {
-    renderVideoStep();
-    showScreen("video-screen");
+    renderEvidenceStep();
+    showScreen("evidence-screen");
   }
 });
 
@@ -820,6 +1091,28 @@ backButton.addEventListener("click", () => {
 saveExitButton.addEventListener("click", () => {
   saveDraft(true);
   showScreen("intro-screen");
+});
+
+
+addEvidenceButton.addEventListener("click", addEvidenceItem);
+
+evidenceContinueButton.addEventListener("click", () => {
+  saveDraft(true, "evidence");
+  renderVideoStep();
+  showScreen("video-screen");
+});
+
+continueWithoutEvidenceButton.addEventListener("click", () => {
+  evidenceItems.splice(0, evidenceItems.length);
+  saveDraft(false);
+  renderVideoStep();
+  showScreen("video-screen");
+});
+
+evidenceBackButton.addEventListener("click", () => {
+  saveDraft(true, "evidence");
+  renderSection(sections.length - 1);
+  showScreen("application-screen");
 });
 
 videoFileInput.addEventListener("change", () => {
@@ -872,8 +1165,8 @@ continueWithoutVideoButton.addEventListener("click", () => {
 
 videoBackButton.addEventListener("click", () => {
   saveVideoContribution(true);
-  renderSection(sections.length - 1);
-  showScreen("application-screen");
+  renderEvidenceStep();
+  showScreen("evidence-screen");
 });
 
 reviewButton.addEventListener("click", () => {
@@ -887,6 +1180,11 @@ reviewOverviewButtonBottom.addEventListener("click", showOverview);
 
 reviewBackButton.addEventListener("click", () => {
   showScreen("completion-screen");
+});
+
+editEvidenceButton.addEventListener("click", () => {
+  renderEvidenceStep();
+  showScreen("evidence-screen");
 });
 
 editVideoButton.addEventListener("click", () => {
