@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-
   <meta
     name="description"
     content="A prototype Artsmark assessment application structured around the eight Artsmark Framework criteria."
   >
-
   <title>Artsmark framework application</title>
-
-  <!-- Relative path: works with Live Server and GitHub Pages -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -24,26 +19,26 @@
     Skip to main content
   </a>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <div>
-      <p class="eyebrow">
-        Artsmark assessment prototype · For testing only · No data sent or stored remotely
-      </p>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark assessment prototype · For testing only · No data sent or stored remotely
+        </p>
 
-      <p class="site-title">
-        Framework application
-      </p>
+        <p class="site-title">
+          Framework application
+        </p>
+      </div>
+
+      <a class="prototype-label" href="../index.html">
+        ← Back to options
+      </a>
     </div>
-
-    <a class="prototype-label" href="../index.html">
-    ← Back to options
-    </a>
-  </div>
-</header>
+  </header>
 
   <main id="main-content" class="page-shell" tabindex="-1">
-    <!-- INTRO SCREEN -->
+    <!-- INTRO -->
     <section
       id="intro-screen"
       class="screen screen--active"
@@ -58,37 +53,30 @@
           </h1>
 
           <p class="lead">
-            This application asks you to describe your arts and cultural
-            practice against each of the eight Artsmark Framework criteria.
+            You will respond once against each of the eight Artsmark Framework
+            criteria, then review the application as a whole and optionally add
+            a small number of supporting items.
           </p>
 
           <p>
-            For each criterion, you will be asked what practice currently looks
-            like, how it is embedded, what difference it makes and what you are
-            learning or strengthening next.
-          </p>
-
-          <p>
-            Assessors are interested in concrete, reflective accounts rather
-            than polished claims. You do not need to describe everything.
-            Choose examples that help someone understand the quality,
-            intention and impact of your practice.
+            You do not need to describe everything your setting has done.
+            Choose one or two concrete examples for each criterion that help an
+            assessor understand your intention, current practice, impact and learning.
           </p>
 
           <div class="notice">
-            <h2>Focus on what helps an assessor understand your practice</h2>
+            <h2>Focus on the essential</h2>
 
-              <p>
-                Use concrete examples to explain what happens, why it matters, what difference it makes and how you know. For each criterion, use specific examples from ordinary school life, such as:
+            <p>
+              Explain what you intended to strengthen, what now happens in
+              practice, the difference it has made and how you know. Be open
+              about what you learned, adapted or still need to strengthen.
+            </p>
 
-              <ul>
-                <li>curriculum, timetable or staffing changes</li>
-                <li>leadership or governor decisions</li>
-                <li>pupil voice or pupil-led activity</li>
-                <li>staff development and changes in teaching</li>
-                <li>participation by different groups</li>
-                <li>partnerships, budgets or recurring provision</li>
-                <li>examples of work, feedback or review</li></ul>
+            <p>
+              Specific examples from ordinary school life are more useful than
+              broad or polished claims.
+            </p>
           </div>
 
           <div class="intro-actions">
@@ -117,17 +105,17 @@
           <dl class="summary-list">
             <div>
               <dt>8</dt>
-              <dd>framework criteria</dd>
+              <dd>framework responses</dd>
             </div>
 
             <div>
-              <dt>32</dt>
-              <dd>short prompts</dd>
+              <dt>1</dt>
+              <dd>overall reflection</dd>
             </div>
 
             <div>
-              <dt>30–45</dt>
-              <dd>minutes to draft</dd>
+              <dt>0–5</dt>
+              <dd>optional evidence items</dd>
             </div>
           </dl>
 
@@ -147,7 +135,7 @@
       </div>
     </section>
 
-    <!-- QUESTIONNAIRE SCREEN -->
+    <!-- STEP 1 -->
     <section
       id="application-screen"
       class="screen"
@@ -156,7 +144,7 @@
       <div class="application-progress">
         <div class="progress-meta">
           <p id="progress-text" class="progress-text">
-            Section 1 of 8
+            Criterion 1 of 8
           </p>
 
           <p id="saved-status" class="saved-status" aria-live="polite">
@@ -178,7 +166,7 @@
       </div>
 
       <div class="application-layout">
-        <aside class="section-navigation" aria-label="Application sections">
+        <aside class="section-navigation" aria-label="Application criteria">
           <h2>Your progress</h2>
           <ol id="section-list" class="section-list"></ol>
         </aside>
@@ -201,17 +189,46 @@
           </div>
 
           <form id="application-form" novalidate>
-            <div id="prompts-container"></div>
+            <article class="prompt-card">
+              <div class="prompt-header">
+                <p class="prompt-count">Your response</p>
 
-            <div
-              id="validation-message"
-              class="validation-message"
-              role="alert"
-              hidden
-            >
-              Please add a response to each prompt before continuing. A short
-              working draft is fine.
-            </div>
+                <h2 class="prompt-title">
+                  Tell us how this is currently reflected in your setting.
+                </h2>
+
+                <p class="prompt-help">
+                  Use one or two concrete examples rather than trying to describe everything.
+                </p>
+              </div>
+
+              <ul id="criterion-prompts" class="prompt-list"></ul>
+
+              <p class="supporting-note">
+                It is useful to explain where practice is uneven, still developing
+                or dependent on particular people or circumstances.
+              </p>
+
+              <div class="textarea-wrapper">
+                <textarea
+                  id="criterion-response"
+                  name="criterion-response"
+                  rows="13"
+                  maxlength="4000"
+                  aria-describedby="criterion-prompts criterion-character-count"
+                ></textarea>
+
+                <div class="textarea-meta">
+                  <span>
+                    A focused, reflective account is more useful than a complete inventory.
+                  </span>
+
+                  <span id="criterion-character-count" class="character-count">
+                    0 / 4,000 characters
+                  </span>
+                </div>
+              </div>
+            </article>
 
             <div class="form-actions">
               <button
@@ -243,113 +260,7 @@
       </div>
     </section>
 
-    <!-- COMPLETION CHOICE -->
-    <section
-      id="completion-screen"
-      class="screen"
-      aria-labelledby="completion-title"
-    >
-      <div class="narrow-panel">
-        <p class="eyebrow">Draft complete</p>
-
-        <h1 id="completion-title">
-          You have responded to all eight framework criteria
-        </h1>
-
-        <p class="lead">
-          You can review and change your draft, or continue to a structured
-          overview of your application.
-        </p>
-
-        <div class="choice-grid">
-          <article class="choice-card">
-            <h2>Review my answers</h2>
-
-            <p>
-              Read every response and return directly to any criterion that
-              needs further work.
-            </p>
-
-            <button
-              id="review-button"
-              class="button button--secondary"
-              type="button"
-            >
-              Review and change
-            </button>
-          </article>
-
-          <article class="choice-card">
-            <h2>See application overview</h2>
-
-            <p>
-              View a concise summary showing how much you have written under
-              each criterion and prepare for the next assessment step.
-            </p>
-
-            <button
-              id="overview-button"
-              class="button button--primary"
-              type="button"
-            >
-              Continue to overview
-            </button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEW SCREEN -->
-    <section
-      id="review-screen"
-      class="screen"
-      aria-labelledby="review-title"
-    >
-      <div class="review-header">
-        <div>
-          <p class="eyebrow">Review</p>
-
-          <h1 id="review-title">
-            Check your application
-          </h1>
-
-          <p class="lead">
-            Your responses are grouped by framework criterion. Return to any
-            section to make changes.
-          </p>
-        </div>
-
-        <button
-          id="review-overview-button"
-          class="button button--primary"
-          type="button"
-        >
-          Continue to overview
-        </button>
-      </div>
-
-      <div id="review-container" class="review-container"></div>
-
-      <div class="review-footer">
-        <button
-          id="review-back-button"
-          class="button button--secondary"
-          type="button"
-        >
-          Back
-        </button>
-
-        <button
-          id="review-overview-button-bottom"
-          class="button button--primary"
-          type="button"
-        >
-          Continue to overview
-        </button>
-      </div>
-    </section>
-
-    <!-- OVERVIEW SCREEN -->
+    <!-- STEP 2 -->
     <section
       id="overview-screen"
       class="screen"
@@ -357,15 +268,15 @@
     >
       <div class="overview-header">
         <div>
-          <p class="eyebrow">Application overview</p>
+          <p class="eyebrow">Step 2 of 3 · Review and synthesis</p>
 
           <h1 id="overview-title">
-            Your framework-based draft
+            Review your application as a whole
           </h1>
 
           <p class="lead">
-            This overview shows the shape and completeness of your written
-            application. It does not indicate an award level.
+            Check that the eight responses give a balanced and credible picture
+            of your provision, then draw together the most important thread.
           </p>
         </div>
 
@@ -374,86 +285,268 @@
           class="button button--secondary"
           type="button"
         >
-          Review answers
+          Review criterion responses
         </button>
       </div>
 
       <div class="overview-grid">
-        <section
-          class="overview-card"
-          aria-labelledby="completion-summary-title"
-        >
-          <h2 id="completion-summary-title">
-            Draft coverage
+        <section class="overview-card" aria-labelledby="responses-title">
+          <h2 id="responses-title">
+            Your eight criterion responses
           </h2>
 
-          <p>
-            Each bar represents how much of the suggested response space you
-            have used. More text is not necessarily better: assessors need
-            relevant examples, evidence and analysis rather than repetition.
-          </p>
-
-          <div id="coverage-list" class="coverage-list"></div>
+          <div id="overview-responses" class="overview-responses"></div>
         </section>
 
         <aside class="overview-summary">
-          <h2>Before assessment</h2>
+          <h2>Check the balance</h2>
 
           <div class="checklist">
             <label>
               <input type="checkbox">
               <span>
-                We have used concrete examples rather than general claims.
+                We have used concrete examples rather than broad claims.
               </span>
             </label>
 
             <label>
               <input type="checkbox">
               <span>
-                We have explained what difference the practice makes and how
-                we know.
+                We have explained the difference made and how we know.
               </span>
             </label>
 
             <label>
               <input type="checkbox">
               <span>
-                We have been honest about what remains uneven, fragile or
-                developing.
+                We have included strengths and areas still developing.
               </span>
             </label>
 
             <label>
               <input type="checkbox">
               <span>
-                Senior leaders and other relevant voices have contributed to
-                the account.
+                We have avoided relying on the same example throughout.
               </span>
             </label>
 
             <label>
               <input type="checkbox">
               <span>
-                Children and young people’s experiences are visible in the
-                application.
+                The account reflects the reality and context of our setting.
               </span>
             </label>
           </div>
         </aside>
       </div>
 
-      <section class="next-step-card" aria-labelledby="next-step-title">
+      <section class="synthesis-card" aria-labelledby="synthesis-title">
+        <p class="eyebrow">Bring the story together</p>
+
+        <h2 id="synthesis-title">
+          What is the most important thing you want the assessor to understand
+          about your provision as a whole?
+        </h2>
+
+        <p>
+          Draw together the strongest thread across your application. This
+          might be a significant change, a distinctive strength, a challenge
+          you have worked through, or what you are now ready to strengthen next.
+        </p>
+
+        <div class="textarea-wrapper">
+          <textarea
+            id="synthesis-response"
+            rows="10"
+            maxlength="3000"
+            aria-describedby="synthesis-character-count"
+          ></textarea>
+
+          <div class="textarea-meta">
+            <span>A concise synthesis is enough.</span>
+
+            <span id="synthesis-character-count" class="character-count">
+              0 / 3,000 characters
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div class="review-footer">
+        <button
+          id="overview-back-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Back
+        </button>
+
+        <button
+          id="continue-to-evidence-button"
+          class="button button--primary"
+          type="button"
+        >
+          Continue to optional evidence
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section
+      id="evidence-screen"
+      class="screen"
+      aria-labelledby="evidence-title"
+    >
+      <div class="overview-header">
+        <div>
+          <p class="eyebrow">Step 3 of 3 · Optional</p>
+
+          <h1 id="evidence-title">
+            Add evidence that brings your application to life
+          </h1>
+
+          <p class="lead">
+            Your written responses should stand on their own. You may add up
+            to five items only where they help an assessor understand something
+            more clearly than words alone.
+          </p>
+        </div>
+
+        <span id="evidence-count-badge" class="evidence-count-badge">
+          0 of 5 items
+        </span>
+      </div>
+
+      <div class="evidence-guidance">
+        <div>
+          <h2>What can be useful</h2>
+
+          <ul>
+            <li>a short curriculum or progression extract</li>
+            <li>an example of pupil work with brief context</li>
+            <li>pupil, staff or partner voice</li>
+            <li>participation or progression information</li>
+            <li>a leadership, governor or improvement-planning extract</li>
+            <li>an image or short example showing practice or change</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Keep it selective</h2>
+
+          <p>
+            Choose only evidence that directly supports something you have
+            said. Do not add large folders, full policies, lengthy reports or
+            collections of unlabelled images.
+          </p>
+        </div>
+      </div>
+
+      <div id="evidence-list" class="evidence-list"></div>
+
+      <button
+        id="add-evidence-button"
+        class="button button--secondary"
+        type="button"
+      >
+        Add an evidence item
+      </button>
+
+      <div class="review-footer">
+        <button
+          id="evidence-back-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Back
+        </button>
+
+        <button
+          id="review-application-button"
+          class="button button--primary"
+          type="button"
+        >
+          Review application
+        </button>
+      </div>
+    </section>
+
+    <!-- FINAL REVIEW -->
+    <section
+      id="final-review-screen"
+      class="screen"
+      aria-labelledby="final-review-title"
+    >
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">Application review</p>
+
+          <h1 id="final-review-title">
+            Review your framework application
+          </h1>
+
+          <p class="lead">
+            This combines your eight criterion responses, overall reflection
+            and any optional evidence you have added.
+          </p>
+        </div>
+
+        <button
+          id="edit-overview-button"
+          class="button button--secondary"
+          type="button"
+        >
+          Edit overview
+        </button>
+      </div>
+
+      <section class="review-block">
+        <h2>Criterion responses</h2>
+        <div id="final-criteria-review" class="review-container"></div>
+      </section>
+
+      <section class="review-block">
+        <div class="review-section__header">
+          <h2>Overall reflection</h2>
+
+          <button
+            id="edit-synthesis-button"
+            class="text-button"
+            type="button"
+          >
+            Change response
+          </button>
+        </div>
+
+        <p id="final-synthesis" class="final-response"></p>
+      </section>
+
+      <section class="review-block">
+        <div class="review-section__header">
+          <h2>Optional evidence</h2>
+
+          <button
+            id="edit-evidence-button"
+            class="text-button"
+            type="button"
+          >
+            Change evidence
+          </button>
+        </div>
+
+        <div id="final-evidence-review" class="final-evidence-review"></div>
+      </section>
+
+      <section class="next-step-card" aria-labelledby="prototype-end-title">
         <div>
           <p class="eyebrow">Prototype endpoint</p>
 
-          <h2 id="next-step-title">
-            The next step could be submission or an optional recorded contribution
+          <h2 id="prototype-end-title">
+            The application could now be prepared for submission
           </h2>
 
           <p>
-            A future version could allow the school to submit this application,
-            add a short optional video contribution, or indicate willingness to
-            take part in an assessor clarification call.
+            A future version could add declarations, final checks and submission.
           </p>
         </div>
 
@@ -475,7 +568,6 @@
     aria-atomic="true"
   ></div>
 
-  <!-- Relative path: works with Live Server and GitHub Pages -->
   <script src="script.js"></script>
 </body>
 </html>

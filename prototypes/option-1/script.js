@@ -1,20 +1,12 @@
 "use strict";
 
 /*
-  ============================================================
   CONTENT EDITING AREA
-  ============================================================
 
-  Change section names, guidance, prompts and suggested limits
-  in the `sections` array below.
-
-  Each criterion currently has four prompts:
-  1. What practice looks like
-  2. How embedded it is
-  3. Its impact and evidence
-  4. Learning and future strengthening
-
-  The rest of the file controls prototype behaviour.
+  Each criterion has:
+  - a short framework description
+  - one response field
+  - criterion-specific guidance prompts
 */
 
 const sections = [
@@ -23,36 +15,12 @@ const sections = [
     subtitle: "Demonstrate commitment to arts and culture",
     shortLabel: "Values and Ethos",
     guidance:
-      "Tell us how arts, culture and creativity are valued in your setting and how that commitment is visible in school life.",
+      "Tell us how arts, culture and creativity are valued in your setting and how that commitment is visible in everyday school life.",
     prompts: [
-      {
-        id: "values-practice",
-        title: "What does current practice look like?",
-        help:
-          "Describe one or two concrete examples. What happens, who is involved and how regularly?",
-        maxCharacters: 1200
-      },
-      {
-        id: "values-embeddedness",
-        title: "What has changed or become more embedded?",
-        help:
-          "What was happening before? What is different now? Where can that difference be seen in normal school practice?",
-        maxCharacters: 1200
-      },
-      {
-        id: "values-impact",
-        title: "What difference has this made, and how do you know?",
-        help:
-          "Explain the impact on children and young people, staff, leadership or the wider community. Refer to the evidence that helped you reach that view.",
-        maxCharacters: 1400
-      },
-      {
-        id: "values-next",
-        title: "What have you learned, and what remains less secure?",
-        help:
-          "What has not worked as expected? Where is practice uneven, fragile or still developing? What are you adapting or strengthening next?",
-        maxCharacters: 900
-      }
+      "What did you intend to strengthen or change?",
+      "What now happens in practice, and where is this visible?",
+      "What difference has this made, and what helps you know?",
+      "What have you learned, adapted or still need to strengthen?"
     ]
   },
   {
@@ -62,34 +30,10 @@ const sections = [
     guidance:
       "Tell us how your provision supports equitable access, representation, relevance and belonging.",
     prompts: [
-      {
-        id: "edi-practice",
-        title: "What does this look like in your setting?",
-        help:
-          "Describe with examples how your arts and cultural provision reflects your pupils, communities and wider society.",
-        maxCharacters: 1200
-      },
-      {
-        id: "edi-embeddedness",
-        title: "How do you identify and address barriers?",
-        help:
-          "Explain how you understand participation, access and representation across different groups.",
-        maxCharacters: 1200
-      },
-      {
-        id: "edi-impact",
-        title: "What difference does it make, and how do you know?",
-        help:
-          "Give examples of changes in participation, belonging, representation, wellbeing or relationships.",
-        maxCharacters: 1400
-      },
-      {
-        id: "edi-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe any gaps, groups or aspects of provision that need further attention.",
-        maxCharacters: 900
-      }
+      "What did you intend to improve or address?",
+      "What now happens in practice, including for different pupil groups?",
+      "What changed in access, participation, representation or belonging, and how do you know?",
+      "Where do barriers, gaps or unevenness remain?"
     ]
   },
   {
@@ -99,34 +43,10 @@ const sections = [
     guidance:
       "Tell us how arts and culture are led, planned, resourced, reviewed and sustained.",
     prompts: [
-      {
-        id: "leadership-practice",
-        title: "What does leadership look like in your setting?",
-        help:
-          "Describe who owns the work, who makes decisions and how senior leaders and governors are involved.",
-        maxCharacters: 1200
-      },
-      {
-        id: "leadership-embeddedness",
-        title: "How is leadership distributed and sustained?",
-        help:
-          "Explain how responsibility extends beyond one person and how the work connects to strategic planning.",
-        maxCharacters: 1200
-      },
-      {
-        id: "leadership-impact",
-        title: "What difference does this leadership make?",
-        help:
-          "Give examples of decisions, resources, plans or changes that have strengthened provision.",
-        maxCharacters: 1400
-      },
-      {
-        id: "leadership-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe anything that remains dependent on individuals, vulnerable to change or insufficiently prioritised.",
-        maxCharacters: 900
-      }
+      "What did you intend to strengthen about leadership?",
+      "Who now owns, supports and makes decisions about the work?",
+      "What difference has this made to priorities, resources or provision?",
+      "What remains dependent on individuals or vulnerable to change?"
     ]
   },
   {
@@ -136,34 +56,10 @@ const sections = [
     guidance:
       "Tell us how children and young people engage with, influence and take ownership of arts and cultural activity.",
     prompts: [
-      {
-        id: "cyp-practice",
-        title: "What does participation and influence look like?",
-        help:
-          "Describe how pupils take part, make choices, shape activity or contribute to planning and delivery.",
-        maxCharacters: 1200
-      },
-      {
-        id: "cyp-embeddedness",
-        title: "How widely is pupil ownership embedded?",
-        help:
-          "Explain whether voice and influence extend across groups, phases and different parts of provision.",
-        maxCharacters: 1200
-      },
-      {
-        id: "cyp-impact",
-        title: "What difference does it make, and how do you know?",
-        help:
-          "Use pupil voice or examples showing effects on confidence, identity, agency, wellbeing or progression.",
-        maxCharacters: 1400
-      },
-      {
-        id: "cyp-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe where participation is still adult-led or where some pupil voices are less visible.",
-        maxCharacters: 900
-      }
+      "What did you intend to change about participation, voice or ownership?",
+      "How do pupils now take part, shape decisions or lead?",
+      "What difference has this made, and what pupil evidence supports your view?",
+      "Whose voice or participation remains less visible?"
     ]
   },
   {
@@ -173,34 +69,10 @@ const sections = [
     guidance:
       "Tell us how arts learning is planned, taught and developed across subjects, phases or year groups.",
     prompts: [
-      {
-        id: "curriculum-practice",
-        title: "What does arts learning look like in your curriculum?",
-        help:
-          "Describe the artforms, knowledge, skills and creative opportunities pupils encounter.",
-        maxCharacters: 1200
-      },
-      {
-        id: "curriculum-embeddedness",
-        title: "How is quality and progression embedded?",
-        help:
-          "Explain how learning builds over time and how staff understand and review quality.",
-        maxCharacters: 1200
-      },
-      {
-        id: "curriculum-impact",
-        title: "What difference does the curriculum make?",
-        help:
-          "Give examples of pupils developing creativity, confidence, craftsmanship, curiosity or artistic independence.",
-        maxCharacters: 1400
-      },
-      {
-        id: "curriculum-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe gaps in progression, consistency, subject knowledge, breadth or quality.",
-        maxCharacters: 900
-      }
+      "What did you intend to strengthen in the curriculum?",
+      "What now happens in teaching, learning and progression?",
+      "What difference has this made to pupils, and how do you know?",
+      "What remains inconsistent, underdeveloped or in need of adaptation?"
     ]
   },
   {
@@ -210,34 +82,10 @@ const sections = [
     guidance:
       "Tell us about the breadth, relevance and accessibility of arts and cultural opportunities available to pupils.",
     prompts: [
-      {
-        id: "range-practice",
-        title: "What opportunities do children and young people experience?",
-        help:
-          "Describe provision within and beyond the timetable, including creating, performing and experiencing culture.",
-        maxCharacters: 1200
-      },
-      {
-        id: "range-embeddedness",
-        title: "How broad, connected and equitable is the offer?",
-        help:
-          "Explain how curriculum, enrichment, visits, events and partnerships work together and who can access them.",
-        maxCharacters: 1200
-      },
-      {
-        id: "range-impact",
-        title: "What difference does the offer make?",
-        help:
-          "Give examples of increased access, engagement, progression, cultural awareness or sustained participation.",
-        maxCharacters: 1400
-      },
-      {
-        id: "range-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe any gaps across artforms, pupil groups, phases, access or progression.",
-        maxCharacters: 900
-      }
+      "What did you intend to broaden, connect or make more accessible?",
+      "What do pupils now experience as creators, performers and audiences?",
+      "What difference has this made to access, engagement or progression?",
+      "Where are there still gaps across artforms, groups or phases?"
     ]
   },
   {
@@ -247,34 +95,10 @@ const sections = [
     guidance:
       "Tell us how staff develop and share the knowledge, skills and confidence needed for quality arts and cultural provision.",
     prompts: [
-      {
-        id: "cpd-practice",
-        title: "What staff development currently takes place?",
-        help:
-          "Describe internal learning, external CPD, practitioner input, peer support or collaborative development.",
-        maxCharacters: 1200
-      },
-      {
-        id: "cpd-embeddedness",
-        title: "How is staff development planned and shared?",
-        help:
-          "Explain how needs are identified, how learning spreads and how expertise is sustained.",
-        maxCharacters: 1200
-      },
-      {
-        id: "cpd-impact",
-        title: "What difference has staff development made?",
-        help:
-          "Give examples of changes in confidence, teaching, curriculum, pupil experience or leadership.",
-        maxCharacters: 1400
-      },
-      {
-        id: "cpd-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe remaining gaps in confidence, capability, subject knowledge or access to development.",
-        maxCharacters: 900
-      }
+      "What did you intend to strengthen in staff confidence or capability?",
+      "What do staff now do differently in practice?",
+      "What difference has this made to teaching, curriculum or pupil experience?",
+      "What learning still needs to spread or be sustained?"
     ]
   },
   {
@@ -284,48 +108,23 @@ const sections = [
     guidance:
       "Tell us how relationships with practitioners, organisations, networks and other settings strengthen your provision.",
     prompts: [
-      {
-        id: "collaboration-practice",
-        title: "What collaborations are currently in place?",
-        help:
-          "Describe who you work with, why those relationships matter and what they contribute.",
-        maxCharacters: 1200
-      },
-      {
-        id: "collaboration-embeddedness",
-        title: "How strategic and sustained are these relationships?",
-        help:
-          "Explain whether partnerships are one-off, repeated, reciprocal or connected to longer-term priorities.",
-        maxCharacters: 1200
-      },
-      {
-        id: "collaboration-impact",
-        title: "What difference do collaborations make?",
-        help:
-          "Give examples of changes in teaching, staff capability, pupil learning, cultural access or community connection.",
-        maxCharacters: 1400
-      },
-      {
-        id: "collaboration-next",
-        title: "What are you learning or strengthening next?",
-        help:
-          "Describe gaps in local connection, partnership depth, access, reciprocity or sustainability.",
-        maxCharacters: 900
-      }
+      "What did you intend the collaboration to make possible?",
+      "What now happens through these relationships?",
+      "What difference has this made to pupils, staff or the wider community?",
+      "What have you learned about partnership depth, reciprocity or sustainability?"
     ]
   }
 ];
 
-/*
-  ============================================================
-  PROTOTYPE BEHAVIOUR
-  ============================================================
-*/
-
-const STORAGE_KEY = "artsmark-option-1-draft";
+const STORAGE_KEY = "artsmark-option-1-simplified-draft";
+const MAX_EVIDENCE_ITEMS = 5;
 
 const answers = {};
+const evidenceItems = [];
+
+let synthesis = "";
 let currentSectionIndex = 0;
+let currentStage = "intro-screen";
 let saveStatusTimeout = null;
 
 const screens = [...document.querySelectorAll(".screen")];
@@ -334,7 +133,12 @@ const startButton = document.getElementById("start-button");
 const resumeButton = document.getElementById("resume-button");
 
 const applicationForm = document.getElementById("application-form");
-const promptsContainer = document.getElementById("prompts-container");
+const criterionResponse = document.getElementById("criterion-response");
+const criterionCharacterCount = document.getElementById(
+  "criterion-character-count"
+);
+const criterionPrompts = document.getElementById("criterion-prompts");
+
 const sectionTitle = document.getElementById("section-title");
 const sectionSubtitle = document.getElementById("section-subtitle");
 const sectionGuidance = document.getElementById("section-guidance");
@@ -345,39 +149,53 @@ const progressText = document.getElementById("progress-text");
 const progressBar = document.getElementById("progress-bar");
 const progressTrack = document.getElementById("progress-track");
 const savedStatus = document.getElementById("saved-status");
-const validationMessage = document.getElementById("validation-message");
 
 const backButton = document.getElementById("back-button");
 const saveExitButton = document.getElementById("save-exit-button");
 const nextButton = document.getElementById("next-button");
 
-const reviewButton = document.getElementById("review-button");
-const overviewButton = document.getElementById("overview-button");
-
-const reviewContainer = document.getElementById("review-container");
-const reviewOverviewButton = document.getElementById(
-  "review-overview-button"
+const overviewResponses = document.getElementById("overview-responses");
+const synthesisResponse = document.getElementById("synthesis-response");
+const synthesisCharacterCount = document.getElementById(
+  "synthesis-character-count"
 );
-const reviewOverviewButtonBottom = document.getElementById(
-  "review-overview-button-bottom"
-);
-const reviewBackButton = document.getElementById("review-back-button");
-
 const editFromOverviewButton = document.getElementById(
   "edit-from-overview-button"
 );
-const coverageList = document.getElementById("coverage-list");
+const overviewBackButton = document.getElementById("overview-back-button");
+const continueToEvidenceButton = document.getElementById(
+  "continue-to-evidence-button"
+);
+
+const evidenceList = document.getElementById("evidence-list");
+const evidenceCountBadge = document.getElementById("evidence-count-badge");
+const addEvidenceButton = document.getElementById("add-evidence-button");
+const evidenceBackButton = document.getElementById("evidence-back-button");
+const reviewApplicationButton = document.getElementById(
+  "review-application-button"
+);
+
+const finalCriteriaReview = document.getElementById("final-criteria-review");
+const finalSynthesis = document.getElementById("final-synthesis");
+const finalEvidenceReview = document.getElementById("final-evidence-review");
+const editOverviewButton = document.getElementById("edit-overview-button");
+const editSynthesisButton = document.getElementById("edit-synthesis-button");
+const editEvidenceButton = document.getElementById("edit-evidence-button");
 const restartButton = document.getElementById("restart-button");
 
 const liveRegion = document.getElementById("live-region");
 
 function showScreen(screenId, focusSelector = "h1") {
+  currentStage = screenId;
+
   screens.forEach((screen) => {
     const isActive = screen.id === screenId;
 
     screen.classList.toggle("screen--active", isActive);
     screen.setAttribute("aria-hidden", String(!isActive));
   });
+
+  saveDraft(false);
 
   window.scrollTo({
     top: 0,
@@ -386,7 +204,7 @@ function showScreen(screenId, focusSelector = "h1") {
 
   window.setTimeout(() => {
     const targetScreen = document.getElementById(screenId);
-    const focusTarget = targetScreen.querySelector(focusSelector);
+    const focusTarget = targetScreen?.querySelector(focusSelector);
 
     if (focusTarget) {
       focusTarget.setAttribute("tabindex", "-1");
@@ -403,42 +221,36 @@ function buildSectionNavigation() {
 
     item.textContent = section.shortLabel;
     item.dataset.index = String(index + 1);
-    item.dataset.sectionIndex = String(index);
 
     sectionList.appendChild(item);
   });
 }
 
-function getAllPrompts() {
-  return sections.flatMap((section) => section.prompts);
-}
-
 function hasAnySavedContent() {
-  return getAllPrompts().some((prompt) => {
-    return Boolean((answers[prompt.id] || "").trim());
-  });
+  return (
+    Object.values(answers).some((value) =>
+      Boolean(String(value || "").trim())
+    ) ||
+    Boolean(synthesis.trim()) ||
+    evidenceItems.length > 0
+  );
 }
 
-function isSectionComplete(sectionIndex) {
-  return sections[sectionIndex].prompts.every((prompt) => {
-    return Boolean((answers[prompt.id] || "").trim());
-  });
-}
-
-function getCompletedSectionCount() {
-  return sections.filter((section, index) => {
-    return isSectionComplete(index);
-  }).length;
+function isSectionComplete(index) {
+  return Boolean((answers[index] || "").trim());
 }
 
 function updateProgress() {
-  const completedSections = getCompletedSectionCount();
+  const completed = sections.filter((_, index) =>
+    isSectionComplete(index)
+  ).length;
+
   const percentage = Math.round(
-    (completedSections / sections.length) * 100
+    (completed / sections.length) * 100
   );
 
   progressText.textContent =
-    `Section ${currentSectionIndex + 1} of ${sections.length}`;
+    `Criterion ${currentSectionIndex + 1} of ${sections.length}`;
 
   progressBar.style.width = `${percentage}%`;
   progressTrack.setAttribute("aria-valuenow", String(percentage));
@@ -449,38 +261,67 @@ function updateProgress() {
   });
 }
 
-function saveDraft(showConfirmation = true) {
+function showSavedStatus() {
+  savedStatus.classList.add("is-visible");
+
+  window.clearTimeout(saveStatusTimeout);
+
+  saveStatusTimeout = window.setTimeout(() => {
+    savedStatus.classList.remove("is-visible");
+  }, 1400);
+}
+
+function saveDraft(showConfirmation = false) {
   const draft = {
     answers,
+    synthesis,
+    evidenceItems,
     currentSectionIndex,
+    currentStage,
     savedAt: new Date().toISOString()
   };
 
   try {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+    resumeButton.hidden = !hasAnySavedContent();
 
     if (showConfirmation) {
       showSavedStatus();
     }
-
-    resumeButton.hidden = !hasAnySavedContent();
   } catch (error) {
-    console.warn("Unable to save draft in this browser session.", error);
+    console.warn("Unable to save this draft.", error);
   }
 }
 
 function loadDraft() {
   try {
-    const savedDraft = sessionStorage.getItem(STORAGE_KEY);
+    const raw = sessionStorage.getItem(STORAGE_KEY);
 
-    if (!savedDraft) {
+    if (!raw) {
       return false;
     }
 
-    const parsed = JSON.parse(savedDraft);
+    const parsed = JSON.parse(raw);
 
     if (parsed.answers && typeof parsed.answers === "object") {
       Object.assign(answers, parsed.answers);
+    }
+
+    if (typeof parsed.synthesis === "string") {
+      synthesis = parsed.synthesis;
+    }
+
+    if (Array.isArray(parsed.evidenceItems)) {
+      evidenceItems.push(
+        ...parsed.evidenceItems
+          .slice(0, MAX_EVIDENCE_ITEMS)
+          .map((item) => ({
+            title: String(item.title || ""),
+            criterion: String(item.criterion || ""),
+            note: String(item.note || ""),
+            fileName: String(item.fileName || "")
+          }))
+      );
     }
 
     if (
@@ -491,9 +332,13 @@ function loadDraft() {
       currentSectionIndex = parsed.currentSectionIndex;
     }
 
+    if (typeof parsed.currentStage === "string") {
+      currentStage = parsed.currentStage;
+    }
+
     return hasAnySavedContent();
   } catch (error) {
-    console.warn("Unable to restore the saved draft.", error);
+    console.warn("Unable to restore this draft.", error);
     return false;
   }
 }
@@ -503,310 +348,356 @@ function clearDraft() {
     delete answers[key];
   });
 
+  evidenceItems.splice(0, evidenceItems.length);
+
+  synthesis = "";
   currentSectionIndex = 0;
+  currentStage = "intro-screen";
 
   try {
     sessionStorage.removeItem(STORAGE_KEY);
   } catch (error) {
-    console.warn("Unable to clear the saved draft.", error);
+    console.warn("Unable to clear this draft.", error);
   }
 
   resumeButton.hidden = true;
 }
 
-function showSavedStatus() {
-  savedStatus.textContent = "Draft saved";
-  savedStatus.classList.add("is-visible");
+function updateCharacterCount(textarea, counter, max) {
+  const length = textarea.value.length;
+  const threshold = Math.round(max * 0.15);
 
-  window.clearTimeout(saveStatusTimeout);
+  counter.textContent =
+    `${length.toLocaleString()} / ${max.toLocaleString()} characters`;
 
-  saveStatusTimeout = window.setTimeout(() => {
-    savedStatus.classList.remove("is-visible");
-  }, 1400);
+  counter.classList.toggle(
+    "is-near-limit",
+    max - length <= threshold
+  );
 }
 
-function createPromptCard(prompt, promptIndex, totalPrompts) {
-  const article = document.createElement("article");
-  const header = document.createElement("div");
-  const count = document.createElement("p");
-  const title = document.createElement("h2");
-  const help = document.createElement("p");
-
-  const textareaWrapper = document.createElement("div");
-  const textarea = document.createElement("textarea");
-  const textareaMeta = document.createElement("div");
-  const guidanceText = document.createElement("span");
-  const characterCount = document.createElement("span");
-
-  article.className = "prompt-card";
-  header.className = "prompt-header";
-
-  count.className = "prompt-count";
-  count.textContent = `Prompt ${promptIndex + 1} of ${totalPrompts}`;
-
-  title.className = "prompt-title";
-  title.id = `${prompt.id}-title`;
-  title.textContent = prompt.title;
-
-  help.className = "prompt-help";
-  help.id = `${prompt.id}-help`;
-  help.textContent = prompt.help;
-
-  header.append(count, title, help);
-
-  textareaWrapper.className = "textarea-wrapper";
-
-  textarea.id = prompt.id;
-  textarea.name = prompt.id;
-  textarea.value = answers[prompt.id] || "";
-  textarea.maxLength = prompt.maxCharacters;
-  textarea.rows = 7;
-  textarea.setAttribute(
-    "aria-labelledby",
-    `${prompt.id}-title`
-  );
-  textarea.setAttribute(
-    "aria-describedby",
-    `${prompt.id}-help ${prompt.id}-count`
-  );
-
-  guidanceText.textContent = "A focused working draft is fine.";
-
-  characterCount.className = "character-count";
-  characterCount.id = `${prompt.id}-count`;
-
-  function updateCharacterCount() {
-    const length = textarea.value.length;
-    const remaining = prompt.maxCharacters - length;
-    const threshold = Math.round(prompt.maxCharacters * 0.15);
-
-    characterCount.textContent =
-      `${length.toLocaleString()} / ` +
-      `${prompt.maxCharacters.toLocaleString()} characters`;
-
-    characterCount.classList.toggle(
-      "is-near-limit",
-      remaining <= threshold && remaining >= 0
-    );
-
-    characterCount.classList.toggle(
-      "is-over-limit",
-      remaining < 0
-    );
-  }
-
-  textarea.addEventListener("input", () => {
-    answers[prompt.id] = textarea.value;
-    textarea.classList.remove("has-error");
-    validationMessage.hidden = true;
-
-    updateCharacterCount();
-    saveDraft(false);
-  });
-
-  textarea.addEventListener("blur", () => {
-    saveDraft(true);
-  });
-
-  updateCharacterCount();
-
-  textareaMeta.className = "textarea-meta";
-  textareaMeta.append(guidanceText, characterCount);
-
-  textareaWrapper.append(textarea, textareaMeta);
-  article.append(header, textareaWrapper);
-
-  return article;
+function saveCurrentCriterion(showConfirmation = false) {
+  answers[currentSectionIndex] = criterionResponse.value;
+  saveDraft(showConfirmation);
+  updateProgress();
 }
 
-function renderSection(sectionIndex) {
-  currentSectionIndex = sectionIndex;
+function renderSection(index) {
+  currentSectionIndex = index;
 
-  const section = sections[currentSectionIndex];
+  const section = sections[index];
 
-  sectionNumber.textContent = `Criterion ${currentSectionIndex + 1}`;
+  sectionNumber.textContent = `Criterion ${index + 1}`;
   sectionTitle.textContent = section.title;
   sectionSubtitle.textContent = section.subtitle;
   sectionGuidance.textContent = section.guidance;
 
-  promptsContainer.innerHTML = "";
-  validationMessage.hidden = true;
+  criterionPrompts.innerHTML = "";
 
-  section.prompts.forEach((prompt, promptIndex) => {
-    promptsContainer.appendChild(
-      createPromptCard(
-        prompt,
-        promptIndex,
-        section.prompts.length
-      )
-    );
+  section.prompts.forEach((prompt) => {
+    const item = document.createElement("li");
+    item.textContent = prompt;
+    criterionPrompts.appendChild(item);
   });
 
-  backButton.disabled = currentSectionIndex === 0;
+  criterionResponse.value = answers[index] || "";
+
+  updateCharacterCount(
+    criterionResponse,
+    criterionCharacterCount,
+    4000
+  );
+
+  backButton.disabled = index === 0;
 
   nextButton.textContent =
-    currentSectionIndex === sections.length - 1
-      ? "Finish draft"
+    index === sections.length - 1
+      ? "Continue to overview"
       : "Save and continue";
 
   updateProgress();
   saveDraft(false);
 
   liveRegion.textContent =
-    `${section.title}. Section ${currentSectionIndex + 1} ` +
-    `of ${sections.length}.`;
+    `${section.title}. Criterion ${index + 1} of ${sections.length}.`;
 }
 
-function validateCurrentSection() {
-  const section = sections[currentSectionIndex];
-  let firstInvalidTextarea = null;
+function renderOverview() {
+  overviewResponses.innerHTML = "";
 
-  section.prompts.forEach((prompt) => {
-    const textarea = document.getElementById(prompt.id);
-    const isEmpty = !(textarea.value || "").trim();
+  sections.forEach((section, index) => {
+    const row = document.createElement("article");
+    const title = document.createElement("h3");
+    const response = document.createElement("p");
 
-    textarea.classList.toggle("has-error", isEmpty);
+    row.className = "overview-response";
+    title.textContent = `${index + 1}. ${section.title}`;
 
-    if (isEmpty && !firstInvalidTextarea) {
-      firstInvalidTextarea = textarea;
-    }
+    const value = (answers[index] || "").trim();
+
+    response.textContent = value || "No response added.";
+    response.classList.toggle("blank-response", !value);
+
+    row.append(title, response);
+    overviewResponses.appendChild(row);
   });
 
-  if (!firstInvalidTextarea) {
-    validationMessage.hidden = true;
-    return true;
-  }
+  synthesisResponse.value = synthesis;
 
-  validationMessage.hidden = false;
-  firstInvalidTextarea.focus();
-
-  return false;
+  updateCharacterCount(
+    synthesisResponse,
+    synthesisCharacterCount,
+    3000
+  );
 }
 
-function renderReview() {
-  reviewContainer.innerHTML = "";
+function saveSynthesis() {
+  synthesis = synthesisResponse.value;
+  saveDraft(false);
+}
 
-  sections.forEach((section, sectionIndex) => {
+function addEvidenceItem() {
+  if (evidenceItems.length >= MAX_EVIDENCE_ITEMS) {
+    return;
+  }
+
+  evidenceItems.push({
+    title: "",
+    criterion: "",
+    note: "",
+    fileName: ""
+  });
+
+  renderEvidenceItems();
+  saveDraft(false);
+}
+
+function renderEvidenceItems() {
+  evidenceList.innerHTML = "";
+
+  evidenceItems.forEach((item, index) => {
+    const article = document.createElement("article");
+    const header = document.createElement("div");
+    const heading = document.createElement("h2");
+    const removeButton = document.createElement("button");
+    const fields = document.createElement("div");
+
+    article.className = "evidence-item";
+    header.className = "evidence-item__header";
+    fields.className = "evidence-fields";
+
+    heading.textContent = `Evidence item ${index + 1}`;
+
+    removeButton.type = "button";
+    removeButton.className = "remove-evidence-button";
+    removeButton.textContent = "Remove";
+
+    removeButton.addEventListener("click", () => {
+      evidenceItems.splice(index, 1);
+      renderEvidenceItems();
+      saveDraft(false);
+    });
+
+    header.append(heading, removeButton);
+
+    const titleLabel = document.createElement("label");
+    const titleInput = document.createElement("input");
+
+    titleLabel.textContent = "Evidence title";
+    titleInput.type = "text";
+    titleInput.value = item.title;
+    titleInput.placeholder = "For example: Year 5 progression extract";
+
+    titleInput.addEventListener("input", () => {
+      evidenceItems[index].title = titleInput.value;
+      saveDraft(false);
+    });
+
+    titleLabel.appendChild(titleInput);
+
+    const criterionLabel = document.createElement("label");
+    const criterionSelect = document.createElement("select");
+
+    criterionLabel.textContent = "Which criterion or claim does this support?";
+
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "Choose a criterion";
+    criterionSelect.appendChild(defaultOption);
+
+    sections.forEach((section, sectionIndex) => {
+      const option = document.createElement("option");
+
+      option.value = String(sectionIndex);
+      option.textContent = section.title;
+      option.selected = item.criterion === String(sectionIndex);
+
+      criterionSelect.appendChild(option);
+    });
+
+    criterionSelect.addEventListener("change", () => {
+      evidenceItems[index].criterion = criterionSelect.value;
+      saveDraft(false);
+    });
+
+    criterionLabel.appendChild(criterionSelect);
+
+    const noteLabel = document.createElement("label");
+    const noteTextarea = document.createElement("textarea");
+
+    noteLabel.className = "field-wide";
+    noteLabel.textContent = "What should the assessor notice?";
+
+    noteTextarea.maxLength = 250;
+    noteTextarea.value = item.note;
+    noteTextarea.placeholder =
+      "Explain briefly what this item shows and why it matters.";
+
+    noteTextarea.addEventListener("input", () => {
+      evidenceItems[index].note = noteTextarea.value;
+      saveDraft(false);
+    });
+
+    noteLabel.appendChild(noteTextarea);
+
+    const fileLabel = document.createElement("label");
+    const fileInput = document.createElement("input");
+    const fileHelp = document.createElement("div");
+
+    fileLabel.className = "field-wide";
+    fileLabel.textContent = "Choose a file";
+
+    fileInput.type = "file";
+    fileInput.accept = ".pdf,.doc,.docx,.jpg,.jpeg,.png,.mp4,.mov,.webm";
+
+    fileInput.addEventListener("change", () => {
+      evidenceItems[index].fileName =
+        fileInput.files?.[0]?.name || "";
+
+      fileHelp.textContent =
+        evidenceItems[index].fileName ||
+        "Prototype only: the selected file is not uploaded or stored.";
+
+      saveDraft(false);
+    });
+
+    fileHelp.className = "file-placeholder";
+    fileHelp.textContent =
+      item.fileName ||
+      "Prototype only: the selected file is not uploaded or stored.";
+
+    fileLabel.append(fileInput, fileHelp);
+
+    fields.append(
+      titleLabel,
+      criterionLabel,
+      noteLabel,
+      fileLabel
+    );
+
+    article.append(header, fields);
+    evidenceList.appendChild(article);
+  });
+
+  evidenceCountBadge.textContent =
+    `${evidenceItems.length} of ${MAX_EVIDENCE_ITEMS} items`;
+
+  addEvidenceButton.disabled =
+    evidenceItems.length >= MAX_EVIDENCE_ITEMS;
+
+  addEvidenceButton.textContent =
+    evidenceItems.length >= MAX_EVIDENCE_ITEMS
+      ? "Maximum of five items reached"
+      : "Add an evidence item";
+}
+
+function renderFinalReview() {
+  finalCriteriaReview.innerHTML = "";
+
+  sections.forEach((section, index) => {
     const article = document.createElement("article");
     const header = document.createElement("div");
     const title = document.createElement("h2");
     const editButton = document.createElement("button");
-    const answerList = document.createElement("dl");
+    const body = document.createElement("div");
+    const response = document.createElement("p");
 
     article.className = "review-section";
     header.className = "review-section__header";
-    answerList.className = "review-answers";
+    body.className = "review-section__body";
 
-    title.textContent = `${sectionIndex + 1}. ${section.title}`;
+    title.textContent = `${index + 1}. ${section.title}`;
 
     editButton.type = "button";
     editButton.className = "text-button";
-    editButton.textContent = "Change answers";
+    editButton.textContent = "Change response";
 
     editButton.addEventListener("click", () => {
-      renderSection(sectionIndex);
+      renderSection(index);
       showScreen("application-screen");
     });
 
+    const value = (answers[index] || "").trim();
+
+    response.textContent = value || "No response added.";
+    response.classList.toggle("blank-response", !value);
+
     header.append(title, editButton);
+    body.appendChild(response);
+    article.append(header, body);
 
-    section.prompts.forEach((prompt) => {
-      const row = document.createElement("div");
-      const term = document.createElement("dt");
-      const description = document.createElement("dd");
-
-      row.className = "review-answer";
-
-      term.textContent = prompt.title;
-      description.textContent =
-        (answers[prompt.id] || "").trim() || "No response added.";
-
-      row.append(term, description);
-      answerList.appendChild(row);
-    });
-
-    article.append(header, answerList);
-    reviewContainer.appendChild(article);
+    finalCriteriaReview.appendChild(article);
   });
-}
 
-function calculateSectionCoverage(section) {
-  const totalCharacters = section.prompts.reduce((total, prompt) => {
-    return total + (answers[prompt.id] || "").trim().length;
-  }, 0);
+  finalSynthesis.textContent =
+    synthesis.trim() || "No overall reflection added.";
 
-  const totalSuggestedCharacters = section.prompts.reduce(
-    (total, prompt) => total + prompt.maxCharacters,
-    0
+  finalSynthesis.classList.toggle(
+    "blank-response",
+    !synthesis.trim()
   );
 
-  /*
-    Coverage is deliberately capped at 100%.
+  finalEvidenceReview.innerHTML = "";
 
-    This is only a visual indication of draft completeness.
-    It is not a quality score or assessment judgement.
-  */
-  return Math.min(
-    100,
-    Math.round(
-      (totalCharacters / totalSuggestedCharacters) * 100
-    )
-  );
-}
+  if (evidenceItems.length === 0) {
+    const empty = document.createElement("p");
 
-function getCoverageLabel(percentage) {
-  if (percentage === 0) {
-    return "Not started";
+    empty.className = "blank-response";
+    empty.textContent = "No optional evidence added.";
+
+    finalEvidenceReview.appendChild(empty);
+    return;
   }
 
-  if (percentage < 20) {
-    return "Brief draft";
-  }
+  evidenceItems.forEach((item, index) => {
+    const article = document.createElement("article");
+    const title = document.createElement("h3");
+    const criterion = document.createElement("p");
+    const note = document.createElement("p");
+    const file = document.createElement("p");
 
-  if (percentage < 45) {
-    return "Developing draft";
-  }
+    article.className = "final-evidence-item";
 
-  if (percentage < 70) {
-    return "Substantial draft";
-  }
+    title.textContent =
+      item.title.trim() || `Evidence item ${index + 1}`;
 
-  return "Detailed draft";
-}
+    const criterionName =
+      item.criterion !== "" && sections[Number(item.criterion)]
+        ? sections[Number(item.criterion)].title
+        : "No criterion selected";
 
-function renderOverview() {
-  coverageList.innerHTML = "";
+    criterion.textContent = `Supports: ${criterionName}`;
+    note.textContent =
+      item.note.trim() || "No explanation added.";
 
-  sections.forEach((section) => {
-    const percentage = calculateSectionCoverage(section);
+    file.textContent =
+      item.fileName
+        ? `Selected file: ${item.fileName}`
+        : "No file selected.";
 
-    const row = document.createElement("div");
-    const label = document.createElement("div");
-    const value = document.createElement("div");
-    const track = document.createElement("div");
-    const fill = document.createElement("div");
-
-    row.className = "coverage-row";
-    label.className = "coverage-label";
-    value.className = "coverage-value";
-    track.className = "coverage-track";
-    fill.className = "coverage-fill";
-
-    label.textContent = section.title;
-    value.textContent = getCoverageLabel(percentage);
-    fill.style.width = `${percentage}%`;
-
-    track.setAttribute("aria-hidden", "true");
-
-    track.appendChild(fill);
-    row.append(label, value, track);
-    coverageList.appendChild(row);
+    article.append(title, criterion, note, file);
+    finalEvidenceReview.appendChild(article);
   });
-}
-
-function showOverview() {
-  renderOverview();
-  showScreen("overview-screen");
 }
 
 startButton.addEventListener("click", () => {
@@ -816,23 +707,58 @@ startButton.addEventListener("click", () => {
 });
 
 resumeButton.addEventListener("click", () => {
+  if (currentStage === "overview-screen") {
+    renderOverview();
+    showScreen("overview-screen");
+    return;
+  }
+
+  if (currentStage === "evidence-screen") {
+    renderEvidenceItems();
+    showScreen("evidence-screen");
+    return;
+  }
+
+  if (currentStage === "final-review-screen") {
+    renderFinalReview();
+    showScreen("final-review-screen");
+    return;
+  }
+
   renderSection(currentSectionIndex);
   showScreen("application-screen");
+});
+
+criterionResponse.addEventListener("input", () => {
+  answers[currentSectionIndex] = criterionResponse.value;
+
+  updateCharacterCount(
+    criterionResponse,
+    criterionCharacterCount,
+    4000
+  );
+
+  saveDraft(false);
+  updateProgress();
+});
+
+criterionResponse.addEventListener("blur", () => {
+  saveCurrentCriterion(true);
 });
 
 applicationForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // Save whatever is present, including blank responses,
-  // then continue to the next section.
-  saveDraft(true);
+  saveCurrentCriterion(true);
 
   if (currentSectionIndex < sections.length - 1) {
     renderSection(currentSectionIndex + 1);
     showScreen("application-screen");
-  } else {
-    showScreen("completion-screen");
+    return;
   }
+
+  renderOverview();
+  showScreen("overview-screen");
 });
 
 backButton.addEventListener("click", () => {
@@ -840,32 +766,76 @@ backButton.addEventListener("click", () => {
     return;
   }
 
-  saveDraft(false);
+  saveCurrentCriterion(false);
   renderSection(currentSectionIndex - 1);
   showScreen("application-screen");
 });
 
 saveExitButton.addEventListener("click", () => {
-  saveDraft(true);
+  saveCurrentCriterion(true);
   showScreen("intro-screen");
 });
 
-reviewButton.addEventListener("click", () => {
-  renderReview();
-  showScreen("review-screen");
-});
-
-overviewButton.addEventListener("click", showOverview);
-reviewOverviewButton.addEventListener("click", showOverview);
-reviewOverviewButtonBottom.addEventListener("click", showOverview);
-
-reviewBackButton.addEventListener("click", () => {
-  showScreen("completion-screen");
-});
-
 editFromOverviewButton.addEventListener("click", () => {
-  renderReview();
-  showScreen("review-screen");
+  saveSynthesis();
+  renderSection(0);
+  showScreen("application-screen");
+});
+
+overviewBackButton.addEventListener("click", () => {
+  saveSynthesis();
+  renderSection(sections.length - 1);
+  showScreen("application-screen");
+});
+
+synthesisResponse.addEventListener("input", () => {
+  synthesis = synthesisResponse.value;
+
+  updateCharacterCount(
+    synthesisResponse,
+    synthesisCharacterCount,
+    3000
+  );
+
+  saveDraft(false);
+});
+
+synthesisResponse.addEventListener("blur", () => {
+  saveSynthesis();
+  saveDraft(true);
+});
+
+continueToEvidenceButton.addEventListener("click", () => {
+  saveSynthesis();
+  renderEvidenceItems();
+  showScreen("evidence-screen");
+});
+
+addEvidenceButton.addEventListener("click", addEvidenceItem);
+
+evidenceBackButton.addEventListener("click", () => {
+  renderOverview();
+  showScreen("overview-screen");
+});
+
+reviewApplicationButton.addEventListener("click", () => {
+  renderFinalReview();
+  showScreen("final-review-screen");
+});
+
+editOverviewButton.addEventListener("click", () => {
+  renderOverview();
+  showScreen("overview-screen");
+});
+
+editSynthesisButton.addEventListener("click", () => {
+  renderOverview();
+  showScreen("overview-screen", "#synthesis-title");
+});
+
+editEvidenceButton.addEventListener("click", () => {
+  renderEvidenceItems();
+  showScreen("evidence-screen");
 });
 
 restartButton.addEventListener("click", () => {
@@ -884,6 +854,7 @@ restartButton.addEventListener("click", () => {
 buildSectionNavigation();
 
 const draftWasRestored = loadDraft();
+
 resumeButton.hidden = !draftWasRestored;
 
 screens.forEach((screen) => {
