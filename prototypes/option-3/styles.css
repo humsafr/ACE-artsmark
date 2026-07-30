@@ -1214,3 +1214,212 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*
+  ============================================================
+  OPTION 3: STRUCTURED SELF-ASSESSMENT ADDITIONS
+  ============================================================
+*/
+
+.criterion-group {
+  margin-bottom: 2.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.criterion-group:last-child {
+  border-bottom: 0;
+}
+
+.criterion-group__heading {
+  margin-bottom: 1rem;
+}
+
+.criterion-group__heading h2 {
+  margin-bottom: 0;
+}
+
+.dimension-label {
+  display: inline-block;
+  margin: 0 0.65rem 0.55rem 0;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.evidence-basis {
+  margin: -0.4rem 0 1.5rem;
+  padding: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  background: var(--surface-soft);
+}
+
+.evidence-basis h3 {
+  margin-bottom: 0.25rem;
+}
+
+.evidence-basis > p {
+  margin-bottom: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.evidence-basis__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.evidence-basis__grid label {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.evidence-basis__grid input {
+  width: 17px;
+  height: 17px;
+  margin-top: 0.12rem;
+  accent-color: var(--primary);
+}
+
+.section-example-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+}
+
+.section-example-card h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.section-example-card .textarea-wrapper textarea {
+  min-height: 170px;
+}
+
+.self-assessment-review {
+  padding: 1.25rem 1.4rem;
+}
+
+.review-criterion {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.review-criterion h3 {
+  margin-bottom: 0.8rem;
+}
+
+.review-judgement {
+  display: grid;
+  grid-template-columns: minmax(145px, 0.35fr) minmax(0, 1fr);
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.review-judgement p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.review-evidence-basis {
+  margin: 0.85rem 0 0;
+  padding: 0.75rem;
+  border-radius: var(--radius-small);
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.review-section-example {
+  padding: 1rem;
+  border-radius: var(--radius-medium);
+  background: var(--accent-soft);
+}
+
+.review-section-example h3 {
+  margin-bottom: 0.35rem;
+}
+
+.review-section-example p {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+.assessor-status-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.assessor-status-list span,
+.assessor-status-placeholder {
+  display: inline-flex;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.assessor-review-card {
+  margin-top: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+}
+
+.assessor-review-card > p {
+  color: var(--text-muted);
+}
+
+.assessor-review-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.assessor-review-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.55fr) auto minmax(0, 1fr);
+  align-items: center;
+  padding: 0.9rem;
+  border-radius: var(--radius-medium);
+  background: var(--surface-soft);
+  gap: 0.8rem;
+}
+
+.assessor-review-row h3,
+.assessor-review-row p {
+  margin: 0;
+}
+
+.assessor-review-row p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 760px) {
+  .evidence-basis__grid,
+  .review-judgement,
+  .assessor-review-row {
+    grid-template-columns: 1fr;
+  }
+}

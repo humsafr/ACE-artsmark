@@ -10,12 +10,11 @@
 
   <meta
     name="description"
-    content="An interactive Artsmark provision snapshot and narrative assessment prototype."
+    content="A structured Artsmark self-assessment prototype reviewed by an assessor."
   >
 
-  <title>Artsmark provision snapshot</title>
+  <title>Artsmark self-assessment</title>
 
-  <!-- Relative path: works with Live Server and GitHub Pages -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -32,7 +31,7 @@
         </p>
 
         <p class="site-title">
-          Your provision snapshot
+          Structured self-assessment
         </p>
       </div>
 
@@ -43,12 +42,10 @@
   </header>
 
   <main id="main-content" class="page-shell" tabindex="-1">
-    <!-- =====================================================
-         INTRO SCREEN
-         ===================================================== -->
+    <!-- INTRO -->
     <section
       id="intro-screen"
-      class="screen screen--active intro-screen"
+      class="screen screen--active"
       aria-labelledby="intro-title"
     >
       <div class="intro-layout">
@@ -56,39 +53,29 @@
           <p class="eyebrow">Before you begin</p>
 
           <h1 id="intro-title">
-            Build a picture of your arts and cultural provision
+            Make an evidence-aware judgement about your current provision
           </h1>
 
           <p class="lead">
-            This questionnaire helps you describe how arts, culture and
-            creativity currently work across your school or setting.
+            This route is a structured self-assessment. You will choose the
+            statements that best describe your current practice, add brief
+            examples, and explain what your judgements are based on.
           </p>
 
           <p>
-            You will respond to three questions under each of the eight
-            Artsmark Framework criteria. Choose the answer that feels closest
-            to your setting today.
-          </p>
-
-          <p>
-            There may not be a perfect fit. Select the best approximate answer.
-            You will be able to review and change your responses before seeing
-            your snapshot.
+            An assessor would then review whether the choices are supported,
+            need qualification or require clarification. The questionnaire
+            does not generate an award level automatically.
           </p>
 
           <div class="notice">
-            <h2>This snapshot is not the assessment itself</h2>
+            <h2>What makes this more than a checklist</h2>
 
             <p>
-              Your answers create a descriptive picture of relative strengths
-              and areas that may be less developed. They do not determine an
-              Artsmark award level.
-            </p>
-
-            <p>
-              After viewing the snapshot, you will be asked to add context,
-              examples and evidence so an assessor can understand what sits
-              behind your choices.
+              Each criterion asks about both the depth of practice and how
+              widely, consistently and sustainably that practice is established.
+              You will also identify the basis for your judgement and add one
+              short example for each section.
             </p>
           </div>
 
@@ -98,7 +85,7 @@
               class="button button--primary"
               type="button"
             >
-              Start the questionnaire
+              Start self-assessment
             </button>
 
             <button
@@ -112,45 +99,39 @@
           </div>
         </div>
 
-        <aside class="intro-summary" aria-label="Questionnaire overview">
+        <aside class="intro-summary" aria-label="Self-assessment overview">
           <h2>What to expect</h2>
 
           <dl class="summary-list">
             <div>
-              <dt>8</dt>
-              <dd>framework sections</dd>
+              <dt>4</dt>
+              <dd>sections</dd>
             </div>
 
             <div>
-              <dt>24</dt>
-              <dd>multiple-choice questions</dd>
+              <dt>16</dt>
+              <dd>multiple-choice judgements</dd>
             </div>
 
             <div>
-              <dt>5</dt>
-              <dd>narrative questions</dd>
+              <dt>4 + 1</dt>
+              <dd>short reflections</dd>
             </div>
           </dl>
 
-          <h3>The eight criteria</h3>
+          <h3>The four sections</h3>
 
           <ol class="criteria-list">
-            <li>Values and Ethos</li>
-            <li>Equality, Diversity and Inclusion</li>
-            <li>Leadership</li>
-            <li>Children and Young People</li>
-            <li>Curriculum Design and Delivery</li>
-            <li>Range of Offer</li>
-            <li>Continuing Professional Development</li>
-            <li>Cultural Collaborations</li>
+            <li>Purpose and leadership</li>
+            <li>Equity and pupil agency</li>
+            <li>Learning and cultural entitlement</li>
+            <li>Capability and connection</li>
           </ol>
         </aside>
       </div>
     </section>
 
-    <!-- =====================================================
-         QUESTIONNAIRE SCREEN
-         ===================================================== -->
+    <!-- QUESTIONNAIRE -->
     <section
       id="questionnaire-screen"
       class="screen"
@@ -159,11 +140,11 @@
       <div class="questionnaire-header">
         <div class="progress-meta">
           <p id="progress-text" class="progress-text">
-            Section 1 of 8
+            Section 1 of 4
           </p>
 
           <p id="answered-text" class="answered-text">
-            0 of 24 questions answered
+            0 of 16 judgements completed
           </p>
         </div>
 
@@ -173,14 +154,14 @@
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow="0"
-          aria-label="Questionnaire progress"
+          aria-label="Self-assessment progress"
         >
           <div id="progress-bar" class="progress-bar"></div>
         </div>
       </div>
 
       <div class="questionnaire-layout">
-        <aside class="section-navigation" aria-label="Questionnaire sections">
+        <aside class="section-navigation" aria-label="Self-assessment sections">
           <h2>Your progress</h2>
           <ol id="section-list" class="section-list"></ol>
         </aside>
@@ -188,20 +169,50 @@
         <div class="question-panel">
           <div class="section-heading">
             <p id="section-number" class="eyebrow">
-              Criterion 1
+              Section 1
             </p>
 
             <h1 id="section-title">
-              Values and Ethos
+              Purpose and leadership
             </h1>
 
-            <p id="section-subtitle" class="section-subtitle">
-              Demonstrate commitment to arts and culture
-            </p>
+            <p id="section-subtitle" class="section-subtitle"></p>
           </div>
 
           <form id="questions-form" novalidate>
-            <div id="questions-container"></div>
+            <div id="criteria-container"></div>
+
+            <article class="section-example-card">
+              <p class="question-count">Section example</p>
+
+              <h2 id="section-example-title">
+                What example best substantiates your choices in this section?
+              </h2>
+
+              <p class="prototype-help">
+                Briefly explain what happened, what changed and how you know.
+                One focused example is enough.
+              </p>
+
+              <div class="textarea-wrapper">
+                <textarea
+                  id="section-example"
+                  rows="7"
+                  maxlength="800"
+                  aria-describedby="section-example-count"
+                ></textarea>
+
+                <div class="textarea-meta">
+                  <span>
+                    Keep this specific rather than covering everything.
+                  </span>
+
+                  <span id="section-example-count">
+                    0 / 800 characters
+                  </span>
+                </div>
+              </div>
+            </article>
 
             <div
               id="validation-message"
@@ -209,7 +220,7 @@
               role="alert"
               hidden
             >
-              Please answer all questions in this section before continuing.
+              Please complete the four judgements in this section before continuing.
             </div>
 
             <div class="form-actions">
@@ -242,33 +253,30 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         COMPLETION CHOICE
-         ===================================================== -->
+    <!-- COMPLETION -->
     <section
       id="completion-screen"
       class="screen"
       aria-labelledby="completion-title"
     >
       <div class="narrow-panel">
-        <p class="eyebrow">Questionnaire complete</p>
+        <p class="eyebrow">Self-assessment complete</p>
 
         <h1 id="completion-title">
-          You have answered all 24 questions
+          You have completed all 16 judgements
         </h1>
 
         <p class="lead">
-          You can review and change your answers, or continue directly to your
-          provision snapshot.
+          You can review your choices or continue to the profile that an
+          assessor would use as the starting point for review.
         </p>
 
         <div class="choice-grid">
           <article class="choice-card">
-            <h2>Review my answers</h2>
+            <h2>Review my choices</h2>
 
             <p>
-              See all eight sections, check your choices and return to anything
-              you would like to change.
+              Check the selected statements, evidence basis and short examples.
             </p>
 
             <button
@@ -281,11 +289,11 @@
           </article>
 
           <article class="choice-card">
-            <h2>See my snapshot</h2>
+            <h2>See my self-assessment profile</h2>
 
             <p>
-              View a visual profile of the relative strengths in your current
-              provision.
+              View the relative shape of the eight criteria before adding one
+              final whole-setting reflection.
             </p>
 
             <button
@@ -293,16 +301,14 @@
               class="button button--primary"
               type="button"
             >
-              Continue to snapshot
+              Continue to profile
             </button>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         QUESTIONNAIRE REVIEW
-         ===================================================== -->
+    <!-- REVIEW -->
     <section
       id="review-screen"
       class="screen"
@@ -313,12 +319,12 @@
           <p class="eyebrow">Review</p>
 
           <h1 id="review-title">
-            Check your answers
+            Check your self-assessment
           </h1>
 
           <p class="lead">
-            Your selected answers are shown below. Return to any section to
-            make changes.
+            Review the judgements, evidence basis and section examples before
+            continuing.
           </p>
         </div>
 
@@ -327,7 +333,7 @@
           class="button button--primary"
           type="button"
         >
-          Continue to snapshot
+          Continue to profile
         </button>
       </div>
 
@@ -347,14 +353,12 @@
           class="button button--primary"
           type="button"
         >
-          Continue to snapshot
+          Continue to profile
         </button>
       </div>
     </section>
 
-    <!-- =====================================================
-         SNAPSHOT RESULTS
-         ===================================================== -->
+    <!-- RESULTS -->
     <section
       id="results-screen"
       class="screen"
@@ -362,15 +366,15 @@
     >
       <div class="results-header">
         <div>
-          <p class="eyebrow">Your snapshot</p>
+          <p class="eyebrow">Your self-assessment profile</p>
 
           <h1 id="results-title">
-            A picture of your current provision
+            A structured claim about your current provision
           </h1>
 
           <p class="lead">
-            This profile shows the relative shape of your answers across the
-            eight Artsmark Framework criteria.
+            This profile summarises the judgements you made across the eight
+            criteria. It is not an award decision.
           </p>
         </div>
 
@@ -379,7 +383,7 @@
           class="button button--secondary"
           type="button"
         >
-          Review answers
+          Review choices
         </button>
       </div>
 
@@ -390,31 +394,34 @@
               id="radar-chart"
               width="760"
               height="620"
-              aria-label="Radar chart showing the relative profile of answers across eight Artsmark criteria"
+              aria-label="Radar chart showing the school's self-assessment across eight Artsmark criteria"
               role="img"
-            >
-              Your browser does not support the chart.
-            </canvas>
+            ></canvas>
           </div>
 
           <p class="chart-note">
-            The further the shape extends towards the edge, the more developed
-            the selected descriptions were in that area. This is not an award
-            score or level.
+            The profile reflects the school's selected statements. An assessor
+            would review whether those judgements are supported by the examples
+            and evidence basis provided.
           </p>
         </div>
 
         <aside class="results-summary">
-          <h2>What this tells you</h2>
+          <h2>How an assessor might use this</h2>
 
           <p>
-            The snapshot can help you notice where practice appears more
-            established and where the picture is less consistent or more
-            dependent on particular people or circumstances.
+            For each criterion, an assessor could confirm the judgement,
+            confirm it with qualification, adjust it, or ask for clarification.
           </p>
 
-          <div id="strengths-summary" class="result-callout"></div>
+          <div class="assessor-status-list">
+            <span>Supported</span>
+            <span>Partly supported</span>
+            <span>Needs clarification</span>
+            <span>Adjusted</span>
+          </div>
 
+          <div id="strengths-summary" class="result-callout"></div>
           <div id="development-summary" class="result-callout"></div>
         </aside>
       </div>
@@ -429,16 +436,15 @@
 
       <section class="next-step-card" aria-labelledby="next-step-title">
         <div>
-          <p class="eyebrow">Next step</p>
+          <p class="eyebrow">Final reflection</p>
 
           <h2 id="next-step-title">
-            Add the story behind your snapshot
+            Interpret the profile before assessor review
           </h2>
 
           <p>
-            Use five narrative questions to explain what the snapshot gets
-            right, add examples and evidence, and describe challenges or
-            areas that remain less established.
+            Explain the strongest feature of your provision, where it is least
+            secure and what you would prioritise next.
           </p>
         </div>
 
@@ -447,56 +453,35 @@
           class="button button--primary"
           type="button"
         >
-          Continue to narrative
+          Add final reflection
         </button>
       </section>
     </section>
 
-    <!-- =====================================================
-         NARRATIVE FOLLOW-UP
-         ===================================================== -->
+    <!-- FINAL REFLECTION -->
     <section
       id="narrative-screen"
       class="screen"
       aria-labelledby="narrative-title"
     >
       <div class="narrative-heading">
-        <p class="eyebrow">Narrative follow-up</p>
+        <p class="eyebrow">Whole-setting reflection</p>
 
         <h1 id="narrative-title">
-          Add the story behind your snapshot
+          What should the assessor understand about this profile?
         </h1>
 
         <p class="lead">
-          Your snapshot is a starting point, not an assessment result. Use the
-          questions to explain what sits behind the pattern, provide examples
-          and add context the questionnaire could not capture.
+          Looking across the self-assessment, identify your strongest feature,
+          where practice is least secure and what you would prioritise next.
         </p>
       </div>
 
-      <details class="mobile-snapshot">
-        <summary>View your snapshot</summary>
-
-        <div class="mobile-snapshot__content">
-          <div class="mini-chart-wrapper">
-            <canvas
-              id="mobile-radar-chart"
-              width="500"
-              height="430"
-              aria-label="Compact version of your Artsmark provision snapshot"
-              role="img"
-            ></canvas>
-          </div>
-
-          <div id="mobile-scores-list" class="mini-scores-list"></div>
-        </div>
-      </details>
-
       <div class="narrative-layout">
-        <aside class="snapshot-reference" aria-label="Your snapshot">
+        <aside class="snapshot-reference" aria-label="Your self-assessment profile">
           <div class="snapshot-reference__header">
             <p class="eyebrow">Your reference</p>
-            <h2>Your snapshot</h2>
+            <h2>Your profile</h2>
           </div>
 
           <div class="mini-chart-wrapper">
@@ -504,7 +489,7 @@
               id="narrative-radar-chart"
               width="500"
               height="430"
-              aria-label="Compact version of your Artsmark provision snapshot"
+              aria-label="Compact version of the self-assessment profile"
               role="img"
             ></canvas>
           </div>
@@ -516,74 +501,44 @@
             class="text-button"
             type="button"
           >
-            View full snapshot
+            View full profile
           </button>
         </aside>
 
         <div class="narrative-panel">
-          <div class="narrative-progress">
-            <div class="progress-meta">
-              <p id="narrative-progress-text" class="progress-text">
-                Question 1 of 5
-              </p>
-
-              <p
-                id="narrative-saved-status"
-                class="saved-status"
-                aria-live="polite"
-              >
-                Draft saved
-              </p>
-            </div>
-
-            <div
-              id="narrative-progress-track"
-              class="progress-track"
-              role="progressbar"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="20"
-              aria-label="Narrative progress"
-            >
-              <div
-                id="narrative-progress-bar"
-                class="progress-bar"
-              ></div>
-            </div>
-          </div>
-
           <form id="narrative-form" novalidate>
             <article class="narrative-question-card">
-              <p id="narrative-question-count" class="question-count">
-                Question 1 of 5
+              <p class="question-count">
+                Final reflection
               </p>
 
-              <h2 id="narrative-question-title">
-                What does this snapshot get right, and where does it need more
-                context?
+              <h2>
+                Looking across your self-assessment, what is strongest, what is
+                least secure, and what would you strengthen next?
               </h2>
 
-              <ul
-                id="narrative-guidance-list"
-                class="prompt-list"
-              ></ul>
+              <ul class="prompt-list">
+                <li>What feels most established, and what supports that judgement?</li>
+                <li>Where is practice still uneven, dependent or fragile?</li>
+                <li>What is the most important realistic next priority?</li>
+                <li>Does any part of the profile need contextual explanation?</li>
+              </ul>
 
               <div class="textarea-wrapper">
                 <textarea
                   id="narrative-response"
                   rows="12"
-                  maxlength="2400"
-                  aria-describedby="narrative-guidance-list narrative-character-count"
+                  maxlength="1800"
+                  aria-describedby="narrative-character-count"
                 ></textarea>
 
                 <div class="textarea-meta">
                   <span>
-                    A focused account with specific examples is more useful
-                    than covering everything.
+                    Be concise, specific and honest about unevenness.
                   </span>
 
                   <span id="narrative-character-count">
-                    0 / 2,400 characters
+                    0 / 1,800 characters
                   </span>
                 </div>
               </div>
@@ -591,7 +546,7 @@
 
             <div class="form-actions">
               <button
-                id="narrative-back-button"
+                id="return-to-results-button-bottom"
                 class="button button--secondary"
                 type="button"
               >
@@ -603,15 +558,14 @@
                 class="button button--quiet"
                 type="button"
               >
-                Save and return to snapshot
+                Save and return to profile
               </button>
 
               <button
-                id="narrative-next-button"
                 class="button button--primary"
                 type="submit"
               >
-                Save and continue
+                Review self-assessment
               </button>
             </div>
           </form>
@@ -619,9 +573,7 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         FINAL REVIEW
-         ===================================================== -->
+    <!-- FINAL REVIEW -->
     <section
       id="final-review-screen"
       class="screen"
@@ -629,15 +581,15 @@
     >
       <div class="review-header">
         <div>
-          <p class="eyebrow">Application review</p>
+          <p class="eyebrow">Ready for assessor review</p>
 
           <h1 id="final-review-title">
-            Review your snapshot and narrative
+            Review the self-assessment claim
           </h1>
 
           <p class="lead">
-            This combines your structured self-assessment with the context,
-            examples and reflection you have added.
+            This combines the structured profile, the school's evidence basis,
+            section examples and final reflection.
           </p>
         </div>
 
@@ -646,20 +598,20 @@
           class="button button--secondary"
           type="button"
         >
-          Edit narrative
+          Edit final reflection
         </button>
       </div>
 
       <div class="final-review-layout">
         <aside class="final-snapshot-card">
-          <h2>Your provision snapshot</h2>
+          <h2>Self-assessment profile</h2>
 
           <div class="mini-chart-wrapper">
             <canvas
               id="final-radar-chart"
               width="500"
               height="430"
-              aria-label="Your Artsmark provision snapshot"
+              aria-label="Self-assessment profile ready for assessor review"
               role="img"
             ></canvas>
           </div>
@@ -671,11 +623,40 @@
             class="text-button"
             type="button"
           >
-            Review questionnaire answers
+            Review questionnaire choices
           </button>
         </aside>
 
-        <div id="narrative-review-container" class="narrative-review-container">
+        <div>
+          <section class="narrative-review-card">
+            <div class="narrative-review-card__header">
+              <h2>Whole-setting reflection</h2>
+
+              <button
+                id="edit-reflection-inline"
+                class="text-button"
+                type="button"
+              >
+                Change response
+              </button>
+            </div>
+
+            <p id="final-reflection"></p>
+          </section>
+
+          <section class="assessor-review-card">
+            <p class="eyebrow">Assessor review</p>
+
+            <h2>Professional judgement remains visible</h2>
+
+            <p>
+              In a live service, the assessor could review each criterion as
+              supported, partly supported, adjusted or needing clarification,
+              with a short rationale where the school's self-assessment changes.
+            </p>
+
+            <div id="assessor-review-list" class="assessor-review-list"></div>
+          </section>
         </div>
       </div>
 
@@ -684,12 +665,12 @@
           <p class="eyebrow">Prototype endpoint</p>
 
           <h2 id="prototype-end-title">
-            The application could now be prepared for submission
+            The self-assessment is ready for assessor review
           </h2>
 
           <p>
-            A future version could add declarations, an optional recorded
-            contribution and a final submission step.
+            A future version could add assessor notes, clarification requests,
+            moderation and the final award recommendation.
           </p>
         </div>
 
@@ -711,7 +692,6 @@
     aria-atomic="true"
   ></div>
 
-  <!-- Relative path: works with Live Server and GitHub Pages -->
   <script src="script.js"></script>
 </body>
 </html>
