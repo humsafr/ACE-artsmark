@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artsmark emerging assessment prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <div class="eyebrow">Artsmark prototype</div>
+        <div class="brand">Emerging assessment</div>
+      </div>
+      <div class="prototype-badge">For testing only</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="screen-intro" class="screen active">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">New assessment structure</div>
+          <h1>Tell us about your school, then tell us what arts and culture look like there now.</h1>
+          <p class="lead">This prototype has two main sections: your school profile and your assessment. Each has two parts.</p>
+
+          <div class="callout">
+            <strong>What this is testing</strong>
+            <p>Can a clearer, more structured assessment make expectations easier to understand without losing reflection, school voice and distinctiveness?</p>
+          </div>
+
+          <button class="button primary" id="startBtn">Start prototype</button>
+          <button class="button secondary" id="resumeBtn" hidden>Continue saved draft</button>
+        </div>
+
+        <aside class="overview-card">
+          <h2>1. Your school profile</h2>
+          <p><strong>A. School record</strong><br>Factual, reusable context about your school and provision.</p>
+          <p><strong>B. Current provision snapshot</strong><br>A non-scored self-check using recognisable scenarios.</p>
+
+          <h2>2. Your assessment</h2>
+          <p><strong>A. Practice and impact</strong><br>Criterion-linked examples and reflection.</p>
+          <p><strong>B. School voice and distinctiveness</strong><br>A more open account of what matters in your setting.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="screen-record" class="screen">
+      <div class="progress-meta"><span>1 of 4 · Your school profile</span><span id="save-record" class="saved">Draft saved</span></div>
+      <div class="progress"><span style="width:15%"></span></div>
+
+      <div class="layout">
+        <aside class="side-card">
+          <div class="eyebrow">Part 1A</div>
+          <h2>School record</h2>
+          <p>This gives assessors context. It is not itself evidence against the criteria.</p>
+          <p class="muted">In a live service, this would be reusable and updated when a school reapplies.</p>
+        </aside>
+
+        <div>
+          <h1>Your school record</h1>
+          <p class="lead">Give the assessor the factual picture they need to understand your setting and what is currently on offer.</p>
+
+          <form id="recordForm">
+            <div class="card">
+              <h2>About your school</h2>
+              <div class="grid2">
+                <label>URN / DfE number<input name="urn"></label>
+                <label>School name<input name="schoolName"></label>
+                <label>School type
+                  <select name="schoolType">
+                    <option value="">Select one</option>
+                    <option>Primary</option><option>Secondary</option><option>All-through</option>
+                    <option>SEND / specialist</option><option>Alternative provision</option><option>Other</option>
+                  </select>
+                </label>
+                <label>School structure
+                  <select name="structure">
+                    <option value="">Select one</option>
+                    <option>Maintained school</option><option>Single academy</option><option>Multi-academy trust</option>
+                    <option>Federation</option><option>Independent</option><option>Other</option>
+                  </select>
+                </label>
+                <label>Age range / key stages<input name="ageRange" placeholder="For example: Reception–Year 6"></label>
+                <label>Approximate pupil roll<input name="pupilCount" type="number" min="0"></label>
+              </div>
+
+              <label>Who does your school serve?
+                <textarea name="community" maxlength="600" placeholder="Short bullet points are fine."></textarea>
+              </label>
+            </div>
+
+            <div class="card">
+              <h2>Your arts and cultural provision</h2>
+              <label>What artforms and subjects are taught?
+                <textarea name="artforms" maxlength="600" placeholder="For example: visual art; music; drama; dance; film; creative writing."></textarea>
+              </label>
+              <label>How does the offer differ by age group or phase?
+                <textarea name="ageOffer" maxlength="700"></textarea>
+              </label>
+              <div class="grid2">
+                <label>Qualifications or progression routes
+                  <textarea name="qualifications" maxlength="450"></textarea>
+                </label>
+                <label>How is arts provision organised?
+                  <textarea name="organisation" maxlength="450" placeholder="Who is primarily responsible, and who else is involved?"></textarea>
+                </label>
+              </div>
+              <label>Anything relevant about capacity, resources or funding?
+                <textarea name="resources" maxlength="450"></textarea>
+              </label>
+            </div>
+
+            <div class="card warm">
+              <h2>Anything else we should know?</h2>
+              <p class="muted">Use this for context the standard fields have not captured, such as recent leadership, staffing, structural or funding changes.</p>
+              <textarea name="context" maxlength="900"></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="button secondary" data-go="screen-intro">Back</button>
+              <button type="submit" class="button primary">Save and continue</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-snapshot" class="screen">
+      <div class="progress-meta"><span>2 of 4 · Your school profile</span><span id="save-snapshot" class="saved">Draft saved</span></div>
+      <div class="progress"><span style="width:35%"></span></div>
+
+      <div class="layout">
+        <aside class="side-card">
+          <div class="eyebrow">Part 1B</div>
+          <h2>Current provision snapshot</h2>
+          <div class="status-box"><strong>Not scored</strong><p>This is a contextual self-check, not an award calculation.</p></div>
+        </aside>
+
+        <div>
+          <h1>Your current provision</h1>
+          <p class="lead">Choose the description that feels closest to your setting now.</p>
+          <p>These questions translate parts of the framework into recognisable situations and help prepare you for the assessment that follows.</p>
+          <form id="snapshotForm">
+            <div id="snapshotQuestions"></div>
+
+            <div class="callout subtle">
+              <strong>What happens with these answers?</strong>
+              <p>They give the assessor a consistent contextual snapshot and help you decide what examples to bring into the assessed section. They are not scored.</p>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="button secondary" data-go="screen-record">Back</button>
+              <button type="submit" class="button primary">Continue to assessment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-assessment" class="screen">
+      <div class="progress-meta"><span>3 of 4 · Your assessment</span><span id="save-assessment" class="saved">Draft saved</span></div>
+      <div class="progress"><span id="assessmentProgress" style="width:55%"></span></div>
+
+      <div class="layout assessment-layout">
+        <aside class="side-card">
+          <div class="eyebrow">Part 2A</div>
+          <h2>Practice and impact</h2>
+          <ol id="assessmentNav" class="section-nav"></ol>
+          <p class="muted">The relevant criteria stay visible throughout.</p>
+        </aside>
+
+        <div>
+          <div class="eyebrow" id="assessmentStep"></div>
+          <h1 id="assessmentTitle"></h1>
+          <p class="lead" id="assessmentIntro"></p>
+
+          <div class="criteria-box">
+            <div class="eyebrow">Framework criteria in this section</div>
+            <div id="criteriaTags" class="tag-row"></div>
+          </div>
+
+          <form id="assessmentForm">
+            <div class="card">
+              <div class="eyebrow">A · Concrete example</div>
+              <h2 id="examplePrompt"></h2>
+              <p class="muted">Cover what happened, who was involved or affected, how widely it applies, what changed and anything that affected the result. Bullet points are welcome.</p>
+              <textarea id="examplesResponse" maxlength="2200"></textarea>
+            </div>
+
+            <div class="card">
+              <div class="eyebrow">B · How do you know?</div>
+              <h2>What did you use to understand what difference this made?</h2>
+              <p class="muted">Select any sources you used. You do not need to upload them here.</p>
+              <div id="evidenceOptions" class="chips"></div>
+              <label>What did this information tell you?
+                <textarea id="findingResponse" maxlength="1200"></textarea>
+              </label>
+            </div>
+
+            <div class="card">
+              <div class="eyebrow">C · Reflect</div>
+              <h2 id="reflectionPrompt"></h2>
+              <p class="muted">Include where practice is less consistent, fragile or still developing if relevant.</p>
+              <textarea id="reflectionResponse" maxlength="1800"></textarea>
+            </div>
+
+            <details class="guidance">
+              <summary>What makes a useful answer?</summary>
+              <p>Be specific. Tell us what happened, who experienced it, what changed and how you know. Generic or sweeping claims are harder to assess, even when the writing sounds polished.</p>
+            </details>
+
+            <div class="actions">
+              <button type="button" class="button secondary" id="assessmentBack">Back</button>
+              <button type="submit" class="button primary" id="assessmentNext">Save and continue</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-voice" class="screen">
+      <div class="progress-meta"><span>4 of 4 · Your assessment</span><span id="save-voice" class="saved">Draft saved</span></div>
+      <div class="progress"><span style="width:90%"></span></div>
+
+      <div class="layout">
+        <aside class="side-card">
+          <div class="eyebrow">Part 2B</div>
+          <h2>School voice and distinctiveness</h2>
+          <p>This part is deliberately more open.</p>
+          <p class="muted">It should add meaning, identity and coherence rather than repeat the criterion-linked answers.</p>
+        </aside>
+
+        <div>
+          <h1>What makes arts and culture distinctive in your school?</h1>
+          <p class="lead">This is your space to tell the assessor what matters most about arts and culture in your setting.</p>
+
+          <form id="voiceForm">
+            <div class="card">
+              <div class="eyebrow">Question 1</div>
+              <h2>What is distinctive about arts and culture in your school?</h2>
+              <p class="muted">Tell us what matters most about the experience you are trying to create for pupils and why. You might include joy, creativity, expression or freedom.</p>
+              <textarea name="distinctive" maxlength="2200"></textarea>
+            </div>
+
+            <div class="card">
+              <div class="eyebrow">Question 2</div>
+              <h2>What are you proudest of right now?</h2>
+              <p class="muted">This might be something pupils experience, something that has changed, or something your school contributes to families, other schools, cultural organisations or the wider community.</p>
+              <textarea name="proud" maxlength="2200"></textarea>
+            </div>
+
+            <div class="callout subtle">
+              <strong>Using AI tools</strong>
+              <p>You can use tools to organise or edit your material, but the account remains your school’s responsibility. Generic language, unsupported claims or wording that removes the specifics of your setting will make the application harder to assess.</p>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="button secondary" id="voiceBack">Back</button>
+              <button type="submit" class="button primary">Review your application</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-review" class="screen">
+      <div class="review-head">
+        <div>
+          <div class="eyebrow">Prototype review</div>
+          <h1>Review your application</h1>
+          <p class="lead">This view makes the different jobs of each part visible.</p>
+        </div>
+        <button class="button quiet" id="restartBtn">Clear prototype</button>
+      </div>
+
+      <div id="reviewContainer"></div>
+
+      <div class="callout">
+        <strong>Prototype question</strong>
+        <p>Does this sequence give enough structure and clarity while still allowing the application to feel recognisably about your school?</p>
+      </div>
+
+      <div class="actions">
+        <button class="button secondary" data-go="screen-voice">Back</button>
+        <button class="button primary" data-go="screen-intro">Return to start</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
