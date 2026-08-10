@@ -52,6 +52,50 @@ main.wrap { padding: clamp(2rem, 5vw, 5rem) 0 6rem; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+.orientation-card {
+  margin: 1.25rem 0;
+  padding: 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.orientation-card h2 {
+  margin-bottom: .7rem;
+  font-size: 1.2rem;
+}
+
+.orientation-card ul {
+  margin: .7rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.orientation-card li {
+  margin-bottom: .35rem;
+}
+
+.orientation-step {
+  padding: .85rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.orientation-step:first-of-type {
+  margin-top: .5rem;
+}
+
+.orientation-step p {
+  margin: .25rem 0 0;
+  color: var(--muted);
+}
+
+.orientation-emphasis {
+  margin: 1rem 0 0;
+  padding: .85rem 1rem;
+  background: var(--primary-soft);
+  border-radius: 8px;
+  font-weight: 700;
+}
 .overview-card { padding: 1.5rem; }
 .overview-card h2 { font-size: 1.15rem; margin-top: 1.2rem; }
 .callout { margin: 1.5rem 0; padding: 1.2rem; border-left: 5px solid var(--accent); background: var(--accent-soft); border-radius: 0 var(--radius) var(--radius) 0; }
