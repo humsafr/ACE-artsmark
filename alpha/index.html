@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Artsmark Award pilot enrolment and assessment form."
+  >
+  <title>Artsmark Award · Pilot form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div>
+        <p class="eyebrow">
+          Artsmark prototype · For testing only · No data sent or stored remotely
+        </p>
+        <p class="site-title">Artsmark Award</p>
+      </div>
+
+      <span class="prototype-label">Pilot form</span>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell" tabindex="-1">
+
+    <!-- =====================================================
+         LANDING
+         ===================================================== -->
+    <section
+      id="landing-screen"
+      class="screen screen--active"
+      aria-labelledby="landing-title"
+    >
+      <div class="landing-panel">
+        <p class="eyebrow">Artsmark Award</p>
+
+        <h1 id="landing-title">Your Artsmark journey</h1>
+
+        <p class="lead">
+          First enrol your school for Artsmark. Once enrolment is complete,
+          you can begin the Artsmark assessment when you are ready.
+        </p>
+
+        <article
+          id="enrolment-stage-card"
+          class="journey-stage journey-stage--enrolment"
+        >
+          <div class="stage-heading">
+            <div>
+              <p class="stage-label">Step 1</p>
+              <h2>Enrolment and school profile</h2>
+            </div>
+
+            <span
+              id="enrolment-status"
+              class="status-pill"
+              hidden
+            >
+              Complete
+            </span>
+          </div>
+
+          <p>
+            Tell us about your school and current arts and cultural provision,
+            then choose how you would like to arrange payment.
+          </p>
+
+          <ul class="stage-summary">
+            <li>School and setting information</li>
+            <li>Current arts and cultural provision</li>
+            <li>How provision is organised</li>
+            <li>Payment now or later</li>
+          </ul>
+
+          <div class="stage-actions">
+            <button
+              id="start-enrolment-button"
+              class="button button--primary"
+              type="button"
+            >
+              Start enrolment
+            </button>
+          </div>
+        </article>
+
+        <div class="journey-divider" aria-hidden="true"></div>
+
+        <article
+          id="assessment-stage-card"
+          class="journey-stage journey-stage--assessment"
+        >
+          <div class="stage-heading">
+            <div>
+              <p class="stage-label">Step 2</p>
+              <h2>Artsmark assessment</h2>
+            </div>
+
+            <span
+              id="assessment-status"
+              class="status-pill status-pill--secondary"
+              hidden
+            >
+              In progress
+            </span>
+          </div>
+
+          <p>
+            Once you have enrolled, complete the assessment when you are ready.
+            It has two parts.
+          </p>
+
+          <div class="assessment-parts">
+            <article>
+              <p class="part-number">Part 1</p>
+              <h3>Practice across the Artsmark criteria</h3>
+              <p>
+                Describe your current provision, what enables it, and what you
+                understand about its effect.
+              </p>
+            </article>
+
+            <article>
+              <p class="part-number">Part 2</p>
+              <h3>School voice and distinctiveness</h3>
+              <p>
+                Tell us what is distinctive about arts and culture in your
+                school, what you are proud of and what you want to bring to
+                life.
+              </p>
+            </article>
+          </div>
+
+          <div class="stage-actions">
+            <button
+              id="start-assessment-button"
+              class="button button--secondary"
+              type="button"
+            >
+              Start assessment
+            </button>
+
+            <p
+              id="assessment-lock-note"
+              class="stage-note"
+            >
+              Complete enrolment first.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ENROLMENT / SCHOOL PROFILE
+         ===================================================== -->
+    <section
+      id="profile-screen"
+      class="screen"
+      aria-labelledby="profile-title"
+    >
+      <div class="workflow-header">
+        <div>
+          <p class="eyebrow">Enrolment</p>
+          <h1 id="profile-title">Enrolment and school profile</h1>
+        </div>
+
+        <p
+          id="profile-saved-status"
+          class="saved-status"
+          aria-live="polite"
+        >
+          Draft saved
+        </p>
+      </div>
+
+      <div class="workflow-layout">
+        <aside class="workflow-navigation" aria-label="Enrolment progress">
+          <h2>Enrolment</h2>
+
+          <ol class="workflow-list">
+            <li class="is-current" data-step="1">
+              School profile
+            </li>
+            <li data-step="2">
+              Payment
+            </li>
+          </ol>
+        </aside>
+
+        <form id="profile-form" class="form-panel" novalidate>
+          <div class="guidance-card guidance-card--aqua">
+            <h2>How to approach this section</h2>
+
+            <p>
+              Following the school details, the questions are generic and will
+              not therefore apply to every type of setting. If something is not
+              relevant to your school, select or write “Not applicable.” You
+              will not be disadvantaged for this.
+            </p>
+          </div>
+
+          <div id="profile-content"></div>
+
+          <div class="form-actions">
+            <button
+              id="profile-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <button
+              id="profile-save-exit"
+              class="button button--quiet"
+              type="button"
+            >
+              Save and return to start
+            </button>
+
+            <button
+              class="button button--primary"
+              type="submit"
+            >
+              Continue to payment
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAYMENT
+         ===================================================== -->
+    <section
+      id="payment-screen"
+      class="screen"
+      aria-labelledby="payment-title"
+    >
+      <div class="workflow-header">
+        <div>
+          <p class="eyebrow">Enrolment</p>
+          <h1 id="payment-title">Arrange payment</h1>
+        </div>
+      </div>
+
+      <div class="workflow-layout">
+        <aside class="workflow-navigation" aria-label="Enrolment progress">
+          <h2>Enrolment</h2>
+
+          <ol class="workflow-list">
+            <li class="is-complete" data-step="1">
+              School profile
+            </li>
+            <li class="is-current" data-step="2">
+              Payment
+            </li>
+          </ol>
+        </aside>
+
+        <form id="payment-form" class="form-panel" novalidate>
+          <section class="payment-card">
+            <p class="section-kicker">Payment</p>
+
+            <h2>How would you like to arrange payment?</h2>
+
+            <p>
+              Choose the option that best fits how your school needs to arrange
+              payment.
+            </p>
+
+            <div class="payment-options">
+              <label class="choice-option">
+                <input
+                  type="radio"
+                  name="paymentOption"
+                  value="now"
+                >
+
+                <span>
+                  <strong>Pay now</strong>
+                  <small>
+                    Continue to payment now.
+                  </small>
+                </span>
+              </label>
+
+              <label class="choice-option">
+                <input
+                  type="radio"
+                  name="paymentOption"
+                  value="later"
+                >
+
+                <span>
+                  <strong>Pay later</strong>
+                  <small>
+                    Choose this if your school needs to arrange an invoice or
+                    payment internally.
+                  </small>
+                </span>
+              </label>
+            </div>
+
+            <div
+              id="pay-now-guidance"
+              class="guidance-card guidance-card--aqua"
+              hidden
+            >
+              <h3>Pay now</h3>
+
+              <p>
+                In the live service, you would continue to the Artsmark payment
+                process here.
+              </p>
+
+              <button
+                id="prototype-pay-button"
+                class="button button--primary"
+                type="button"
+              >
+                Continue to payment
+              </button>
+            </div>
+
+            <div
+              id="pay-later-guidance"
+              class="guidance-card guidance-card--purple"
+              hidden
+            >
+              <h3>Pay later</h3>
+
+              <p>
+                Your enrolment can be completed now while your school arranges
+                payment internally.
+              </p>
+
+              <p>
+                Payment must be received by
+                <strong>[DD Month YYYY]</strong>.
+              </p>
+
+              <p>
+                If you need help arranging payment, contact
+                <strong>[Artsmark contact / email]</strong>.
+              </p>
+            </div>
+
+            <p
+              id="payment-validation"
+              class="validation-message"
+              role="alert"
+              hidden
+            >
+              Choose whether you would like to pay now or pay later.
+            </p>
+          </section>
+
+          <div class="form-actions">
+            <button
+              id="payment-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <button
+              id="payment-save-exit"
+              class="button button--quiet"
+              type="button"
+            >
+              Save and return to start
+            </button>
+
+            <button
+              class="button button--primary"
+              type="submit"
+            >
+              Complete enrolment
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ENROLMENT COMPLETE
+         ===================================================== -->
+    <section
+      id="enrolment-complete-screen"
+      class="screen"
+      aria-labelledby="enrolment-complete-title"
+    >
+      <div class="narrow-panel completion-panel">
+        <p class="eyebrow">Enrolment complete</p>
+
+        <h1 id="enrolment-complete-title">
+          Your school is enrolled
+        </h1>
+
+        <p class="lead">
+          Your school profile and payment preference have been saved.
+        </p>
+
+        <div
+          id="payment-summary"
+          class="guidance-card guidance-card--aqua"
+        ></div>
+
+        <p>
+          You can now begin the Artsmark assessment when you are ready.
+        </p>
+
+        <div class="intro-actions">
+          <button
+            id="go-to-assessment-button"
+            class="button button--primary"
+            type="button"
+          >
+            Start assessment
+          </button>
+
+          <button
+            id="return-home-after-enrolment"
+            class="button button--secondary"
+            type="button"
+          >
+            Return to start
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ASSESSMENT INTRO
+         ===================================================== -->
+    <section
+      id="assessment-intro-screen"
+      class="screen"
+      aria-labelledby="assessment-intro-title"
+    >
+      <div class="narrow-panel">
+        <p class="eyebrow">Artsmark assessment</p>
+
+        <h1 id="assessment-intro-title">Your Artsmark assessment</h1>
+
+        <p class="lead">
+          The Artsmark award is based on an assessment of your school's current
+          arts and cultural provision against the Artsmark criteria and quality
+          principles.
+        </p>
+
+        <p>
+          It is both descriptive and interpretive, meaning rather than a
+          complete record of everything your school has done, it should help
+          your assessor understand what arts and culture look like in your
+          setting, why they matter and what you know about their effect.
+        </p>
+
+        <div class="assessment-intro-grid">
+          <article class="assessment-intro-card">
+            <p class="part-number">Part 1</p>
+            <h2>Practice across the Artsmark criteria</h2>
+            <p>
+              Four areas bring related criteria together and ask you to
+              describe current practice, what enables it, and what you
+              understand about its effect.
+            </p>
+          </article>
+
+          <article class="assessment-intro-card">
+            <p class="part-number">Part 2</p>
+            <h2>School voice and distinctiveness</h2>
+            <p>
+              Step back from the individual criteria and tell us what is
+              distinctive, what you value, and what you most want the assessor
+              to understand.
+            </p>
+          </article>
+        </div>
+
+        <div class="intro-actions">
+          <button
+            id="assessment-intro-back"
+            class="button button--secondary"
+            type="button"
+          >
+            Back
+          </button>
+
+          <button
+            id="assessment-intro-next"
+            class="button button--primary"
+            type="button"
+          >
+            Begin assessment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CRITERIA INTRO
+         ===================================================== -->
+    <section
+      id="criteria-intro-screen"
+      class="screen"
+      aria-labelledby="criteria-intro-title"
+    >
+      <div class="workflow-header">
+        <div>
+          <p class="eyebrow">Artsmark assessment · Part 1</p>
+
+          <h1 id="criteria-intro-title">
+            Practice across the Artsmark criteria
+          </h1>
+        </div>
+      </div>
+
+      <div class="workflow-layout">
+        <aside class="workflow-navigation" aria-label="Assessment progress">
+          <h2>Assessment</h2>
+
+          <ol class="workflow-list">
+            <li class="is-current" data-step="1">
+              Practice across the criteria
+            </li>
+            <li data-step="2">
+              School voice and distinctiveness
+            </li>
+            <li data-step="3">
+              Before you submit
+            </li>
+          </ol>
+        </aside>
+
+        <div class="form-panel">
+          <div class="guidance-card guidance-card--aqua">
+            <h2>How to approach this section</h2>
+
+            <p>
+              The sections below organise the Artsmark criteria into four
+              related areas. The order is intended to help you move from the
+              arts and cultural experiences pupils have, towards the wider
+              conditions and relationships that support them.
+            </p>
+
+            <p>
+              Assessors are interested in an honest account of your current
+              provision, including what is well established, what is emerging
+              and what may be constrained by your context.
+            </p>
+
+            <p>
+              For each section, tell us what this looks like in your school
+              now. Choose examples that best represent your current practice.
+              Where possible, go beyond describing activity to help us
+              understand why it matters, who experiences or shapes it, what
+              makes it possible or helps it continue, what you have noticed or
+              learned about its effect, and what helps you know this.
+            </p>
+          </div>
+
+          <div class="guidance-card guidance-card--purple">
+            <h2>
+              If something is less relevant or less developed in your setting
+            </h2>
+
+            <p>
+              You can still tell us about your current relationship to it.
+              For example, you might explain:
+            </p>
+
+            <ul>
+              <li>why it is less relevant in your context</li>
+              <li>
+                practical or geographical barriers that affect what is possible
+              </li>
+              <li>
+                what you currently do at a scale that makes sense for your
+                school
+              </li>
+              <li>
+                something you are beginning to explore or understand
+              </li>
+              <li>
+                what an equivalent looks like in your particular setting
+              </li>
+            </ul>
+          </div>
+
+          <p>
+            Schools are all different. Their size, phase, location, pupils,
+            staffing, resources and community will all affect what arts and
+            cultural provision can and should look like.
+          </p>
+
+          <p>
+            This means that not every section or prompt will be equally
+            relevant to every school. They are there to help you consider what
+            might be useful to tell us, not as a checklist of things you are
+            expected to have.
+          </p>
+
+          <p class="limit-note">
+            The suggested response is 100–300 words per area, however this will
+            be finalised following the pilot.
+          </p>
+
+          <section class="areas-card" aria-labelledby="four-areas-title">
+            <h2 id="four-areas-title">The four areas</h2>
+
+            <div class="areas-table">
+              <div class="areas-table__header">
+                <div>Section</div>
+                <div>Relevant Artsmark criteria</div>
+              </div>
+
+              <div class="areas-table__row">
+                <div>
+                  <strong>
+                    1. Arts and culture: learning and experiences
+                  </strong>
+                </div>
+                <div>
+                  Curriculum design and delivery + Range of offer
+                </div>
+              </div>
+
+              <div class="areas-table__row">
+                <div>
+                  <strong>2. Inclusion and pupil agency</strong>
+                </div>
+                <div>
+                  Equality, diversity and inclusion + Children and young people
+                </div>
+              </div>
+
+              <div class="areas-table__row">
+                <div>
+                  <strong>3. People, capability and sustainability</strong>
+                </div>
+                <div>
+                  Values and ethos + Leadership + CPD
+                </div>
+              </div>
+
+              <div class="areas-table__row">
+                <div>
+                  <strong>4. Cultural connections and contribution</strong>
+                </div>
+                <div>
+                  Cultural collaborations
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <button
+              id="criteria-intro-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <span></span>
+
+            <button
+              id="criteria-intro-next"
+              class="button button--primary"
+              type="button"
+            >
+              Start this part
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CRITERIA DETAIL
+         ===================================================== -->
+    <section
+      id="criteria-screen"
+      class="screen"
+      aria-labelledby="criteria-title"
+    >
+      <div class="progress-header">
+        <div class="progress-meta">
+          <p id="criteria-progress-text" class="progress-text">
+            Area 1 of 4
+          </p>
+
+          <p
+            id="criteria-saved-status"
+            class="saved-status"
+            aria-live="polite"
+          >
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          id="criteria-progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="25"
+        >
+          <div id="criteria-progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="questionnaire-layout">
+        <aside
+          class="section-navigation"
+          aria-label="Practice across the Artsmark criteria"
+        >
+          <h2>Practice across the criteria</h2>
+          <ol id="criteria-section-list" class="section-list"></ol>
+        </aside>
+
+        <form id="criteria-form" class="question-panel" novalidate>
+          <div class="section-heading">
+            <p id="criteria-eyebrow" class="eyebrow"></p>
+            <h1 id="criteria-title"></h1>
+            <p id="criteria-label" class="criteria-label"></p>
+            <p
+              id="criteria-description"
+              class="lead criteria-description"
+            ></p>
+            <p
+              id="criteria-extra-description"
+              class="criteria-extra-description"
+            ></p>
+          </div>
+
+          <div class="guidance-grid">
+            <article class="guidance-card guidance-card--aqua">
+              <h2>How this part is used</h2>
+              <div id="criteria-how-used"></div>
+            </article>
+
+            <article class="guidance-card guidance-card--purple">
+              <h2>You might speak about</h2>
+              <ul id="criteria-prompts"></ul>
+            </article>
+          </div>
+
+          <article class="response-card">
+            <h2>What this currently looks like in your school</h2>
+
+            <p id="criteria-response-guidance"></p>
+            <p id="criteria-limit-note" class="limit-note"></p>
+
+            <textarea
+              id="criteria-response"
+              rows="14"
+              placeholder="Type your response here"
+            ></textarea>
+
+            <div class="textarea-meta">
+              <span id="criteria-word-guidance"></span>
+              <span id="criteria-word-count">0 words</span>
+            </div>
+          </article>
+
+          <div class="form-actions">
+            <button
+              id="criteria-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <button
+              id="criteria-save-exit"
+              class="button button--quiet"
+              type="button"
+            >
+              Save and return to start
+            </button>
+
+            <button
+              id="criteria-next"
+              class="button button--primary"
+              type="submit"
+            >
+              Save and continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SCHOOL VOICE INTRO
+         ===================================================== -->
+    <section
+      id="voice-intro-screen"
+      class="screen"
+      aria-labelledby="voice-intro-title"
+    >
+      <div class="workflow-header">
+        <div>
+          <p class="eyebrow">Artsmark assessment · Part 2</p>
+
+          <h1 id="voice-intro-title">
+            School voice and distinctiveness
+          </h1>
+        </div>
+      </div>
+
+      <div class="workflow-layout">
+        <aside class="workflow-navigation" aria-label="Assessment progress">
+          <h2>Assessment</h2>
+
+          <ol class="workflow-list">
+            <li class="is-complete" data-step="1">
+              Practice across the criteria
+            </li>
+            <li class="is-current" data-step="2">
+              School voice and distinctiveness
+            </li>
+            <li data-step="3">
+              Before you submit
+            </li>
+          </ol>
+        </aside>
+
+        <div class="form-panel">
+          <div class="guidance-card guidance-card--aqua">
+            <h2>How to approach this section</h2>
+
+            <p>
+              While the sections above help us consider your provision against
+              the Artsmark criteria, this part gives you more space to tell us
+              what is particular about your school: what is unique, what you
+              value and what you most want the assessor to understand.
+            </p>
+          </div>
+
+          <div class="guidance-card guidance-card--purple">
+            <h2>You might speak about</h2>
+
+            <ul>
+              <li>something you are especially proud of achieving</li>
+              <li>
+                where children and young people experience joy, creativity or
+                freedom
+              </li>
+              <li>your contribution to the wider school community</li>
+              <li>an area you have worked hard to strengthen</li>
+            </ul>
+
+            <p>
+              You do not need to repeat examples already given unless they
+              help tell a bigger story.
+            </p>
+          </div>
+
+          <div class="form-actions">
+            <button
+              id="voice-intro-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <span></span>
+
+            <button
+              id="voice-intro-next"
+              class="button button--primary"
+              type="button"
+            >
+              Start this part
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SCHOOL VOICE DETAIL
+         ===================================================== -->
+    <section
+      id="voice-screen"
+      class="screen"
+      aria-labelledby="voice-title"
+    >
+      <div class="progress-header">
+        <div class="progress-meta">
+          <p id="voice-progress-text" class="progress-text">
+            Question 1 of 4
+          </p>
+
+          <p
+            id="voice-saved-status"
+            class="saved-status"
+            aria-live="polite"
+          >
+            Draft saved
+          </p>
+        </div>
+
+        <div
+          id="voice-progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="25"
+        >
+          <div id="voice-progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="questionnaire-layout">
+        <aside
+          class="section-navigation"
+          aria-label="School voice questions"
+        >
+          <h2>School voice and distinctiveness</h2>
+          <ol id="voice-section-list" class="section-list"></ol>
+        </aside>
+
+        <form id="voice-form" class="question-panel" novalidate>
+          <article class="narrative-question-card">
+            <p id="voice-question-count" class="question-count"></p>
+            <h1 id="voice-title" class="narrative-title"></h1>
+            <p id="voice-guidance" class="question-intro"></p>
+            <p id="voice-limit-note" class="limit-note"></p>
+
+            <div
+              id="standard-voice-response"
+              class="textarea-wrapper"
+            >
+              <textarea
+                id="voice-response"
+                rows="14"
+                placeholder="Type your response here"
+              ></textarea>
+
+              <div class="textarea-meta">
+                <span></span>
+                <span id="voice-word-count">0 words</span>
+              </div>
+            </div>
+
+            <div id="bring-to-life-content" hidden>
+              <div class="guidance-card guidance-card--purple">
+                <h2>What you can share</h2>
+
+                <p>
+                  Please provide one link to a folder containing a small
+                  selection of material.
+                </p>
+
+                <p>
+                  For the pilot, we suggest a maximum of three items in total.
+                  These might include:
+                </p>
+
+                <ul>
+                  <li>photographs</li>
+                  <li>examples of pupil work</li>
+                  <li>a short document or other artefact</li>
+                  <li>pupil, family, community or partner contributions</li>
+                  <li>links to audio or video</li>
+                </ul>
+
+                <p>
+                  Please keep any audio or video material to no more than two
+                  minutes in total.
+                </p>
+
+                <p>
+                  Choose material that adds something difficult to communicate
+                  in writing rather than repeating or documenting everything
+                  in your application.
+                </p>
+              </div>
+
+              <div class="field">
+                <label for="bring-notice">
+                  What would you like the assessor to notice or understand
+                  from this?
+                </label>
+
+                <p class="field-help">
+                  A sentence or two is enough.
+                </p>
+
+                <textarea
+                  id="bring-notice"
+                  rows="6"
+                  placeholder="Type your response here"
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <label for="folder-link">Folder link</label>
+
+                <input
+                  id="folder-link"
+                  type="url"
+                  placeholder="Paste the link here"
+                >
+              </div>
+
+              <div class="guidance-card guidance-card--aqua">
+                <h2>Sharing safely</h2>
+
+                <p>
+                  Your school is responsible for ensuring that anything shared:
+                </p>
+
+                <ul>
+                  <li>
+                    follows your own safeguarding, consent and data-protection
+                    policies
+                  </li>
+                  <li>is appropriate to share outside the school</li>
+                  <li>
+                    has the necessary permissions where children, young people
+                    or others can be identified
+                  </li>
+                  <li>
+                    can be accessed by the assessor for the assessment period
+                  </li>
+                </ul>
+              </div>
+
+              <p>
+                Material may also be the kind of work you would be happy to
+                celebrate or share with other Artsmark schools.
+              </p>
+
+              <label class="checkbox-card" for="share-permission">
+                <input id="share-permission" type="checkbox">
+
+                <span>
+                  If Artsmark thought something I shared could be useful or
+                  inspiring to other schools, I would be happy to be contacted
+                  for permission to share it more widely.
+                </span>
+              </label>
+            </div>
+          </article>
+
+          <div class="form-actions">
+            <button
+              id="voice-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <button
+              id="voice-save-exit"
+              class="button button--quiet"
+              type="button"
+            >
+              Save and return to start
+            </button>
+
+            <button
+              id="voice-next"
+              class="button button--primary"
+              type="submit"
+            >
+              Save and continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BEFORE SUBMIT
+         ===================================================== -->
+    <section
+      id="submit-screen"
+      class="screen"
+      aria-labelledby="submit-title"
+    >
+      <div class="workflow-header">
+        <div>
+          <p class="eyebrow">Artsmark assessment</p>
+          <h1 id="submit-title">Before you submit</h1>
+        </div>
+      </div>
+
+      <div class="workflow-layout">
+        <aside class="workflow-navigation" aria-label="Assessment progress">
+          <h2>Assessment</h2>
+
+          <ol class="workflow-list">
+            <li class="is-complete" data-step="1">
+              Practice across the criteria
+            </li>
+            <li class="is-complete" data-step="2">
+              School voice and distinctiveness
+            </li>
+            <li class="is-current" data-step="3">
+              Before you submit
+            </li>
+          </ol>
+        </aside>
+
+        <form id="submit-form" class="form-panel" novalidate>
+          <section class="checklist-card">
+            <h2>Please check that:</h2>
+
+            <ul class="checklist">
+              <li>your school profile is up to date</li>
+              <li>your responses describe your current provision</li>
+              <li>
+                you have chosen examples that help the assessor understand your
+                practice rather than trying to record everything
+              </li>
+              <li>
+                where you make claims about impact or change, you have explained
+                what has helped you reach that understanding
+              </li>
+              <li>
+                your application reflects your actual setting, including areas
+                that may be less developed or work differently from other
+                schools
+              </li>
+              <li>
+                any supplementary material meets your school's safeguarding,
+                consent and data-protection requirements
+              </li>
+            </ul>
+          </section>
+
+          <div class="guidance-card guidance-card--purple">
+            <p>
+              <strong>
+                Please remember you are not writing towards a particular award
+                level.
+              </strong>
+              Your assessor will consider the application as a whole against
+              the Artsmark framework and use professional judgement to
+              determine the award.
+            </p>
+          </div>
+
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="submitter-name">
+                Name of person submitting
+              </label>
+              <input
+                id="submitter-name"
+                name="submitterName"
+                type="text"
+              >
+            </div>
+
+            <div class="field">
+              <label for="submitter-role">Role</label>
+              <input
+                id="submitter-role"
+                name="submitterRole"
+                type="text"
+              >
+            </div>
+
+            <div class="field">
+              <label for="submit-date">Date</label>
+              <input
+                id="submit-date"
+                name="submitDate"
+                type="date"
+              >
+            </div>
+          </div>
+
+          <section class="declaration-card">
+            <h2>Declaration</h2>
+
+            <p>
+              I confirm that the information in this application is an accurate
+              account of our school's current arts and cultural provision.
+            </p>
+
+            <label
+              class="checkbox-card"
+              for="declaration-confirmation"
+            >
+              <input
+                id="declaration-confirmation"
+                type="checkbox"
+              >
+
+              <span>Confirmation · Tick / sign here</span>
+            </label>
+          </section>
+
+          <div class="form-actions">
+            <button
+              id="submit-back"
+              class="button button--secondary"
+              type="button"
+            >
+              Back
+            </button>
+
+            <button
+              id="submit-save-exit"
+              class="button button--quiet"
+              type="button"
+            >
+              Save and return to start
+            </button>
+
+            <button
+              class="button button--primary"
+              type="submit"
+            >
+              Finish
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ASSESSMENT COMPLETE
+         ===================================================== -->
+    <section
+      id="complete-screen"
+      class="screen"
+      aria-labelledby="complete-title"
+    >
+      <div class="narrow-panel completion-panel">
+        <p class="eyebrow">Pilot form complete</p>
+
+        <h1 id="complete-title">
+          Your assessment draft is complete
+        </h1>
+
+        <p class="lead">
+          This prototype does not send or submit data. Your responses are stored
+          only in this browser session for testing.
+        </p>
+
+        <div class="intro-actions">
+          <button
+            id="return-to-form"
+            class="button button--secondary"
+            type="button"
+          >
+            Return to final check
+          </button>
+
+          <button
+            id="return-home"
+            class="button button--primary"
+            type="button"
+          >
+            Return to start
+          </button>
+
+          <button
+            id="restart-button"
+            class="button button--quiet"
+            type="button"
+          >
+            Clear this draft and start again
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="live-region"
+      class="visually-hidden"
+      aria-live="polite"
+    ></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
